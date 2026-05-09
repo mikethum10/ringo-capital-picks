@@ -19,6 +19,9 @@
     details > summary::-webkit-details-marker { display: none; }
     details[open] .chevron { transform: rotate(180deg); }
     .chevron { transition: transform 0.2s; display:inline-block; }
+    .tab-btn { padding: 0.5rem 1rem; font-size: 0.875rem; font-weight: 600; color: #64748b; border-bottom: 2px solid transparent; transition: all 0.15s; }
+    .tab-btn:hover { color: #1e293b; }
+    .tab-btn.active { color: #1e293b; border-bottom-color: #1e293b; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen font-sans">
@@ -34,51 +37,69 @@
   </div>
 </header>
 
-<main class="max-w-4xl mx-auto px-4 py-6 space-y-8">
+<main class="max-w-4xl mx-auto px-4 py-6 space-y-4">
 
-  <!-- DATE + SUMMARY -->
-  <div class="flex items-baseline justify-between">
+  <!-- DATE + NOTE -->
+  <div class="flex items-baseline justify-between flex-wrap gap-2">
     <h1 id="picks-date" class="text-2xl font-bold text-slate-900">—</h1>
     <p id="model-note" class="text-xs text-slate-400"></p>
   </div>
 
-  <!-- BET CARDS -->
-  <section>
-    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-3">Today's Picks</h2>
-    <div id="bet-cards" class="space-y-4"></div>
-    <p id="no-bets" class="hidden text-slate-400 text-sm italic">No plays meet the edge threshold today.</p>
-  </section>
+  <!-- TAB NAV -->
+  <div class="flex gap-0 border-b border-slate-200 -mb-1">
+    <button id="tab-btn-today"    onclick="switchTab('today')"    class="tab-btn active">Today's Games</button>
+    <button id="tab-btn-mypicks"  onclick="switchTab('mypicks')"  class="tab-btn">My Picks</button>
+  </div>
 
-  <!-- ALL GAMES -->
-  <section>
-    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-3">All Games</h2>
-    <div id="all-games" class="space-y-3"></div>
-  </section>
+  <!-- ── TAB: TODAY ────────────────────────────────────────────── -->
+  <div id="tab-today" class="space-y-8">
 
-  <!-- SEASON RECORD -->
-  <section>
-    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-3">Season Record</h2>
-    <div id="season-summary" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4"></div>
-    <div id="results-table-wrap" class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-slate-100 text-slate-400 text-xs uppercase">
-            <th class="px-4 py-2 text-left">Date</th>
-            <th class="px-4 py-2 text-left">Matchup</th>
-            <th class="px-4 py-2 text-left">Bet</th>
-            <th class="px-4 py-2 text-right">Line</th>
-            <th class="px-4 py-2 text-right">Model</th>
-            <th class="px-4 py-2 text-right">Edge</th>
-            <th class="px-4 py-2 text-center">Tier</th>
-            <th class="px-4 py-2 text-right">Actual</th>
-            <th class="px-4 py-2 text-center">ATS</th>
-          </tr>
-        </thead>
-        <tbody id="results-body"></tbody>
-      </table>
-      <p id="no-results" class="hidden text-center text-slate-400 text-sm py-6 italic">No results yet this season.</p>
+    <!-- BET CARDS -->
+    <section>
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-3">Model Picks</h2>
+      <div id="bet-cards" class="space-y-4"></div>
+      <p id="no-bets" class="hidden text-slate-400 text-sm italic">No plays meet the edge threshold today.</p>
+    </section>
+
+    <!-- ALL GAMES -->
+    <section>
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-3">All Games</h2>
+      <div id="all-games" class="space-y-3"></div>
+    </section>
+
+    <!-- SEASON RECORD (model) -->
+    <section>
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-3">Model Season Record</h2>
+      <div id="season-summary" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4"></div>
+      <div id="results-table-wrap" class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-100 text-slate-400 text-xs uppercase">
+              <th class="px-4 py-2 text-left">Date</th>
+              <th class="px-4 py-2 text-left">Matchup</th>
+              <th class="px-4 py-2 text-left">Bet</th>
+              <th class="px-4 py-2 text-right">Line</th>
+              <th class="px-4 py-2 text-right">Model</th>
+              <th class="px-4 py-2 text-right">Edge</th>
+              <th class="px-4 py-2 text-center">Tier</th>
+              <th class="px-4 py-2 text-right">Actual</th>
+              <th class="px-4 py-2 text-center">ATS</th>
+            </tr>
+          </thead>
+          <tbody id="results-body"></tbody>
+        </table>
+        <p id="no-results" class="hidden text-center text-slate-400 text-sm py-6 italic">No results yet this season.</p>
+      </div>
+    </section>
+
+  </div><!-- /tab-today -->
+
+  <!-- ── TAB: MY PICKS ─────────────────────────────────────────── -->
+  <div id="tab-mypicks" class="hidden space-y-6">
+    <div id="my-picks-content">
+      <p class="text-slate-400 text-sm italic">Loading your picks…</p>
     </div>
-  </section>
+  </div>
 
 </main>
 
@@ -89,21 +110,276 @@
 <script>
 const TIER_ORDER = { STRONG: 0, MEDIUM: 1, LEAN: 2 };
 
+// ── Picks storage (localStorage) ────────────────────────────────────────────
+const PICKS_KEY = 'ringoPicks';
+function getPicks()         { try { return JSON.parse(localStorage.getItem(PICKS_KEY) || '[]'); } catch { return []; } }
+function savePicks(picks)   { localStorage.setItem(PICKS_KEY, JSON.stringify(picks)); }
+function upsertPick(pick)   { const ps = getPicks(); const i = ps.findIndex(p => p.id === pick.id); if (i >= 0) ps[i] = pick; else ps.push(pick); savePicks(ps); }
+function removePick(id)     { savePicks(getPicks().filter(p => p.id !== id)); }
+function makePickId(date, home, away) { return `${date}__${home}__${away}`; }
+
+// ATS result for a pick: actual_margin is home - away
+function pickAts(pick, actualMargin) {
+  if (actualMargin == null) return null;
+  const side = pick.is_home_pick ? actualMargin : -actualMargin;
+  const cover = side + pick.pick_line;
+  if (Math.abs(cover) < 0.01) return 'P';
+  return cover > 0 ? 'W' : 'L';
+}
+
+// ROI at flat -110
+function calcRoi(annotated) {
+  return annotated.reduce((sum, p) => {
+    if (p.result === 'W') return sum + 0.9091;
+    if (p.result === 'L') return sum - 1;
+    return sum;
+  }, 0);
+}
+
+// Game data cache keyed by date
+const dateCache = {};
+async function getDateGames(date) {
+  if (dateCache[date]) return dateCache[date];
+  const data = await loadJSON(`data/${date}.json`);
+  dateCache[date] = data?.games ?? [];
+  return dateCache[date];
+}
+
+// Global map: pickId → game object (populated during render)
+const gameDataMap = {};
+
+// ── Pick UI helpers ──────────────────────────────────────────────────────────
+function pickUiContent(id) {
+  const pick = getPicks().find(p => p.id === id);
+  if (!pick) {
+    return `<button onclick="openPickForm('${id}')" class="text-xs text-blue-600 hover:text-blue-800 font-semibold border border-blue-200 hover:border-blue-400 px-2.5 py-1 rounded-full transition-colors">+ Log Pick</button>`;
+  }
+  if (pick.skip) {
+    return `<span class="text-slate-400 text-xs italic">Skipped</span>
+      <button onclick="clearMyPick('${id}')" class="text-xs text-slate-300 hover:text-slate-500 ml-2 underline">change</button>`;
+  }
+  const lineStr = (pick.pick_line >= 0 ? '+' : '') + Number(pick.pick_line).toFixed(1);
+  const alignBadge = pick.aligned
+    ? '<span class="text-green-600 text-xs ml-1.5 font-medium">✓ aligned</span>'
+    : '<span class="text-amber-600 text-xs ml-1.5 font-medium">↗ diverged</span>';
+  return `<span class="font-semibold text-slate-700 text-sm">${pick.pick_team} ${lineStr}</span>${alignBadge}
+    <button onclick="clearMyPick('${id}')" class="text-xs text-slate-300 hover:text-slate-500 ml-2 underline">change</button>`;
+}
+
+function openPickForm(id) {
+  const d = gameDataMap[id];
+  if (!d) return;
+  const { g, date } = d;
+  const inj = hasInjuries(g);
+  const hasBet    = inj ? (g.adj_has_bet ?? g.has_bet)               : g.has_bet;
+  const modelDir  = inj ? (g.adj_bet_direction ?? g.bet_direction)   : g.bet_direction;
+  const modelTier = inj ? (g.adj_tier ?? g.tier)                     : g.tier;
+  const spreadNum = g.spread;
+  const isModelHome = modelDir === 'HOME';
+
+  const el = document.getElementById(`pick-ui-${id}`);
+  if (!el) return;
+
+  let html = '<div class="flex flex-wrap gap-1.5 items-center">';
+  if (spreadNum != null) {
+    const homeSpread = spreadNum;
+    const awaySpread = -spreadNum;
+    const homeLbl = `${g.home_team} ${(homeSpread >= 0 ? '+' : '') + homeSpread.toFixed(1)}`;
+    const awayLbl = `${g.away_team} ${(awaySpread >= 0 ? '+' : '') + awaySpread.toFixed(1)}`;
+
+    const homeModelMatch = hasBet && isModelHome;
+    const awayModelMatch = hasBet && !isModelHome;
+    const homeCls = homeModelMatch ? 'bg-green-50 border-green-400 text-green-700 font-semibold' : 'border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-700';
+    const awayCls = awayModelMatch ? 'bg-green-50 border-green-400 text-green-700 font-semibold' : 'border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-700';
+    const homeExtra = homeModelMatch ? ` <span class="ml-1 text-green-600 text-xs font-bold">${modelTier}</span>` : '';
+    const awayExtra = awayModelMatch ? ` <span class="ml-1 text-green-600 text-xs font-bold">${modelTier}</span>` : '';
+
+    html += `<button onclick="logPick('${id}', true)"  class="border ${homeCls} px-2.5 py-1 rounded text-xs transition-colors">${homeLbl}${homeExtra}</button>`;
+    html += `<button onclick="logPick('${id}', false)" class="border ${awayCls} px-2.5 py-1 rounded text-xs transition-colors">${awayLbl}${awayExtra}</button>`;
+  }
+  html += `<button onclick="logSkip('${id}')" class="border border-slate-200 text-slate-400 px-2.5 py-1 rounded text-xs hover:border-slate-300 transition-colors">Skip</button>`;
+  html += `<button onclick="cancelPickForm('${id}')" class="text-slate-300 hover:text-slate-500 text-base px-1 ml-1">×</button>`;
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function logPick(id, isHome) {
+  const d = gameDataMap[id];
+  if (!d) return;
+  const { g, date } = d;
+  const inj = hasInjuries(g);
+  const hasBet    = inj ? (g.adj_has_bet ?? g.has_bet)               : g.has_bet;
+  const modelDir  = inj ? (g.adj_bet_direction ?? g.bet_direction)   : g.bet_direction;
+  const modelTier = inj ? (g.adj_tier ?? g.tier)                     : g.tier;
+  const modelLbl  = inj ? (g.adj_bet_label ?? g.bet_label)           : g.bet_label;
+  const isModelHome = modelDir === 'HOME';
+  const spreadNum = g.spread;
+  const pickLine  = isHome ? spreadNum : -spreadNum;
+  const pickTeam  = isHome ? g.home_team : g.away_team;
+
+  upsertPick({
+    id, date,
+    home_team: g.home_team,
+    away_team: g.away_team,
+    pick_team: pickTeam,
+    pick_line: pickLine,
+    is_home_pick: isHome,
+    model_label: modelLbl,
+    model_tier: modelTier,
+    aligned: isHome === isModelHome,
+    timestamp: new Date().toISOString(),
+  });
+  refreshPickUI(id);
+}
+
+function logSkip(id) {
+  const d = gameDataMap[id];
+  if (!d) return;
+  const { g, date } = d;
+  upsertPick({ id, date, home_team: g.home_team, away_team: g.away_team, skip: true, timestamp: new Date().toISOString() });
+  refreshPickUI(id);
+}
+
+function cancelPickForm(id) { refreshPickUI(id); }
+
+function clearMyPick(id) { removePick(id); refreshPickUI(id); }
+
+function refreshPickUI(id) {
+  const el = document.getElementById(`pick-ui-${id}`);
+  if (el) el.innerHTML = pickUiContent(id);
+}
+
+// ── Tab switching ────────────────────────────────────────────────────────────
+function switchTab(name) {
+  ['today', 'mypicks'].forEach(t => {
+    document.getElementById(`tab-${t}`).classList.toggle('hidden', t !== name);
+    document.getElementById(`tab-btn-${t}`).classList.toggle('active', t === name);
+  });
+  if (name === 'mypicks') renderMyPicks();
+}
+
+// ── My Picks tab ─────────────────────────────────────────────────────────────
+async function renderMyPicks() {
+  const container = document.getElementById('my-picks-content');
+  if (!container) return;
+
+  const allPicks  = getPicks();
+  const realPicks = allPicks.filter(p => !p.skip);
+
+  if (realPicks.length === 0 && allPicks.length === 0) {
+    container.innerHTML = `<p class="text-slate-400 text-sm italic py-8 text-center">No picks logged yet — use the "Log Pick" button on any game card.</p>`;
+    return;
+  }
+
+  // Load game data for all dates we have picks on
+  const dates = [...new Set(realPicks.map(p => p.date))];
+  await Promise.all(dates.map(d => getDateGames(d)));
+
+  // Annotate with results
+  const annotated = realPicks.map(p => {
+    const game = (dateCache[p.date] ?? []).find(g => g.home_team === p.home_team && g.away_team === p.away_team);
+    const actual = game?.actual_margin ?? null;
+    return { ...p, actualMargin: actual, result: pickAts(p, actual) };
+  });
+
+  const played  = annotated.filter(p => p.result !== null);
+  const W = played.filter(p => p.result === 'W').length;
+  const L = played.filter(p => p.result === 'L').length;
+  const P = played.filter(p => p.result === 'P').length;
+  const winPct  = (W + L) > 0 ? (W / (W + L) * 100).toFixed(1) : '—';
+  const roi     = calcRoi(played);
+
+  const aligned  = annotated.filter(p => p.aligned);
+  const diverged = annotated.filter(p => !p.aligned);
+  const alignW   = aligned.filter(p => p.result === 'W').length;
+  const alignL   = aligned.filter(p => p.result === 'L').length;
+  const divW     = diverged.filter(p => p.result === 'W').length;
+  const divL     = diverged.filter(p => p.result === 'L').length;
+
+  const summary = `
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+      ${statCard('My Record', `${W}-${L}-${P}`, `${winPct}% ATS · ${annotated.length} picks`)}
+      ${statCard('My ROI', `${roi >= 0 ? '+' : ''}${roi.toFixed(2)}u`, 'flat 1u at -110')}
+      ${statCard('w/ Model', `${alignW}-${alignL}`, `${aligned.length} aligned`)}
+      ${statCard('vs Model', `${divW}-${divL}`, `${diverged.length} diverged`)}
+    </div>`;
+
+  const tableRows = [...annotated].reverse().map(p => {
+    const lineStr   = (p.pick_line >= 0 ? '+' : '') + Number(p.pick_line).toFixed(1);
+    const alignCell = p.aligned
+      ? '<span class="text-green-600 text-xs font-bold">✓</span>'
+      : '<span class="text-amber-600 text-xs font-bold">↗</span>';
+    const result = p.result
+      ? `<span class="ats-${p.result} font-bold">${p.result}</span>`
+      : '<span class="text-slate-300 text-xs">TBD</span>';
+    const actualCell = p.actualMargin != null ? signStr(p.actualMargin) : '—';
+    const modelCell  = p.model_label
+      ? `${p.model_label} ${p.model_tier ? `<span class="tier-${p.model_tier} px-1.5 py-0.5 rounded text-xs font-bold uppercase ml-1">${p.model_tier}</span>` : ''}`
+      : '<span class="text-slate-300">—</span>';
+    return `<tr class="border-b border-slate-50 hover:bg-slate-50">
+      <td class="px-4 py-2 text-slate-400 text-xs whitespace-nowrap">${p.date}</td>
+      <td class="px-4 py-2 text-sm whitespace-nowrap">${p.away_team} @ ${p.home_team}</td>
+      <td class="px-4 py-2 text-xs text-slate-500 whitespace-nowrap">${modelCell}</td>
+      <td class="px-4 py-2 font-semibold text-slate-800 whitespace-nowrap">${p.pick_team} ${lineStr}</td>
+      <td class="px-4 py-2 text-center">${alignCell}</td>
+      <td class="px-4 py-2 text-center font-mono text-xs text-slate-400">${actualCell}</td>
+      <td class="px-4 py-2 text-center">${result}</td>
+    </tr>`;
+  }).join('');
+
+  const emptyRow = '<tr><td colspan="7" class="px-4 py-8 text-center text-slate-400 italic text-sm">No picks logged yet.</td></tr>';
+
+  container.innerHTML = summary + `
+    <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-100 text-slate-400 text-xs uppercase">
+            <th class="px-4 py-2 text-left">Date</th>
+            <th class="px-4 py-2 text-left">Matchup</th>
+            <th class="px-4 py-2 text-left">Model</th>
+            <th class="px-4 py-2 text-left">Your Pick</th>
+            <th class="px-4 py-2 text-center">Match</th>
+            <th class="px-4 py-2 text-right">Actual</th>
+            <th class="px-4 py-2 text-center">Result</th>
+          </tr>
+        </thead>
+        <tbody>${tableRows || emptyRow}</tbody>
+      </table>
+    </div>
+    <div class="mt-4 flex justify-end gap-3">
+      <button onclick="exportPicks()" class="text-xs text-slate-400 hover:text-slate-600 border border-slate-200 px-3 py-1.5 rounded transition-colors">Export picks JSON</button>
+      <label class="text-xs text-slate-400 hover:text-slate-600 border border-slate-200 px-3 py-1.5 rounded cursor-pointer transition-colors">
+        Import JSON <input type="file" class="hidden" accept=".json" onchange="importPicks(this)">
+      </label>
+    </div>`;
+}
+
+function exportPicks() {
+  const blob = new Blob([JSON.stringify(getPicks(), null, 2)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'my_picks.json'; a.click();
+}
+function importPicks(input) {
+  const file = input.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try { savePicks(JSON.parse(e.target.result)); renderMyPicks(); } catch { alert('Invalid JSON file.'); }
+  };
+  reader.readAsText(file);
+}
+
+// ── Card builders ────────────────────────────────────────────────────────────
 function tierBadge(tier) {
   return `<span class="tier-${tier.replace(/\s/g,'-')} px-2 py-0.5 rounded text-xs font-bold uppercase">${tier}</span>`;
 }
-
 function signStr(v, decimals=1) {
   if (v == null) return 'N/A';
   return (v >= 0 ? '+' : '') + v.toFixed(decimals);
 }
-
 function edgeSideIcon(side) {
   if (side == null) return '';
   if (side === 'EVEN') return '<span class="text-slate-300">—</span>';
   return `<span class="font-medium text-slate-500">${side}</span>`;
 }
-
 function hasInjuries(g) {
   return (g.inj_home && g.inj_home.length > 0) || (g.inj_away && g.inj_away.length > 0);
 }
@@ -118,8 +394,7 @@ function buildStatTable(stats, betDir) {
       <th class="py-1 text-right">Edge</th>
     </tr></thead><tbody>`;
   for (const s of stats) {
-    const isBetEdge = s.edge_side === betDir;
-    const rowCls = isBetEdge ? 'bg-green-50' : '';
+    const rowCls = s.edge_side === betDir ? 'bg-green-50' : '';
     html += `<tr class="${rowCls} border-b border-slate-50">
       <td class="py-1 text-slate-600">${s.label}</td>
       <td class="py-1 text-right font-mono">${s.home_display}</td>
@@ -136,13 +411,12 @@ function modelBreakdown(g) {
   const diff = Math.abs(g.pred_ridge - g.pred_xgb);
   const agree = diff < 4;
   const agreeColor = agree ? 'text-green-600' : 'text-amber-600';
-  const agreeLabel = agree ? 'Models agree' : 'Models diverge';
   return `<div class="flex flex-wrap items-center gap-x-5 gap-y-1 pt-3 pb-3 border-b border-slate-100 text-sm">
     <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Model Breakdown</span>
     <span><span class="text-xs text-slate-400 mr-1">Ridge</span><span class="font-mono">${signStr(g.pred_ridge)}</span></span>
     <span><span class="text-xs text-slate-400 mr-1">XGBoost</span><span class="font-mono">${signStr(g.pred_xgb)}</span></span>
     <span><span class="text-xs text-slate-400 mr-1">Ensemble</span><span class="font-mono font-semibold">${signStr(g.pred_margin)}</span></span>
-    <span class="${agreeColor} text-xs ml-auto">${diff.toFixed(1)} pt spread &middot; ${agreeLabel}</span>
+    <span class="${agreeColor} text-xs ml-auto">${diff.toFixed(1)} pt spread · ${agree ? 'Models agree' : 'Models diverge'}</span>
   </div>`;
 }
 
@@ -154,12 +428,11 @@ function buildDriverList(drivers) {
     const pct = Math.round((Math.abs(d.impact) / maxAbs) * 100);
     const pos = d.impact >= 0;
     const barCls = pos ? 'driver-bar-pos' : 'driver-bar-neg';
-    const sign = pos ? '+' : '';
-    const dirLabel = pos ? 'home cover' : 'away cover';
+    const dirLabel = pos ? 'home covers' : 'away covers';
     html += `<div>
       <div class="flex justify-between text-xs text-slate-500 mb-0.5">
         <span><strong>${d.side}</strong> ${d.label}</span>
-        <span class="${pos ? 'text-green-600' : 'text-red-600'} font-mono">${sign}${d.impact.toFixed(2)} pts &rarr; ${dirLabel}</span>
+        <span class="${pos ? 'text-green-600' : 'text-red-600'} font-mono">${pos?'+':''}${d.impact.toFixed(2)} pts → ${dirLabel}</span>
       </div>
       <div class="bg-slate-100 rounded h-1.5 w-full">
         <div class="${barCls} h-1.5 rounded" style="width:${pct}%"></div>
@@ -172,32 +445,28 @@ function buildDriverList(drivers) {
 
 function buildInjurySection(g) {
   if (!hasInjuries(g)) return '';
-
   const allPlayers = [
     ...(g.inj_home || []).map(p => ({...p, side: 'HOME'})),
     ...(g.inj_away || []).map(p => ({...p, side: 'AWAY'})),
   ];
-
-  const delta = g.inj_delta ?? 0;
+  const delta    = g.inj_delta ?? 0;
   const hasDelta = delta !== 0;
-  const favors = delta > 0 ? `HOME ${g.home_team}` : `AWAY ${g.away_team}`;
+  const favors   = delta > 0 ? `HOME ${g.home_team}` : `AWAY ${g.away_team}`;
   const deltaStr = (delta >= 0 ? '+' : '') + delta.toFixed(1) + ' pts';
-
   const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
   const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
   const isSideFlip   = g.has_bet && g.adj_has_bet && baseBetStr !== adjBetStr;
   const isBetAppear  = !g.has_bet && g.adj_has_bet;
   const isBetDisapp  = g.has_bet && !g.adj_has_bet;
   const isTierChange = g.has_bet && g.adj_has_bet && g.tier !== g.adj_tier && !isSideFlip;
-
-  const tierColors = { STAR: 'text-purple-700 font-bold', STARTER: 'text-blue-700 font-semibold', ROTATION: 'text-slate-600', BENCH: 'text-slate-400' };
+  const tierColors   = { STAR: 'text-purple-700 font-bold', STARTER: 'text-blue-700 font-semibold', ROTATION: 'text-slate-600', BENCH: 'text-slate-400' };
   let rows = '';
   for (const p of allPlayers) {
     const tierLabel = p.tier
       ? `<span class="${tierColors[p.tier] || 'text-slate-500'} text-xs">${p.tier}</span>`
       : `<span class="text-slate-400 text-xs italic">unknown</span>`;
     const impactStr = p.found
-      ? `<span class="${p.impact >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-semibold">${(p.impact >= 0 ? '+' : '') + p.impact.toFixed(1)} pts${p.gtd ? ' (GTD&times;&frac12;)' : ''}</span>`
+      ? `<span class="${p.impact >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-semibold">${(p.impact >= 0 ? '+' : '') + p.impact.toFixed(1)} pts${p.gtd ? ' (GTD×½)' : ''}</span>`
       : `<span class="text-slate-400 italic text-xs">${p.gtd ? '(GTD)' : ''}</span>`;
     const minStr = p.avg_min != null ? `<span class="text-slate-400 text-xs">${p.avg_min.toFixed(1)}'</span>` : '';
     rows += `<tr class="border-b border-amber-100 last:border-0">
@@ -208,73 +477,66 @@ function buildInjurySection(g) {
       <td class="py-1.5 text-right text-xs">${impactStr}</td>
     </tr>`;
   }
-
   const flags = [
     (isSideFlip || isBetAppear) ? '<span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded">SIDE FLIP</span>' : '',
     isTierChange                ? '<span class="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded">TIER CHANGE</span>' : '',
     isBetDisapp                 ? '<span class="bg-slate-200 text-slate-600 text-xs font-bold px-2 py-0.5 rounded">BET REMOVED</span>' : '',
   ].filter(Boolean).join(' ');
-
   const adjLine = hasDelta ? `
     <div class="mt-2.5 pt-2.5 border-t border-amber-200 space-y-1">
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-600">
-        <span>Net injury delta: <span class="${delta >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-bold">${deltaStr}</span> &rarr; favors <strong>${favors}</strong></span>
+        <span>Net injury delta: <span class="${delta >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-bold">${deltaStr}</span> → favors <strong>${favors}</strong></span>
       </div>
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-600">
-        <span>Base: <span class="font-mono">${signStr(g.pred_margin)}</span> (${g.tier || '&mdash;'})</span>
-        <span class="text-slate-400">&rarr;</span>
-        <span>Adjusted: <span class="font-mono font-bold">${signStr(g.adj_margin)}</span> (${g.adj_tier || '&mdash;'})</span>
+        <span>Base: <span class="font-mono">${signStr(g.pred_margin)}</span> (${g.tier || '—'})</span>
+        <span class="text-slate-400">→</span>
+        <span>Adjusted: <span class="font-mono font-bold">${signStr(g.adj_margin)}</span> (${g.adj_tier || '—'})</span>
         ${flags ? `<span class="ml-1">${flags}</span>` : ''}
       </div>
     </div>` : '';
-
   return `
   <div class="rounded-lg bg-amber-50 border border-amber-200 px-4 py-3 mt-3 mb-1">
     <div class="flex items-center gap-2 mb-2">
       <span class="text-xs font-bold uppercase tracking-wide text-amber-800">Injury Report</span>
-      <span class="text-xs text-amber-400">&middot; Rotowire</span>
+      <span class="text-xs text-amber-400">· Rotowire</span>
     </div>
     <table class="w-full"><tbody>${rows}</tbody></table>
     ${adjLine}
   </div>`;
 }
 
-function gameCard(g) {
+function gameCard(g, date) {
   const inj = hasInjuries(g);
-
-  // Use adjusted values when injuries are present
   const hasBet     = inj ? (g.adj_has_bet ?? g.has_bet)               : g.has_bet;
   const tier       = inj ? (g.adj_tier ?? g.tier)                     : g.tier;
   const betDir     = inj ? (g.adj_bet_direction ?? g.bet_direction)   : g.bet_direction;
   const betTeam    = inj ? (g.adj_bet_team ?? g.bet_team)             : g.bet_team;
   const dispMargin = inj ? (g.adj_margin ?? g.pred_margin)            : g.pred_margin;
   const dispEdge   = inj ? (g.adj_edge ?? g.edge)                     : g.edge;
-
-  const spread   = inj ? (g.spread_display ?? 'N/A') : (g.spread_display ?? 'N/A');
-  const edgeStr  = dispEdge != null ? (dispEdge >= 0 ? '+' : '') + dispEdge.toFixed(2) : 'N/A';
-  const pred     = inj ? (g.adj_pred_display ?? g.pred_display ?? signStr(dispMargin)) : (g.pred_display ?? signStr(dispMargin));
-  const betLabel = hasBet ? (inj ? (g.adj_bet_label ?? g.bet_label ?? `${betDir} ${betTeam}`) : (g.bet_label ?? `${betDir} ${betTeam}`)) : '—';
-
+  const spread     = g.spread_display ?? 'N/A';
+  const edgeStr    = dispEdge != null ? (dispEdge >= 0 ? '+' : '') + dispEdge.toFixed(2) : 'N/A';
+  const pred       = inj ? (g.adj_pred_display ?? g.pred_display ?? signStr(dispMargin)) : (g.pred_display ?? signStr(dispMargin));
+  const betLabel   = hasBet ? (inj ? (g.adj_bet_label ?? g.bet_label ?? `${betDir} ${betTeam}`) : (g.bet_label ?? `${betDir} ${betTeam}`)) : '—';
   const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
   const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
   const isSideFlip  = inj && g.has_bet && g.adj_has_bet && baseBetStr !== adjBetStr;
   const isBetAppear = inj && !g.has_bet && g.adj_has_bet;
-
   const borderCls = hasBet
     ? (tier === 'STRONG' ? 'border-l-4 border-green-500' : tier === 'MEDIUM' ? 'border-l-4 border-blue-500' : 'border-l-4 border-amber-500')
     : 'border-l-4 border-slate-200';
-
   const resultBadge = g.ats_result
     ? `<span class="ats-${g.ats_result} ml-2">${g.ats_result}</span>`
     : (g.actual_margin != null ? `<span class="text-slate-400 text-xs ml-2">Final: ${signStr(g.actual_margin)}</span>` : '');
-
   const flipHeaderBadge = (isSideFlip || isBetAppear)
     ? `<span class="bg-red-100 text-red-700 text-xs font-bold px-1.5 py-0.5 rounded">SIDE FLIP</span>`
     : '';
-
   const injDeltaBadge = inj && (g.inj_delta ?? 0) !== 0
     ? `<span class="text-xs text-amber-600 font-mono ml-1">${(g.inj_delta >= 0 ? '+' : '') + g.inj_delta.toFixed(1)} inj</span>`
     : '';
+
+  // Register in global map for pick form
+  const pickId = makePickId(date, g.home_team, g.away_team);
+  gameDataMap[pickId] = { g, date };
 
   return `
   <div class="bg-white rounded-xl shadow-sm ${borderCls} overflow-hidden">
@@ -287,7 +549,7 @@ function gameCard(g) {
             <span class="font-semibold text-slate-900 truncate">${g.away_team} <span class="text-slate-400 font-normal">@</span> ${g.home_team}</span>
             ${resultBadge}
           </div>
-          ${hasBet ? `<div class="text-xs text-slate-500 mt-1">Bet: <strong>${betLabel}</strong>${injDeltaBadge}</div>` : ''}
+          ${hasBet ? `<div class="text-xs text-slate-500 mt-1">Model: <strong>${betLabel}</strong>${injDeltaBadge}</div>` : ''}
         </div>
         <div class="flex items-center gap-4 ml-4 shrink-0">
           <div class="text-right hidden sm:block">
@@ -313,11 +575,16 @@ function gameCard(g) {
           <div>
             <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Model Drivers (SHAP)</h4>
             ${buildDriverList(g.shap_drivers)}
-            <p class="text-xs text-slate-300 mt-2">+ = home covers &nbsp;&middot;&nbsp; - = away covers</p>
+            <p class="text-xs text-slate-300 mt-2">+ = home covers · - = away covers</p>
           </div>
         </div>
       </div>
     </details>
+    <!-- Pick logging row -->
+    <div class="border-t border-slate-100 px-5 py-2.5 flex items-center justify-between bg-slate-50/50">
+      <span class="text-xs text-slate-400 uppercase tracking-wide font-semibold">Your Pick</span>
+      <div id="pick-ui-${pickId}" class="flex items-center gap-1.5">${pickUiContent(pickId)}</div>
+    </div>
   </div>`;
 }
 
@@ -337,54 +604,57 @@ async function loadJSON(path) {
   } catch { return null; }
 }
 
+// ── Main render ───────────────────────────────────────────────────────────────
 async function render() {
   const [pred, results] = await Promise.all([
     loadJSON('data/latest.json'),
     loadJSON('data/results.json'),
   ]);
 
-  // --- Season record header ---
-  const rec = results?.record ?? { W: 0, L: 0, P: 0 };
-  const total = (rec.W||0) + (rec.L||0) + (rec.P||0);
+  // Header record (model)
+  const rec    = results?.record ?? { W: 0, L: 0, P: 0 };
+  const total  = (rec.W||0) + (rec.L||0) + (rec.P||0);
   const winPct = total > 0 ? ((rec.W||0) / ((rec.W||0)+(rec.L||0)) * 100).toFixed(1) : '—';
-  const roi = results?.roi_units ?? 0;
+  const roi    = results?.roi_units ?? 0;
   document.getElementById('header-record').innerHTML =
-    `<span class="font-semibold text-slate-700">${rec.W||0}-${rec.L||0}-${rec.P||0}</span> &nbsp;&middot;&nbsp; ${winPct}% ATS &nbsp;&middot;&nbsp; <span class="${roi>=0?'text-green-600':'text-red-600'} font-semibold">${roi>=0?'+':''}${roi.toFixed(2)}u ROI</span>`;
+    `<span class="font-semibold text-slate-700">${rec.W||0}-${rec.L||0}-${rec.P||0}</span> &nbsp;·&nbsp; ${winPct}% ATS &nbsp;·&nbsp; <span class="${roi>=0?'text-green-600':'text-red-600'} font-semibold">${roi>=0?'+':''}${roi.toFixed(2)}u ROI</span>`;
 
-  // --- Today's picks ---
+  // Today's games
   if (pred) {
-    document.getElementById('picks-date').textContent = new Date(pred.date + 'T12:00:00').toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
-    document.getElementById('model-note').textContent = `Generated ${new Date(pred.generated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZoneName:'short'})}`;
+    const date = pred.date;
+    document.getElementById('picks-date').textContent =
+      new Date(date + 'T12:00:00').toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+    document.getElementById('model-note').textContent =
+      `Generated ${new Date(pred.generated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZoneName:'short'})}`;
 
-    // Resolve effective has_bet and tier accounting for injury adjustments
+    // Cache today's games for pick results
+    dateCache[date] = pred.games || [];
+
     const effHasBet = g => hasInjuries(g) ? (g.adj_has_bet ?? g.has_bet) : g.has_bet;
     const effTier   = g => hasInjuries(g) ? (g.adj_tier ?? g.tier)       : g.tier;
-
     const bets    = (pred.games||[]).filter(effHasBet).sort((a,b) => (TIER_ORDER[effTier(a)]??9) - (TIER_ORDER[effTier(b)]??9));
     const nonBets = (pred.games||[]).filter(g => !effHasBet(g));
 
     const betContainer = document.getElementById('bet-cards');
     if (bets.length) {
-      betContainer.innerHTML = bets.map(g => gameCard(g)).join('');
+      betContainer.innerHTML = bets.map(g => gameCard(g, date)).join('');
     } else {
       document.getElementById('no-bets').classList.remove('hidden');
     }
-
-    document.getElementById('all-games').innerHTML = nonBets.map(g => gameCard(g)).join('');
+    document.getElementById('all-games').innerHTML = nonBets.map(g => gameCard(g, date)).join('');
   } else {
     document.getElementById('picks-date').textContent = 'No predictions loaded';
   }
 
-  // --- Season summary cards ---
+  // Season summary (model)
   const byTier = results?.by_tier ?? {};
-  const summaryEl = document.getElementById('season-summary');
-  summaryEl.innerHTML =
-    statCard('Overall', `${rec.W||0}-${rec.L||0}-${rec.P||0}`, `${winPct}% win rate`) +
+  document.getElementById('season-summary').innerHTML =
+    statCard('Model Record', `${rec.W||0}-${rec.L||0}-${rec.P||0}`, `${winPct}% win rate`) +
     statCard('ROI', `${roi>=0?'+':''}${roi.toFixed(2)}u`, 'at -110 juice') +
     statCard('STRONG', byTier.STRONG ? `${byTier.STRONG.W}-${byTier.STRONG.L}-${byTier.STRONG.P||0}` : '0-0', 'bets') +
     statCard('MEDIUM', byTier.MEDIUM ? `${byTier.MEDIUM.W}-${byTier.MEDIUM.L}-${byTier.MEDIUM.P||0}` : '0-0', 'bets');
 
-  // --- Results table ---
+  // Results table (model picks)
   const pastBets = results?.bets ?? [];
   const tbody = document.getElementById('results-body');
   if (pastBets.length === 0) {
