@@ -1,0 +1,562 @@
+{
+  "date": "2026-05-09",
+  "generated_at": "2026-05-09T14:57:10.957268-04:00",
+  "games": [
+    {
+      "home_team": "Indiana Fever",
+      "away_team": "Dallas Wings",
+      "spread": -5.5,
+      "pred_margin": 13.5,
+      "pred_ridge": 12.7,
+      "pred_xgb": 14.0,
+      "edge": 7.95,
+      "tier": "MEDIUM",
+      "bet_direction": "HOME",
+      "bet_team": "Indiana Fever",
+      "has_bet": true,
+      "stats": [
+        {
+          "key": "net_rtg_r10",
+          "label": "Net Rating L10",
+          "home_val": 5.3234,
+          "away_val": -14.716,
+          "home_display": "+5.3",
+          "away_display": "-14.7",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "margin_r10",
+          "label": "Avg Margin L10",
+          "home_val": 4.3,
+          "away_val": -12.1,
+          "home_display": "+4.3",
+          "away_display": "-12.1",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "home_val": 0.0969,
+          "away_val": -0.3775,
+          "home_display": "+0.097",
+          "away_display": "-0.378",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "home_val": 0.5114,
+          "away_val": 0.4581,
+          "home_display": "51.1%",
+          "away_display": "45.8%",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "home_val": 0.1341,
+          "away_val": 0.1461,
+          "home_display": "13.4%",
+          "away_display": "14.6%",
+          "edge_side": "HOME",
+          "higher_is_better": false
+        },
+        {
+          "key": "pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "home_val": 0.0319,
+          "away_val": 0.0297,
+          "home_display": "3.2%",
+          "away_display": "3.0%",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pace_r10",
+          "label": "Pace L10",
+          "home_val": 78.6249,
+          "away_val": 82.5955,
+          "home_display": "78.6",
+          "away_display": "82.6",
+          "edge_side": null,
+          "higher_is_better": null
+        },
+        {
+          "key": "days_rest",
+          "label": "Days Rest",
+          "home_val": 10.0,
+          "away_val": 10.0,
+          "home_display": "10",
+          "away_display": "10",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        }
+      ],
+      "shap_drivers": [
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.458,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": 1.877,
+          "value": 0.0969,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": 1.513,
+          "value": -14.716,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": 1.307,
+          "value": -0.3775,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "AWAY",
+          "impact": 1.299,
+          "value": -12.1,
+          "direction": "home_cover"
+        }
+      ],
+      "actual_margin": null,
+      "ats_result": null
+    },
+    {
+      "home_team": "Las Vegas Aces",
+      "away_team": "Phoenix Mercury",
+      "spread": -9.5,
+      "pred_margin": 9.6,
+      "pred_ridge": 8.2,
+      "pred_xgb": 10.5,
+      "edge": 0.08,
+      "tier": "--",
+      "bet_direction": "HOME",
+      "bet_team": "Las Vegas Aces",
+      "has_bet": false,
+      "stats": [
+        {
+          "key": "net_rtg_r10",
+          "label": "Net Rating L10",
+          "home_val": 9.1421,
+          "away_val": 0.318,
+          "home_display": "+9.1",
+          "away_display": "+0.3",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "margin_r10",
+          "label": "Avg Margin L10",
+          "home_val": 7.4,
+          "away_val": 0.2,
+          "home_display": "+7.4",
+          "away_display": "+0.2",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "home_val": 0.2135,
+          "away_val": 0.0305,
+          "home_display": "+0.214",
+          "away_display": "+0.030",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "home_val": 0.5444,
+          "away_val": 0.4846,
+          "home_display": "54.4%",
+          "away_display": "48.5%",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "home_val": 0.1405,
+          "away_val": 0.131,
+          "home_display": "14.1%",
+          "away_display": "13.1%",
+          "edge_side": "AWAY",
+          "higher_is_better": false
+        },
+        {
+          "key": "pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "home_val": 0.0278,
+          "away_val": 0.0258,
+          "home_display": "2.8%",
+          "away_display": "2.6%",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pace_r10",
+          "label": "Pace L10",
+          "home_val": 79.6387,
+          "away_val": 79.8016,
+          "home_display": "79.6",
+          "away_display": "79.8",
+          "edge_side": null,
+          "higher_is_better": null
+        },
+        {
+          "key": "days_rest",
+          "label": "Days Rest",
+          "home_val": 10.0,
+          "away_val": 10.0,
+          "home_display": "10",
+          "away_display": "10",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        }
+      ],
+      "shap_drivers": [
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.387,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": 2.922,
+          "value": 0.2135,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": -1.75,
+          "value": 0.1101,
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "HOME",
+          "impact": 1.533,
+          "value": 0.1405,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "HOME",
+          "impact": 1.494,
+          "value": 0.2752,
+          "direction": "home_cover"
+        }
+      ],
+      "actual_margin": null,
+      "ats_result": null
+    },
+    {
+      "home_team": "Portland Fire",
+      "away_team": "Chicago Sky",
+      "spread": 5.5,
+      "pred_margin": 14.4,
+      "pred_ridge": 10.1,
+      "pred_xgb": 17.2,
+      "edge": 19.85,
+      "tier": "STRONG",
+      "bet_direction": "HOME",
+      "bet_team": "Portland Fire",
+      "has_bet": true,
+      "stats": [
+        {
+          "key": "net_rtg_r10",
+          "label": "Net Rating L10",
+          "home_val": 0.1923,
+          "away_val": -8.8961,
+          "home_display": "+0.2",
+          "away_display": "-8.9",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "margin_r10",
+          "label": "Avg Margin L10",
+          "home_val": 0.2,
+          "away_val": -7.0,
+          "home_display": "+0.2",
+          "away_display": "-7.0",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "home_val": -0.0167,
+          "away_val": -0.2288,
+          "home_display": "-0.017",
+          "away_display": "-0.229",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "home_val": 0.483,
+          "away_val": 0.4453,
+          "home_display": "48.3%",
+          "away_display": "44.5%",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "home_val": 0.1542,
+          "away_val": 0.1607,
+          "home_display": "15.4%",
+          "away_display": "16.1%",
+          "edge_side": "HOME",
+          "higher_is_better": false
+        },
+        {
+          "key": "pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "home_val": 0.0278,
+          "away_val": 0.0279,
+          "home_display": "2.8%",
+          "away_display": "2.8%",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        },
+        {
+          "key": "pace_r10",
+          "label": "Pace L10",
+          "home_val": 80.5738,
+          "away_val": 78.0992,
+          "home_display": "80.6",
+          "away_display": "78.1",
+          "edge_side": null,
+          "higher_is_better": null
+        },
+        {
+          "key": "days_rest",
+          "label": "Days Rest",
+          "home_val": 10.0,
+          "away_val": 10.0,
+          "home_display": "10",
+          "away_display": "10",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        }
+      ],
+      "shap_drivers": [
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": 4.647,
+          "value": 0.0807,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 2.385,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": 1.835,
+          "value": -0.2288,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": 1.251,
+          "value": -8.8961,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "AWAY",
+          "impact": 1.055,
+          "value": -7.0,
+          "direction": "home_cover"
+        }
+      ],
+      "actual_margin": null,
+      "ats_result": null
+    },
+    {
+      "home_team": "Minnesota Lynx",
+      "away_team": "Atlanta Dream",
+      "spread": 4.5,
+      "pred_margin": 5.0,
+      "pred_ridge": -0.4,
+      "pred_xgb": 8.6,
+      "edge": 9.52,
+      "tier": "STRONG",
+      "bet_direction": "HOME",
+      "bet_team": "Minnesota Lynx",
+      "has_bet": true,
+      "stats": [
+        {
+          "key": "net_rtg_r10",
+          "label": "Net Rating L10",
+          "home_val": 10.8995,
+          "away_val": 17.4569,
+          "home_display": "+10.9",
+          "away_display": "+17.5",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "margin_r10",
+          "label": "Avg Margin L10",
+          "home_val": 8.2,
+          "away_val": 13.4,
+          "home_display": "+8.2",
+          "away_display": "+13.4",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "home_val": 0.1976,
+          "away_val": 0.3035,
+          "home_display": "+0.198",
+          "away_display": "+0.303",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "home_val": 0.5411,
+          "away_val": 0.5309,
+          "home_display": "54.1%",
+          "away_display": "53.1%",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "home_val": 0.1385,
+          "away_val": 0.1131,
+          "home_display": "13.8%",
+          "away_display": "11.3%",
+          "edge_side": "AWAY",
+          "higher_is_better": false
+        },
+        {
+          "key": "pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "home_val": 0.0295,
+          "away_val": 0.0336,
+          "home_display": "2.9%",
+          "away_display": "3.4%",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pace_r10",
+          "label": "Pace L10",
+          "home_val": 77.3218,
+          "away_val": 77.0046,
+          "home_display": "77.3",
+          "away_display": "77.0",
+          "edge_side": null,
+          "higher_is_better": null
+        },
+        {
+          "key": "days_rest",
+          "label": "Days Rest",
+          "home_val": 10.0,
+          "away_val": 10.0,
+          "home_display": "10",
+          "away_display": "10",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        }
+      ],
+      "shap_drivers": [
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.859,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": 3.505,
+          "value": 0.1976,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": -2.307,
+          "value": 0.3035,
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": -1.88,
+          "value": 0.114,
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_margin_r5",
+          "label": "Avg Margin L5",
+          "side": "AWAY",
+          "impact": 1.587,
+          "value": 16.6,
+          "direction": "home_cover"
+        }
+      ],
+      "actual_margin": null,
+      "ats_result": null
+    }
+  ]
+}
