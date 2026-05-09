@@ -250,10 +250,10 @@ function gameCard(g) {
   const dispMargin = inj ? (g.adj_margin ?? g.pred_margin)            : g.pred_margin;
   const dispEdge   = inj ? (g.adj_edge ?? g.edge)                     : g.edge;
 
-  const spread  = g.spread != null ? (g.spread >= 0 ? '+' : '') + g.spread.toFixed(1) : 'N/A';
-  const edgeStr = dispEdge != null ? (dispEdge >= 0 ? '+' : '') + dispEdge.toFixed(2) : 'N/A';
-  const pred    = signStr(dispMargin);
-  const betLabel = hasBet ? `${betDir} ${betTeam}` : '—';
+  const spread   = inj ? (g.spread_display ?? 'N/A') : (g.spread_display ?? 'N/A');
+  const edgeStr  = dispEdge != null ? (dispEdge >= 0 ? '+' : '') + dispEdge.toFixed(2) : 'N/A';
+  const pred     = inj ? (g.adj_pred_display ?? g.pred_display ?? signStr(dispMargin)) : (g.pred_display ?? signStr(dispMargin));
+  const betLabel = hasBet ? (inj ? (g.adj_bet_label ?? g.bet_label ?? `${betDir} ${betTeam}`) : (g.bet_label ?? `${betDir} ${betTeam}`)) : '—';
 
   const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
   const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
@@ -313,7 +313,7 @@ function gameCard(g) {
           <div>
             <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Model Drivers (SHAP)</h4>
             ${buildDriverList(g.shap_drivers)}
-            <p class="text-xs text-slate-300 mt-2">+ = toward home cover &nbsp;&middot;&nbsp; - = toward away cover</p>
+            <p class="text-xs text-slate-300 mt-2">+ = home covers &nbsp;&middot;&nbsp; - = away covers</p>
           </div>
         </div>
       </div>
