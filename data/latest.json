@@ -1,6 +1,6 @@
 {
   "date": "2026-05-09",
-  "generated_at": "2026-05-09T14:57:10.957268-04:00",
+  "generated_at": "2026-05-09T15:23:17.987847-04:00",
   "games": [
     {
       "home_team": "Indiana Fever",
@@ -14,6 +14,31 @@
       "bet_direction": "HOME",
       "bet_team": "Indiana Fever",
       "has_bet": true,
+      "inj_delta": 0.0,
+      "adj_margin": 13.5,
+      "adj_edge": 8.0,
+      "adj_tier": "STRONG",
+      "adj_bet_direction": "HOME",
+      "adj_bet_team": "Indiana Fever",
+      "adj_has_bet": true,
+      "inj_home": [
+        {
+          "player": "Monique Billings",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Justine Pissott",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        }
+      ],
+      "inj_away": [],
+      "inj_source": "rotowire",
       "stats": [
         {
           "key": "net_rtg_r10",
@@ -153,6 +178,53 @@
       "bet_direction": "HOME",
       "bet_team": "Las Vegas Aces",
       "has_bet": false,
+      "inj_delta": 12.7,
+      "adj_margin": 22.3,
+      "adj_edge": 12.8,
+      "adj_tier": "STRONG",
+      "adj_bet_direction": "HOME",
+      "adj_bet_team": "Las Vegas Aces",
+      "adj_has_bet": true,
+      "inj_home": [
+        {
+          "player": "Janiah Barker",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Dana Evans",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        }
+      ],
+      "inj_away": [
+        {
+          "player": "Monique Akoa Makani",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 12.7,
+          "found": true
+        },
+        {
+          "player": "Valeriane Ayayi",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Sami Whitcomb",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        }
+      ],
+      "inj_source": "rotowire",
       "stats": [
         {
           "key": "net_rtg_r10",
@@ -292,6 +364,81 @@
       "bet_direction": "HOME",
       "bet_team": "Portland Fire",
       "has_bet": true,
+      "inj_delta": -12.5,
+      "adj_margin": 1.9,
+      "adj_edge": 7.4,
+      "adj_tier": "MEDIUM",
+      "adj_bet_direction": "HOME",
+      "adj_bet_team": "Portland Fire",
+      "adj_has_bet": true,
+      "inj_home": [
+        {
+          "player": "Sug Sutton",
+          "status": "GTD",
+          "gtd": true,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Teja Oblak",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Karlie Samuelson",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Kamiah Smalls",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        }
+      ],
+      "inj_away": [
+        {
+          "player": "Maddy Westbeld",
+          "status": "GTD",
+          "gtd": true,
+          "impact": -12.03,
+          "found": true
+        },
+        {
+          "player": "DiJonai Carrington",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Natasha Cloud",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        },
+        {
+          "player": "Azura Stevens",
+          "status": "OUT",
+          "gtd": false,
+          "impact": -9.3,
+          "found": true
+        },
+        {
+          "player": "Courtney Vandersloot",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 2.8,
+          "found": true
+        }
+      ],
+      "inj_source": "rotowire",
       "stats": [
         {
           "key": "net_rtg_r10",
@@ -431,6 +578,39 @@
       "bet_direction": "HOME",
       "bet_team": "Minnesota Lynx",
       "has_bet": true,
+      "inj_delta": -19.9,
+      "adj_margin": -14.9,
+      "adj_edge": -10.4,
+      "adj_tier": "STRONG",
+      "adj_bet_direction": "AWAY",
+      "adj_bet_team": "Atlanta Dream",
+      "adj_has_bet": true,
+      "inj_home": [
+        {
+          "player": "Napheesa Collier",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 11.18,
+          "found": true
+        },
+        {
+          "player": "Dorka Juhasz",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 8.7,
+          "found": true
+        }
+      ],
+      "inj_away": [
+        {
+          "player": "Brionna Jones",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "found": false
+        }
+      ],
+      "inj_source": "rotowire",
       "stats": [
         {
           "key": "net_rtg_r10",
