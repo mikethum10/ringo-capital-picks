@@ -190,15 +190,21 @@ function buildInjurySection(g) {
   const isBetDisapp  = g.has_bet && !g.adj_has_bet;
   const isTierChange = g.has_bet && g.adj_has_bet && g.tier !== g.adj_tier && !isSideFlip;
 
+  const tierColors = { STAR: 'text-purple-700 font-bold', STARTER: 'text-blue-700 font-semibold', ROTATION: 'text-slate-600', BENCH: 'text-slate-400' };
   let rows = '';
   for (const p of allPlayers) {
+    const tierLabel = p.tier
+      ? `<span class="${tierColors[p.tier] || 'text-slate-500'} text-xs">${p.tier}</span>`
+      : `<span class="text-slate-400 text-xs italic">unknown</span>`;
     const impactStr = p.found
       ? `<span class="${p.impact >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-semibold">${(p.impact >= 0 ? '+' : '') + p.impact.toFixed(1)} pts${p.gtd ? ' (GTD&times;&frac12;)' : ''}</span>`
-      : `<span class="text-slate-400 italic text-xs">no historical data${p.gtd ? ' (GTD)' : ''}</span>`;
+      : `<span class="text-slate-400 italic text-xs">${p.gtd ? '(GTD)' : ''}</span>`;
+    const minStr = p.avg_min != null ? `<span class="text-slate-400 text-xs">${p.avg_min.toFixed(1)}'</span>` : '';
     rows += `<tr class="border-b border-amber-100 last:border-0">
       <td class="py-1.5 pr-3 text-slate-700 text-sm">${p.player}</td>
       <td class="py-1.5 pr-3"><span class="${p.side === 'HOME' ? 'text-blue-600' : 'text-orange-600'} text-xs font-semibold">${p.side}</span></td>
       <td class="py-1.5 pr-3"><span class="${p.status === 'OUT' ? 'text-red-600' : 'text-amber-600'} text-xs font-bold">${p.status}</span></td>
+      <td class="py-1.5 pr-3">${tierLabel} ${minStr}</td>
       <td class="py-1.5 text-right text-xs">${impactStr}</td>
     </tr>`;
   }

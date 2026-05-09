@@ -1,6 +1,6 @@
 {
   "date": "2026-05-09",
-  "generated_at": "2026-05-09T16:05:49.973033-04:00",
+  "generated_at": "2026-05-09T16:31:06.051919-04:00",
   "games": [
     {
       "home_team": "Indiana Fever",
@@ -27,6 +27,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -34,6 +36,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         }
       ],
@@ -121,7 +125,48 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [],
+      "shap_drivers": [
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.458,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": 1.877,
+          "value": 0.0969,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": 1.513,
+          "value": -14.716,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": 1.307,
+          "value": -0.3775,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "AWAY",
+          "impact": 1.299,
+          "value": -12.1,
+          "direction": "home_cover"
+        }
+      ],
       "actual_margin": null,
       "ats_result": null
     },
@@ -137,27 +182,31 @@
       "bet_direction": "HOME",
       "bet_team": "Las Vegas Aces",
       "has_bet": false,
-      "inj_delta": 12.7,
-      "adj_margin": 22.3,
-      "adj_edge": 12.8,
-      "adj_tier": "STRONG",
+      "inj_delta": 2.0,
+      "adj_margin": 11.6,
+      "adj_edge": 2.1,
+      "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Las Vegas Aces",
-      "adj_has_bet": true,
+      "adj_has_bet": false,
       "inj_home": [
         {
           "player": "Janiah Barker",
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
           "player": "Dana Evans",
           "status": "OUT",
           "gtd": false,
-          "impact": 0.0,
-          "found": false
+          "impact": 1.0,
+          "tier": "ROTATION",
+          "avg_min": 18.2,
+          "found": true
         }
       ],
       "inj_away": [
@@ -165,7 +214,9 @@
           "player": "Monique Akoa Makani",
           "status": "OUT",
           "gtd": false,
-          "impact": 12.7,
+          "impact": 3.0,
+          "tier": "STARTER",
+          "avg_min": 22.0,
           "found": true
         },
         {
@@ -173,6 +224,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -180,6 +233,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -187,6 +242,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -194,6 +251,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         }
       ],
@@ -280,7 +339,48 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [],
+      "shap_drivers": [
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.387,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": 2.922,
+          "value": 0.2135,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": -1.75,
+          "value": 0.1101,
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "HOME",
+          "impact": 1.533,
+          "value": 0.1405,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "HOME",
+          "impact": 1.494,
+          "value": 0.2752,
+          "direction": "home_cover"
+        }
+      ],
       "actual_margin": null,
       "ats_result": null
     },
@@ -296,10 +396,10 @@
       "bet_direction": "HOME",
       "bet_team": "Portland Fire",
       "has_bet": true,
-      "inj_delta": -12.5,
-      "adj_margin": 1.9,
-      "adj_edge": 7.4,
-      "adj_tier": "MEDIUM",
+      "inj_delta": 6.0,
+      "adj_margin": 20.4,
+      "adj_edge": 25.9,
+      "adj_tier": "STRONG",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Portland Fire",
       "adj_has_bet": true,
@@ -309,6 +409,8 @@
           "status": "GTD",
           "gtd": true,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -316,6 +418,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -323,6 +427,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -330,6 +436,8 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         }
       ],
@@ -338,14 +446,18 @@
           "player": "Maddy Westbeld",
           "status": "GTD",
           "gtd": true,
-          "impact": -12.03,
-          "found": true
+          "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         },
         {
           "player": "DiJonai Carrington",
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
@@ -353,20 +465,26 @@
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
+          "tier": null,
+          "avg_min": null,
           "found": false
         },
         {
           "player": "Azura Stevens",
           "status": "OUT",
           "gtd": false,
-          "impact": -9.3,
+          "impact": 3.0,
+          "tier": "STARTER",
+          "avg_min": 21.4,
           "found": true
         },
         {
           "player": "Courtney Vandersloot",
           "status": "OUT",
           "gtd": false,
-          "impact": 2.8,
+          "impact": 3.0,
+          "tier": "STARTER",
+          "avg_min": 25.3,
           "found": true
         }
       ],
@@ -453,7 +571,48 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [],
+      "shap_drivers": [
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": 4.647,
+          "value": 0.0807,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 2.385,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": 1.835,
+          "value": -0.2288,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": 1.251,
+          "value": -8.8961,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "AWAY",
+          "impact": 1.055,
+          "value": -7.0,
+          "direction": "home_cover"
+        }
+      ],
       "actual_margin": null,
       "ats_result": null
     },
@@ -469,26 +628,30 @@
       "bet_direction": "HOME",
       "bet_team": "Minnesota Lynx",
       "has_bet": true,
-      "inj_delta": -19.9,
-      "adj_margin": -14.9,
-      "adj_edge": -10.4,
-      "adj_tier": "STRONG",
-      "adj_bet_direction": "AWAY",
-      "adj_bet_team": "Atlanta Dream",
+      "inj_delta": -3.0,
+      "adj_margin": 2.0,
+      "adj_edge": 6.5,
+      "adj_tier": "MEDIUM",
+      "adj_bet_direction": "HOME",
+      "adj_bet_team": "Minnesota Lynx",
       "adj_has_bet": true,
       "inj_home": [
         {
           "player": "Napheesa Collier",
           "status": "OUT",
           "gtd": false,
-          "impact": 11.18,
+          "impact": 5.0,
+          "tier": "STAR",
+          "avg_min": 32.2,
           "found": true
         },
         {
           "player": "Dorka Juhasz",
           "status": "OUT",
           "gtd": false,
-          "impact": 8.7,
+          "impact": 1.0,
+          "tier": "ROTATION",
+          "avg_min": 14.5,
           "found": true
         }
       ],
@@ -497,8 +660,10 @@
           "player": "Brionna Jones",
           "status": "OUT",
           "gtd": false,
-          "impact": 0.0,
-          "found": false
+          "impact": 3.0,
+          "tier": "STARTER",
+          "avg_min": 26.3,
+          "found": true
         }
       ],
       "inj_source": "rotowire",
@@ -584,7 +749,48 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [],
+      "shap_drivers": [
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.859,
+          "value": 10.0,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": 3.505,
+          "value": 0.1976,
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": -2.307,
+          "value": 0.3035,
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": -1.88,
+          "value": 0.114,
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_margin_r5",
+          "label": "Avg Margin L5",
+          "side": "AWAY",
+          "impact": 1.587,
+          "value": 16.6,
+          "direction": "home_cover"
+        }
+      ],
       "actual_margin": null,
       "ats_result": null
     }
