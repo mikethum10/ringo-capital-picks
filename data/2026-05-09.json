@@ -1,6 +1,6 @@
 {
   "date": "2026-05-09",
-  "generated_at": "2026-05-09T16:31:06.051919-04:00",
+  "generated_at": "2026-05-09T16:35:25.752198-04:00",
   "games": [
     {
       "home_team": "Indiana Fever",
@@ -125,48 +125,7 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "away_days_rest",
-          "label": "Days Rest",
-          "side": "AWAY",
-          "impact": 3.458,
-          "value": 10.0,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": 1.877,
-          "value": 0.0969,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_net_rtg_r10",
-          "label": "Net Rating L10",
-          "side": "AWAY",
-          "impact": 1.513,
-          "value": -14.716,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "AWAY",
-          "impact": 1.307,
-          "value": -0.3775,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_margin_r10",
-          "label": "Avg Margin L10",
-          "side": "AWAY",
-          "impact": 1.299,
-          "value": -12.1,
-          "direction": "home_cover"
-        }
-      ],
+      "shap_drivers": [],
       "actual_margin": null,
       "ats_result": null
     },
@@ -339,48 +298,7 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "away_days_rest",
-          "label": "Days Rest",
-          "side": "AWAY",
-          "impact": 3.387,
-          "value": 10.0,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": 2.922,
-          "value": 0.2135,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": -1.75,
-          "value": 0.1101,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_tov_pct_r10",
-          "label": "Turnover% L10",
-          "side": "HOME",
-          "impact": 1.533,
-          "value": 0.1405,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "HOME",
-          "impact": 1.494,
-          "value": 0.2752,
-          "direction": "home_cover"
-        }
-      ],
+      "shap_drivers": [],
       "actual_margin": null,
       "ats_result": null
     },
@@ -571,48 +489,7 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": 4.647,
-          "value": 0.0807,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_days_rest",
-          "label": "Days Rest",
-          "side": "AWAY",
-          "impact": 2.385,
-          "value": 10.0,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "AWAY",
-          "impact": 1.835,
-          "value": -0.2288,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_net_rtg_r10",
-          "label": "Net Rating L10",
-          "side": "AWAY",
-          "impact": 1.251,
-          "value": -8.8961,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_margin_r10",
-          "label": "Avg Margin L10",
-          "side": "AWAY",
-          "impact": 1.055,
-          "value": -7.0,
-          "direction": "home_cover"
-        }
-      ],
+      "shap_drivers": [],
       "actual_margin": null,
       "ats_result": null
     },
@@ -749,48 +626,7 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "away_days_rest",
-          "label": "Days Rest",
-          "side": "AWAY",
-          "impact": 3.859,
-          "value": 10.0,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": 3.505,
-          "value": 0.1976,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "AWAY",
-          "impact": -2.307,
-          "value": 0.3035,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": -1.88,
-          "value": 0.114,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "away_margin_r5",
-          "label": "Avg Margin L5",
-          "side": "AWAY",
-          "impact": 1.587,
-          "value": 16.6,
-          "direction": "home_cover"
-        }
-      ],
+      "shap_drivers": [],
       "actual_margin": null,
       "ats_result": null
     }
