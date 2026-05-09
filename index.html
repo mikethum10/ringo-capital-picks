@@ -90,7 +90,6 @@
 const TIER_ORDER = { STRONG: 0, MEDIUM: 1, LEAN: 2 };
 
 function tierBadge(tier) {
-  const cls = `tier-${tier.replace(/\s/g,'-')}` in document.styleSheets[0] ? tier : 'default';
   return `<span class="tier-${tier.replace(/\s/g,'-')} px-2 py-0.5 rounded text-xs font-bold uppercase">${tier}</span>`;
 }
 
@@ -99,12 +98,14 @@ function signStr(v, decimals=1) {
   return (v >= 0 ? '+' : '') + v.toFixed(decimals);
 }
 
-function edgeSideIcon(side, higher_is_better) {
+function edgeSideIcon(side) {
   if (side == null) return '';
   if (side === 'EVEN') return '<span class="text-slate-300">—</span>';
-  const isGoodHome = (side === 'HOME' && higher_is_better) || (side === 'AWAY' && !higher_is_better);
-  const color = isGoodHome ? 'text-slate-500' : 'text-slate-500';
-  return `<span class="font-medium ${color}">${side}</span>`;
+  return `<span class="font-medium text-slate-500">${side}</span>`;
+}
+
+function hasInjuries(g) {
+  return (g.inj_home && g.inj_home.length > 0) || (g.inj_away && g.inj_away.length > 0);
 }
 
 function buildStatTable(stats, betDir) {
@@ -123,7 +124,7 @@ function buildStatTable(stats, betDir) {
       <td class="py-1 text-slate-600">${s.label}</td>
       <td class="py-1 text-right font-mono">${s.home_display}</td>
       <td class="py-1 text-right font-mono">${s.away_display}</td>
-      <td class="py-1 text-right">${edgeSideIcon(s.edge_side, s.higher_is_better)}</td>
+      <td class="py-1 text-right">${edgeSideIcon(s.edge_side)}</td>
     </tr>`;
   }
   html += '</tbody></table>';
@@ -169,22 +170,105 @@ function buildDriverList(drivers) {
   return html;
 }
 
-function gameCard(g, isFullCard) {
-  const hasBet = g.has_bet;
-  const spread = g.spread != null ? (g.spread >= 0 ? '+' : '') + g.spread.toFixed(1) : 'N/A';
-  const edge   = g.edge   != null ? (g.edge   >= 0 ? '+' : '') + g.edge.toFixed(2)   : 'N/A';
-  const pred   = (g.pred_margin >= 0 ? '+' : '') + g.pred_margin.toFixed(1);
-  const betLabel = hasBet ? `${g.bet_direction} ${g.bet_team}` : '—';
+function buildInjurySection(g) {
+  if (!hasInjuries(g)) return '';
+
+  const allPlayers = [
+    ...(g.inj_home || []).map(p => ({...p, side: 'HOME'})),
+    ...(g.inj_away || []).map(p => ({...p, side: 'AWAY'})),
+  ];
+
+  const delta = g.inj_delta ?? 0;
+  const hasDelta = delta !== 0;
+  const favors = delta > 0 ? `HOME ${g.home_team}` : `AWAY ${g.away_team}`;
+  const deltaStr = (delta >= 0 ? '+' : '') + delta.toFixed(1) + ' pts';
+
+  const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
+  const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
+  const isSideFlip   = g.has_bet && g.adj_has_bet && baseBetStr !== adjBetStr;
+  const isBetAppear  = !g.has_bet && g.adj_has_bet;
+  const isBetDisapp  = g.has_bet && !g.adj_has_bet;
+  const isTierChange = g.has_bet && g.adj_has_bet && g.tier !== g.adj_tier && !isSideFlip;
+
+  let rows = '';
+  for (const p of allPlayers) {
+    const impactStr = p.found
+      ? `<span class="${p.impact >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-semibold">${(p.impact >= 0 ? '+' : '') + p.impact.toFixed(1)} pts${p.gtd ? ' (GTD&times;&frac12;)' : ''}</span>`
+      : `<span class="text-slate-400 italic text-xs">no historical data${p.gtd ? ' (GTD)' : ''}</span>`;
+    rows += `<tr class="border-b border-amber-100 last:border-0">
+      <td class="py-1.5 pr-3 text-slate-700 text-sm">${p.player}</td>
+      <td class="py-1.5 pr-3"><span class="${p.side === 'HOME' ? 'text-blue-600' : 'text-orange-600'} text-xs font-semibold">${p.side}</span></td>
+      <td class="py-1.5 pr-3"><span class="${p.status === 'OUT' ? 'text-red-600' : 'text-amber-600'} text-xs font-bold">${p.status}</span></td>
+      <td class="py-1.5 text-right text-xs">${impactStr}</td>
+    </tr>`;
+  }
+
+  const flags = [
+    (isSideFlip || isBetAppear) ? '<span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded">SIDE FLIP</span>' : '',
+    isTierChange                ? '<span class="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded">TIER CHANGE</span>' : '',
+    isBetDisapp                 ? '<span class="bg-slate-200 text-slate-600 text-xs font-bold px-2 py-0.5 rounded">BET REMOVED</span>' : '',
+  ].filter(Boolean).join(' ');
+
+  const adjLine = hasDelta ? `
+    <div class="mt-2.5 pt-2.5 border-t border-amber-200 space-y-1">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-600">
+        <span>Net injury delta: <span class="${delta >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-bold">${deltaStr}</span> &rarr; favors <strong>${favors}</strong></span>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-600">
+        <span>Base: <span class="font-mono">${signStr(g.pred_margin)}</span> (${g.tier || '&mdash;'})</span>
+        <span class="text-slate-400">&rarr;</span>
+        <span>Adjusted: <span class="font-mono font-bold">${signStr(g.adj_margin)}</span> (${g.adj_tier || '&mdash;'})</span>
+        ${flags ? `<span class="ml-1">${flags}</span>` : ''}
+      </div>
+    </div>` : '';
+
+  return `
+  <div class="rounded-lg bg-amber-50 border border-amber-200 px-4 py-3 mt-3 mb-1">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-xs font-bold uppercase tracking-wide text-amber-800">Injury Report</span>
+      <span class="text-xs text-amber-400">&middot; Rotowire</span>
+    </div>
+    <table class="w-full"><tbody>${rows}</tbody></table>
+    ${adjLine}
+  </div>`;
+}
+
+function gameCard(g) {
+  const inj = hasInjuries(g);
+
+  // Use adjusted values when injuries are present
+  const hasBet     = inj ? (g.adj_has_bet ?? g.has_bet)               : g.has_bet;
+  const tier       = inj ? (g.adj_tier ?? g.tier)                     : g.tier;
+  const betDir     = inj ? (g.adj_bet_direction ?? g.bet_direction)   : g.bet_direction;
+  const betTeam    = inj ? (g.adj_bet_team ?? g.bet_team)             : g.bet_team;
+  const dispMargin = inj ? (g.adj_margin ?? g.pred_margin)            : g.pred_margin;
+  const dispEdge   = inj ? (g.adj_edge ?? g.edge)                     : g.edge;
+
+  const spread  = g.spread != null ? (g.spread >= 0 ? '+' : '') + g.spread.toFixed(1) : 'N/A';
+  const edgeStr = dispEdge != null ? (dispEdge >= 0 ? '+' : '') + dispEdge.toFixed(2) : 'N/A';
+  const pred    = signStr(dispMargin);
+  const betLabel = hasBet ? `${betDir} ${betTeam}` : '—';
+
+  const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
+  const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
+  const isSideFlip  = inj && g.has_bet && g.adj_has_bet && baseBetStr !== adjBetStr;
+  const isBetAppear = inj && !g.has_bet && g.adj_has_bet;
 
   const borderCls = hasBet
-    ? (g.tier === 'STRONG' ? 'border-l-4 border-green-500' : g.tier === 'MEDIUM' ? 'border-l-4 border-blue-500' : 'border-l-4 border-amber-500')
+    ? (tier === 'STRONG' ? 'border-l-4 border-green-500' : tier === 'MEDIUM' ? 'border-l-4 border-blue-500' : 'border-l-4 border-amber-500')
     : 'border-l-4 border-slate-200';
 
   const resultBadge = g.ats_result
     ? `<span class="ats-${g.ats_result} ml-2">${g.ats_result}</span>`
     : (g.actual_margin != null ? `<span class="text-slate-400 text-xs ml-2">Final: ${signStr(g.actual_margin)}</span>` : '');
 
-  const detailId = `detail-${g.home_team.replace(/\s/g,'')}-${g.away_team.replace(/\s/g,'')}`;
+  const flipHeaderBadge = (isSideFlip || isBetAppear)
+    ? `<span class="bg-red-100 text-red-700 text-xs font-bold px-1.5 py-0.5 rounded">SIDE FLIP</span>`
+    : '';
+
+  const injDeltaBadge = inj && (g.inj_delta ?? 0) !== 0
+    ? `<span class="text-xs text-amber-600 font-mono ml-1">${(g.inj_delta >= 0 ? '+' : '') + g.inj_delta.toFixed(1)} inj</span>`
+    : '';
 
   return `
   <div class="bg-white rounded-xl shadow-sm ${borderCls} overflow-hidden">
@@ -192,16 +276,17 @@ function gameCard(g, isFullCard) {
       <summary class="px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 flex-wrap">
-            ${hasBet ? tierBadge(g.tier) : ''}
+            ${hasBet ? tierBadge(tier) : ''}
+            ${flipHeaderBadge}
             <span class="font-semibold text-slate-900 truncate">${g.away_team} <span class="text-slate-400 font-normal">@</span> ${g.home_team}</span>
             ${resultBadge}
           </div>
-          ${hasBet ? `<div class="text-xs text-slate-500 mt-1">Bet: <strong>${betLabel}</strong></div>` : ''}
+          ${hasBet ? `<div class="text-xs text-slate-500 mt-1">Bet: <strong>${betLabel}</strong>${injDeltaBadge}</div>` : ''}
         </div>
         <div class="flex items-center gap-4 ml-4 shrink-0">
           <div class="text-right hidden sm:block">
             <div class="text-xs text-slate-400">Line / Model / Edge</div>
-            <div class="font-mono text-sm text-slate-700">${spread} / ${pred} / <span class="${g.edge != null && Math.abs(g.edge) >= 2.5 ? 'text-green-600 font-bold' : ''}">${edge}</span></div>
+            <div class="font-mono text-sm text-slate-700">${spread} / ${pred} / <span class="${dispEdge != null && Math.abs(dispEdge) >= 2.5 ? 'text-green-600 font-bold' : ''}">${edgeStr}</span></div>
           </div>
           <span class="chevron text-slate-400 text-lg">&#8964;</span>
         </div>
@@ -210,18 +295,19 @@ function gameCard(g, isFullCard) {
         <div class="sm:hidden mb-3 pt-3 grid grid-cols-3 text-center text-xs text-slate-500">
           <div><div class="font-semibold text-slate-700 text-base">${spread}</div>Line</div>
           <div><div class="font-semibold text-slate-700 text-base">${pred}</div>Model</div>
-          <div><div class="font-semibold ${g.edge != null && Math.abs(g.edge) >= 2.5 ? 'text-green-600' : 'text-slate-700'} text-base">${edge}</div>Edge</div>
+          <div><div class="font-semibold ${dispEdge != null && Math.abs(dispEdge) >= 2.5 ? 'text-green-600' : 'text-slate-700'} text-base">${edgeStr}</div>Edge</div>
         </div>
         ${modelBreakdown(g)}
+        ${buildInjurySection(g)}
         <div class="grid md:grid-cols-2 gap-6 pt-3">
           <div>
             <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Stat Comparison</h4>
-            ${buildStatTable(g.stats, g.bet_direction)}
+            ${buildStatTable(g.stats, betDir)}
           </div>
           <div>
             <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Model Drivers (SHAP)</h4>
             ${buildDriverList(g.shap_drivers)}
-            <p class="text-xs text-slate-300 mt-2">+ = toward home cover &nbsp;·&nbsp; - = toward away cover</p>
+            <p class="text-xs text-slate-300 mt-2">+ = toward home cover &nbsp;&middot;&nbsp; - = toward away cover</p>
           </div>
         </div>
       </div>
@@ -257,24 +343,28 @@ async function render() {
   const winPct = total > 0 ? ((rec.W||0) / ((rec.W||0)+(rec.L||0)) * 100).toFixed(1) : '—';
   const roi = results?.roi_units ?? 0;
   document.getElementById('header-record').innerHTML =
-    `<span class="font-semibold text-slate-700">${rec.W||0}-${rec.L||0}-${rec.P||0}</span> &nbsp;·&nbsp; ${winPct}% ATS &nbsp;·&nbsp; <span class="${roi>=0?'text-green-600':'text-red-600'} font-semibold">${roi>=0?'+':''}${roi.toFixed(2)}u ROI</span>`;
+    `<span class="font-semibold text-slate-700">${rec.W||0}-${rec.L||0}-${rec.P||0}</span> &nbsp;&middot;&nbsp; ${winPct}% ATS &nbsp;&middot;&nbsp; <span class="${roi>=0?'text-green-600':'text-red-600'} font-semibold">${roi>=0?'+':''}${roi.toFixed(2)}u ROI</span>`;
 
   // --- Today's picks ---
   if (pred) {
     document.getElementById('picks-date').textContent = new Date(pred.date + 'T12:00:00').toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
     document.getElementById('model-note').textContent = `Generated ${new Date(pred.generated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZoneName:'short'})}`;
 
-    const bets    = (pred.games||[]).filter(g => g.has_bet).sort((a,b) => (TIER_ORDER[a.tier]??9) - (TIER_ORDER[b.tier]??9));
-    const nonBets = (pred.games||[]).filter(g => !g.has_bet);
+    // Resolve effective has_bet and tier accounting for injury adjustments
+    const effHasBet = g => hasInjuries(g) ? (g.adj_has_bet ?? g.has_bet) : g.has_bet;
+    const effTier   = g => hasInjuries(g) ? (g.adj_tier ?? g.tier)       : g.tier;
+
+    const bets    = (pred.games||[]).filter(effHasBet).sort((a,b) => (TIER_ORDER[effTier(a)]??9) - (TIER_ORDER[effTier(b)]??9));
+    const nonBets = (pred.games||[]).filter(g => !effHasBet(g));
 
     const betContainer = document.getElementById('bet-cards');
     if (bets.length) {
-      betContainer.innerHTML = bets.map(g => gameCard(g, true)).join('');
+      betContainer.innerHTML = bets.map(g => gameCard(g)).join('');
     } else {
       document.getElementById('no-bets').classList.remove('hidden');
     }
 
-    document.getElementById('all-games').innerHTML = nonBets.map(g => gameCard(g, false)).join('');
+    document.getElementById('all-games').innerHTML = nonBets.map(g => gameCard(g)).join('');
   } else {
     document.getElementById('picks-date').textContent = 'No predictions loaded';
   }
@@ -289,12 +379,12 @@ async function render() {
     statCard('MEDIUM', byTier.MEDIUM ? `${byTier.MEDIUM.W}-${byTier.MEDIUM.L}-${byTier.MEDIUM.P||0}` : '0-0', 'bets');
 
   // --- Results table ---
-  const bets = results?.bets ?? [];
+  const pastBets = results?.bets ?? [];
   const tbody = document.getElementById('results-body');
-  if (bets.length === 0) {
+  if (pastBets.length === 0) {
     document.getElementById('no-results').classList.remove('hidden');
   } else {
-    tbody.innerHTML = [...bets].reverse().map(b => {
+    tbody.innerHTML = [...pastBets].reverse().map(b => {
       const spread = b.spread != null ? (b.spread>=0?'+':'')+b.spread.toFixed(1) : 'N/A';
       const edge   = b.edge   != null ? (b.edge  >=0?'+':'')+b.edge.toFixed(2)   : 'N/A';
       const actual = b.actual_margin != null ? signStr(b.actual_margin) : '—';
