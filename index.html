@@ -462,24 +462,30 @@ function buildInjurySection(g) {
   const tierColors   = { STAR: 'text-purple-700 font-bold', STARTER: 'text-blue-700 font-semibold', ROTATION: 'text-slate-600', BENCH: 'text-slate-400' };
   let rows = '';
   for (const p of allPlayers) {
-    const baked = p.already_baked === true;
+    const missFrac = p.miss_frac ?? 0;
+    const fullyBaked = missFrac >= 1.0;
+    const partialBaked = missFrac > 0 && missFrac < 1.0;
+    const dim = fullyBaked;
     const tierLabel = p.tier
-      ? `<span class="${baked ? 'text-slate-400' : (tierColors[p.tier] || 'text-slate-500')} text-xs">${p.tier}</span>`
+      ? `<span class="${dim ? 'text-slate-400' : (tierColors[p.tier] || 'text-slate-500')} text-xs">${p.tier}</span>`
       : `<span class="text-slate-400 text-xs italic">unknown</span>`;
     let impactStr;
-    if (baked) {
-      impactStr = `<span class="text-slate-400 text-xs italic">already in model</span>`;
-    } else if (p.found) {
-      impactStr = `<span class="${p.impact >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-semibold">${(p.impact >= 0 ? '+' : '') + p.impact.toFixed(1)} pts${p.gtd ? ' (GTD×½)' : ''}</span>`;
-    } else {
+    if (!p.found) {
       impactStr = `<span class="text-slate-400 italic text-xs">${p.gtd ? '(GTD)' : ''}</span>`;
+    } else if (fullyBaked) {
+      impactStr = `<span class="text-slate-400 text-xs italic">already in model</span>`;
+    } else if (partialBaked) {
+      const pct = Math.round((1 - missFrac) * 100);
+      impactStr = `<span class="${p.impact >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-semibold">${(p.impact >= 0 ? '+' : '') + p.impact.toFixed(1)} pts</span><span class="text-slate-400 text-xs ml-1">(${pct}% new${p.gtd ? ', GTD×½' : ''})</span>`;
+    } else {
+      impactStr = `<span class="${p.impact >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-semibold">${(p.impact >= 0 ? '+' : '') + p.impact.toFixed(1)} pts${p.gtd ? ' (GTD×½)' : ''}</span>`;
     }
-    const minStr = p.avg_min != null ? `<span class="${baked ? 'text-slate-300' : 'text-slate-400'} text-xs">${p.avg_min.toFixed(1)}'</span>` : '';
-    const rowCls = baked ? 'opacity-50' : '';
+    const minStr = p.avg_min != null ? `<span class="${dim ? 'text-slate-300' : 'text-slate-400'} text-xs">${p.avg_min.toFixed(1)}'</span>` : '';
+    const rowCls = fullyBaked ? 'opacity-50' : '';
     rows += `<tr class="border-b border-amber-100 last:border-0 ${rowCls}">
-      <td class="py-1.5 pr-3 ${baked ? 'text-slate-400' : 'text-slate-700'} text-sm">${p.player}</td>
-      <td class="py-1.5 pr-3"><span class="${p.side === 'HOME' ? (baked ? 'text-blue-300' : 'text-blue-600') : (baked ? 'text-orange-300' : 'text-orange-600')} text-xs font-semibold">${p.side}</span></td>
-      <td class="py-1.5 pr-3"><span class="${p.status === 'OUT' ? (baked ? 'text-red-300' : 'text-red-600') : (baked ? 'text-amber-300' : 'text-amber-600')} text-xs font-bold">${p.status}</span></td>
+      <td class="py-1.5 pr-3 ${dim ? 'text-slate-400' : 'text-slate-700'} text-sm">${p.player}</td>
+      <td class="py-1.5 pr-3"><span class="${p.side === 'HOME' ? (dim ? 'text-blue-300' : 'text-blue-600') : (dim ? 'text-orange-300' : 'text-orange-600')} text-xs font-semibold">${p.side}</span></td>
+      <td class="py-1.5 pr-3"><span class="${p.status === 'OUT' ? (dim ? 'text-red-300' : 'text-red-600') : (dim ? 'text-amber-300' : 'text-amber-600')} text-xs font-bold">${p.status}</span></td>
       <td class="py-1.5 pr-3">${tierLabel} ${minStr}</td>
       <td class="py-1.5 text-right text-xs">${impactStr}</td>
     </tr>`;
