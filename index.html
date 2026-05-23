@@ -47,8 +47,9 @@
 
   <!-- TAB NAV -->
   <div class="flex gap-0 border-b border-slate-200 -mb-1">
-    <button id="tab-btn-today"    onclick="switchTab('today')"    class="tab-btn active">Today's Games</button>
-    <button id="tab-btn-mypicks"  onclick="switchTab('mypicks')"  class="tab-btn">My Picks</button>
+    <button id="tab-btn-today"     onclick="switchTab('today')"     class="tab-btn active">Today's Games</button>
+    <button id="tab-btn-mypicks"   onclick="switchTab('mypicks')"   class="tab-btn">My Picks</button>
+    <button id="tab-btn-teamstats" onclick="switchTab('teamstats')" class="tab-btn">Team Stats</button>
   </div>
 
   <!-- ── TAB: TODAY ────────────────────────────────────────────── -->
@@ -98,6 +99,22 @@
   <div id="tab-mypicks" class="hidden space-y-6">
     <div id="my-picks-content">
       <p class="text-slate-400 text-sm italic">Loading your picks…</p>
+    </div>
+  </div>
+
+  <!-- ── TAB: TEAM STATS ───────────────────────────────────────── -->
+  <div id="tab-teamstats" class="hidden space-y-4">
+    <div class="flex flex-wrap items-center gap-4">
+      <div>
+        <p class="text-xs text-slate-400 mt-1">L10 = rolling 10-game average &nbsp;·&nbsp; Δ = L5 minus L10 (direction of trend) &nbsp;·&nbsp; Sorted by column header click</p>
+      </div>
+      <div class="ml-auto flex gap-2 text-xs">
+        <span class="flex items-center gap-1"><span class="inline-block w-2 h-2 rounded-full bg-green-500"></span> Improving (L5 &gt; L10)</span>
+        <span class="flex items-center gap-1"><span class="inline-block w-2 h-2 rounded-full bg-red-400"></span> Worsening (L5 &lt; L10)</span>
+      </div>
+    </div>
+    <div id="team-stats-table" class="overflow-x-auto">
+      <p class="text-slate-400 text-sm italic">Loading team stats…</p>
     </div>
   </div>
 
@@ -251,11 +268,12 @@ function refreshPickUI(id) {
 
 // ── Tab switching ────────────────────────────────────────────────────────────
 function switchTab(name) {
-  ['today', 'mypicks'].forEach(t => {
+  ['today', 'mypicks', 'teamstats'].forEach(t => {
     document.getElementById(`tab-${t}`).classList.toggle('hidden', t !== name);
     document.getElementById(`tab-btn-${t}`).classList.toggle('active', t === name);
   });
   if (name === 'mypicks') renderMyPicks();
+  if (name === 'teamstats') renderTeamStats();
 }
 
 // ── My Picks tab ─────────────────────────────────────────────────────────────
@@ -682,6 +700,117 @@ async function render() {
 }
 
 render();
+
+// ── Team Stats tab ────────────────────────────────────────────────────────────
+let _teamStatsData = null;
+let _teamSortKey   = 'net_rtg';
+let _teamSortDir   = -1; // -1 = desc, 1 = asc
+
+async function renderTeamStats() {
+  const container = document.getElementById('team-stats-table');
+  if (!_teamStatsData) {
+    try {
+      const r = await fetch('data/team_stats.json');
+      _teamStatsData = await r.json();
+    } catch(e) {
+      container.innerHTML = '<p class="text-red-400 text-sm">Could not load team_stats.json</p>';
+      return;
+    }
+  }
+  container.innerHTML = buildTeamStatsTable(_teamStatsData);
+}
+
+function teamStatSort(key) {
+  const meta = _teamStatsData.stats_meta.find(m => m.key === key);
+  if (_teamSortKey === key) {
+    _teamSortDir *= -1;
+  } else {
+    _teamSortKey = key;
+    // Default: higher-is-better stats sort descending, lower-is-better ascending
+    _teamSortDir = (meta && meta.higher_is_better === false) ? 1 : -1;
+  }
+  document.getElementById('team-stats-table').innerHTML = buildTeamStatsTable(_teamStatsData);
+}
+
+function buildTeamStatsTable(data) {
+  const meta  = data.stats_meta;
+  const teams = [...data.teams].sort((a, b) => {
+    const av = a.stats[_teamSortKey]?.l10 ?? -9999;
+    const bv = b.stats[_teamSortKey]?.l10 ?? -9999;
+    return _teamSortDir * (bv - av);
+  });
+
+  function fmtVal(val, fmt) {
+    if (val === null || val === undefined) return '—';
+    if (fmt === 'pct1') return val.toFixed(1) + '%';
+    if (fmt === 'pct0') return val.toFixed(0) + '%';
+    if (fmt === '+.1f') return (val >= 0 ? '+' : '') + val.toFixed(1);
+    if (fmt === '+.3f') return (val >= 0 ? '+' : '') + val.toFixed(3);
+    if (fmt === '.3f')  return val.toFixed(3);
+    if (fmt === '.1f')  return val.toFixed(1);
+    return val;
+  }
+
+  function deltaCell(l5, l10, hib, fmt) {
+    if (l5 === null || l5 === undefined || l10 === null || l10 === undefined) return '<td class="px-2 py-2 text-slate-300 text-xs text-center">—</td>';
+    const delta = l5 - l10;
+    const improving = hib === null ? false : (hib ? delta > 0 : delta < 0);
+    const worsening = hib === null ? false : (hib ? delta < 0 : delta > 0);
+    const threshold = Math.abs(l10) * 0.03 + 0.001; // 3% relative or tiny absolute
+    const sig = Math.abs(delta) > threshold;
+    let cls = 'text-slate-400';
+    let arrow = '';
+    if (sig && improving) { cls = 'text-green-600 font-semibold'; arrow = ' ↑'; }
+    else if (sig && worsening) { cls = 'text-red-500 font-semibold'; arrow = ' ↓'; }
+    const sign = delta >= 0 ? '+' : '';
+    return `<td class="px-2 py-2 text-xs text-center font-mono ${cls}">${sign}${fmtVal(delta, fmt)}${arrow}</td>`;
+  }
+
+  const sortIcon = (key) => {
+    if (key !== _teamSortKey) return '<span class="text-slate-300 ml-0.5">⇅</span>';
+    return _teamSortDir === -1 ? '<span class="text-slate-600 ml-0.5">↓</span>' : '<span class="text-slate-600 ml-0.5">↑</span>';
+  };
+
+  let html = `<table class="w-full text-sm border-collapse min-w-max">
+    <thead class="bg-slate-50 sticky top-0 z-10">
+      <tr class="border-b border-slate-200">
+        <th class="px-3 py-2 text-left text-xs font-semibold text-slate-500 cursor-pointer hover:text-slate-800 whitespace-nowrap" onclick="teamStatSort('net_rtg')">Team</th>
+        <th class="px-2 py-2 text-center text-xs font-semibold text-slate-500 whitespace-nowrap">G</th>
+        <th class="px-2 py-2 text-center text-xs font-semibold text-slate-500 whitespace-nowrap">Last Game</th>`;
+
+  for (const m of meta) {
+    const isSort = m.key === _teamSortKey;
+    html += `<th colspan="2" class="px-2 py-1 text-center text-xs font-semibold whitespace-nowrap cursor-pointer hover:text-slate-800 ${isSort ? 'text-slate-800 bg-slate-100' : 'text-slate-500'}" onclick="teamStatSort('${m.key}')">${m.label} ${sortIcon(m.key)}</th>`;
+  }
+  html += `</tr>
+      <tr class="border-b-2 border-slate-200 bg-slate-50">
+        <th class="px-3 py-1"></th><th class="px-2 py-1"></th><th class="px-2 py-1"></th>`;
+  for (const m of meta) {
+    html += `<th class="px-2 py-1 text-xs text-slate-400 text-center font-normal">L10</th>
+             <th class="px-2 py-1 text-xs text-slate-400 text-center font-normal">Δ L5</th>`;
+  }
+  html += `</tr></thead><tbody>`;
+
+  for (const t of teams) {
+    html += `<tr class="border-b border-slate-100 hover:bg-slate-50">
+      <td class="px-3 py-2 font-semibold text-slate-700 whitespace-nowrap">${t.team}</td>
+      <td class="px-2 py-2 text-center text-slate-500 text-xs">${t.games_2026}</td>
+      <td class="px-2 py-2 text-center text-slate-400 text-xs whitespace-nowrap">${t.last_game || '—'}</td>`;
+    for (const m of meta) {
+      const s   = t.stats[m.key] || {};
+      const l10 = s.l10 ?? null;
+      const l5  = s.l5  ?? null;
+      const isSort = m.key === _teamSortKey;
+      html += `<td class="px-2 py-2 text-center font-mono text-xs ${isSort ? 'bg-slate-50 font-semibold' : ''}">${fmtVal(l10, m.fmt)}</td>`;
+      html += deltaCell(l5, l10, m.higher_is_better, m.fmt);
+    }
+    html += `</tr>`;
+  }
+
+  html += `</tbody></table>
+  <p class="text-xs text-slate-400 mt-3">Generated: ${data.generated} &nbsp;·&nbsp; Δ L5 = (L5 − L10): green ↑ = improving trend, red ↓ = worsening trend (≥3% relative change)</p>`;
+  return html;
+}
 </script>
 </body>
 </html>
