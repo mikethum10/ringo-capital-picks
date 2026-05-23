@@ -384,25 +384,42 @@ function hasInjuries(g) {
   return (g.inj_home && g.inj_home.length > 0) || (g.inj_away && g.inj_away.length > 0);
 }
 
-function buildStatTable(stats, betDir) {
-  if (!stats || !stats.length) return '<p class="text-slate-400 text-sm italic">No stats available.</p>';
-  let html = `<table class="w-full text-sm mt-2">
-    <thead><tr class="text-xs uppercase text-slate-400 border-b border-slate-100">
-      <th class="py-1 text-left">Stat</th>
-      <th class="py-1 text-right">Home</th>
-      <th class="py-1 text-right">Away</th>
-      <th class="py-1 text-right">Edge</th>
-    </tr></thead><tbody>`;
-  for (const s of stats) {
-    const rowCls = s.edge_side === betDir ? 'bg-green-50' : '';
-    html += `<tr class="${rowCls} border-b border-slate-50">
-      <td class="py-1 text-slate-600">${s.label}</td>
-      <td class="py-1 text-right font-mono">${s.home_display}</td>
-      <td class="py-1 text-right font-mono">${s.away_display}</td>
-      <td class="py-1 text-right">${edgeSideIcon(s.edge_side)}</td>
-    </tr>`;
+function buildUnifiedDriverTable(drivers) {
+  if (!drivers || !drivers.length) return '<p class="text-slate-400 text-sm italic">SHAP not available.</p>';
+  const maxAbs = Math.max(...drivers.map(d => Math.abs(d.impact)));
+  let html = `
+    <div class="mt-2">
+      <div class="flex text-xs text-slate-400 uppercase tracking-wide mb-2 px-0.5 gap-2">
+        <span class="w-12 shrink-0"></span>
+        <span class="flex-1">Stat</span>
+        <span class="w-14 text-right shrink-0">Value</span>
+        <span class="w-28 shrink-0 text-center">Model weight</span>
+        <span class="w-14 text-right shrink-0">Impact</span>
+      </div>`;
+  for (const d of drivers) {
+    const pct    = Math.round((Math.abs(d.impact) / maxAbs) * 100);
+    const pos    = d.impact >= 0;
+    const barCls = pos ? 'driver-bar-pos' : 'driver-bar-neg';
+    const sideCls = d.side === 'HOME'
+      ? 'bg-blue-100 text-blue-700'
+      : 'bg-orange-100 text-orange-700';
+    const impactCls = pos ? 'text-green-600' : 'text-red-500';
+    html += `
+      <div class="flex items-center gap-2 py-1 border-b border-slate-50 last:border-0">
+        <span class="w-12 shrink-0 text-center text-xs font-semibold px-1 py-0.5 rounded ${sideCls}">${d.side}</span>
+        <span class="flex-1 text-xs text-slate-600 truncate">${d.label}</span>
+        <span class="w-14 text-right text-xs font-mono text-slate-500 shrink-0">${d.value_str ?? ''}</span>
+        <div class="w-28 shrink-0">
+          <div class="bg-slate-100 rounded h-1.5 w-full">
+            <div class="${barCls} h-1.5 rounded" style="width:${pct}%"></div>
+          </div>
+        </div>
+        <span class="w-14 text-right text-xs font-mono font-semibold shrink-0 ${impactCls}">${pos?'+':''}${d.impact.toFixed(1)}</span>
+      </div>`;
   }
-  html += '</tbody></table>';
+  html += `
+      <p class="text-xs text-slate-300 mt-2">+ = toward home cover &nbsp;·&nbsp; − = toward away cover</p>
+    </div>`;
   return html;
 }
 
@@ -420,28 +437,6 @@ function modelBreakdown(g) {
   </div>`;
 }
 
-function buildDriverList(drivers) {
-  if (!drivers || !drivers.length) return '<p class="text-slate-400 text-sm italic">SHAP not available.</p>';
-  const maxAbs = Math.max(...drivers.map(d => Math.abs(d.impact)));
-  let html = '<div class="space-y-2 mt-2">';
-  for (const d of drivers) {
-    const pct = Math.round((Math.abs(d.impact) / maxAbs) * 100);
-    const pos = d.impact >= 0;
-    const barCls = pos ? 'driver-bar-pos' : 'driver-bar-neg';
-    const dirLabel = pos ? 'home covers' : 'away covers';
-    html += `<div>
-      <div class="flex justify-between text-xs text-slate-500 mb-0.5">
-        <span><strong>${d.side}</strong> ${d.label}</span>
-        <span class="${pos ? 'text-green-600' : 'text-red-600'} font-mono">${pos?'+':''}${d.impact.toFixed(2)} pts → ${dirLabel}</span>
-      </div>
-      <div class="bg-slate-100 rounded h-1.5 w-full">
-        <div class="${barCls} h-1.5 rounded" style="width:${pct}%"></div>
-      </div>
-    </div>`;
-  }
-  html += '</div>';
-  return html;
-}
 
 function buildInjurySection(g) {
   if (!hasInjuries(g)) return '';
@@ -580,16 +575,9 @@ function gameCard(g, date) {
         </div>
         ${modelBreakdown(g)}
         ${buildInjurySection(g)}
-        <div class="grid md:grid-cols-2 gap-6 pt-3">
-          <div>
-            <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Stat Comparison</h4>
-            ${buildStatTable(g.stats, betDir)}
-          </div>
-          <div>
-            <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Model Drivers (SHAP)</h4>
-            ${buildDriverList(g.shap_drivers)}
-            <p class="text-xs text-slate-300 mt-2">+ = home covers · - = away covers</p>
-          </div>
+        <div class="pt-3">
+          <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Model Drivers — how each stat moves the predicted margin</h4>
+          ${buildUnifiedDriverTable(g.shap_drivers)}
         </div>
       </div>
     </details>
