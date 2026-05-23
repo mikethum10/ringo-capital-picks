@@ -1,6 +1,6 @@
 {
   "date": "2026-05-23",
-  "generated_at": "2026-05-23T09:23:02.138306-04:00",
+  "generated_at": "2026-05-23T09:39:03.018117-04:00",
   "games": [
     {
       "home_team": "Chicago Sky",
@@ -167,48 +167,7 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "home_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "HOME",
-          "impact": 1.492,
-          "value": 0.1247,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "HOME",
-          "impact": -1.168,
-          "value": 0.3452,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "away_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "AWAY",
-          "impact": -0.924,
-          "value": 0.1669,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pace_r10",
-          "label": "Pace L10",
-          "side": "HOME",
-          "impact": 0.806,
-          "value": 77.5311,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": 0.805,
-          "value": 0.0956,
-          "direction": "home_cover"
-        }
-      ],
+      "shap_drivers": [],
       "actual_margin": null,
       "ats_result": null
     },
@@ -404,48 +363,7 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": 4.805,
-          "value": 0.076,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": -2.619,
-          "value": -0.1277,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_efg_pct_r10",
-          "label": "eFG% L10",
-          "side": "HOME",
-          "impact": 1.673,
-          "value": 0.4268,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "AWAY",
-          "impact": 1.563,
-          "value": -0.2029,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "AWAY",
-          "impact": -1.45,
-          "value": 0.2313,
-          "direction": "away_cover"
-        }
-      ],
+      "shap_drivers": [],
       "actual_margin": null,
       "ats_result": null
     },
@@ -596,48 +514,9 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": 1.939,
-          "value": 0.2135,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": -1.648,
-          "value": 0.1275,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_efg_pct_r10",
-          "label": "eFG% L10",
-          "side": "HOME",
-          "impact": -1.466,
-          "value": 0.5444,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "away_pq_oreb_pct_r10",
-          "label": "Off Reb% L10",
-          "side": "AWAY",
-          "impact": -1.348,
-          "value": 0.0358,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_tov_pct_r10",
-          "label": "Turnover% L10",
-          "side": "HOME",
-          "impact": 1.216,
-          "value": 0.1405,
-          "direction": "home_cover"
-        }
-      ]
+      "shap_drivers": [],
+      "actual_margin": null,
+      "ats_result": null
     },
     {
       "home_team": "Atlanta Dream",
@@ -748,48 +627,9 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": 2.364,
-          "value": 0.1536,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": -1.655,
-          "value": 0.1247,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "HOME",
-          "impact": -1.637,
-          "value": 0.3747,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_tov_pct_r10",
-          "label": "Turnover% L10",
-          "side": "HOME",
-          "impact": 1.074,
-          "value": 0.1391,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "HOME",
-          "impact": 1.029,
-          "value": 0.1235,
-          "direction": "home_cover"
-        }
-      ]
+      "shap_drivers": [],
+      "actual_margin": null,
+      "ats_result": null
     },
     {
       "home_team": "New York Liberty",
@@ -843,9 +683,9 @@
           "key": "pq_pm_per_min_r10",
           "label": "Player Quality L10",
           "home_val": 0.0725,
-          "away_val": 0.0247,
+          "away_val": 0.029,
           "home_display": "+0.073",
-          "away_display": "+0.025",
+          "away_display": "+0.029",
           "edge_side": "HOME",
           "higher_is_better": true
         },
@@ -900,48 +740,9 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": 3.062,
-          "value": 0.0725,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": -1.949,
-          "value": 0.1057,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_tov_pct_r10",
-          "label": "Turnover% L10",
-          "side": "HOME",
-          "impact": 1.526,
-          "value": 0.1407,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "HOME",
-          "impact": -1.172,
-          "value": 0.3669,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "away_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "AWAY",
-          "impact": 0.57,
-          "value": 0.2875,
-          "direction": "home_cover"
-        }
-      ]
+      "shap_drivers": [],
+      "actual_margin": null,
+      "ats_result": null
     },
     {
       "home_team": "Seattle Storm",
@@ -1052,48 +853,9 @@
           "higher_is_better": true
         }
       ],
-      "shap_drivers": [
-        {
-          "feature": "away_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "AWAY",
-          "impact": 6.82,
-          "value": 0.0686,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "HOME",
-          "impact": -3.889,
-          "value": 0.0673,
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_pq_efg_pct_r10",
-          "label": "eFG% L10",
-          "side": "HOME",
-          "impact": 2.457,
-          "value": 0.4162,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_net_rtg_r10",
-          "label": "Net Rating L10",
-          "side": "AWAY",
-          "impact": 2.14,
-          "value": -14.7248,
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_pm_per_min_r10",
-          "label": "Player Quality L10",
-          "side": "HOME",
-          "impact": -2.099,
-          "value": -0.0885,
-          "direction": "away_cover"
-        }
-      ]
+      "shap_drivers": [],
+      "actual_margin": null,
+      "ats_result": null
     }
   ]
 }
