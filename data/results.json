@@ -1,0 +1,62 @@
+{
+  "record": {
+    "W": 2,
+    "L": 1,
+    "P": 0
+  },
+  "by_tier": {
+    "MEDIUM": {
+      "W": 1,
+      "L": 0,
+      "P": 0
+    },
+    "STRONG": {
+      "W": 1,
+      "L": 1,
+      "P": 0
+    }
+  },
+  "roi_units": 0.818,
+  "bets": [
+    {
+      "date": "2026-05-09",
+      "home_team": "Indiana Fever",
+      "away_team": "Dallas Wings",
+      "bet_direction": "HOME",
+      "bet_team": "Indiana Fever",
+      "spread": -5.5,
+      "pred_margin": 13.5,
+      "edge": 7.95,
+      "tier": "MEDIUM",
+      "actual_margin": 19.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-05-09",
+      "home_team": "Portland Fire",
+      "away_team": "Chicago Sky",
+      "bet_direction": "HOME",
+      "bet_team": "Portland Fire",
+      "spread": 5.5,
+      "pred_margin": 14.4,
+      "edge": 19.85,
+      "tier": "STRONG",
+      "actual_margin": -15.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-05-09",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Atlanta Dream",
+      "bet_direction": "HOME",
+      "bet_team": "Minnesota Lynx",
+      "spread": 4.5,
+      "pred_margin": 5.0,
+      "edge": 9.52,
+      "tier": "STRONG",
+      "actual_margin": -4.0,
+      "ats_result": "W"
+    }
+  ],
+  "updated": "2026-05-23"
+}
