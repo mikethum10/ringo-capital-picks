@@ -180,8 +180,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -10.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -10.0,
+        "pace": 89.7,
+        "home_efg_pct": 0.3562,
+        "home_ts_pct": 0.435,
+        "home_tov_pct": 0.1132,
+        "home_ft_rate": 0.411,
+        "home_ast_pct": 0.6087,
+        "home_oreb_pct": 0.1458,
+        "home_pts": 75.0,
+        "home_poss": 90.2,
+        "away_efg_pct": 0.4595,
+        "away_ts_pct": 0.5106,
+        "away_tov_pct": 0.1858,
+        "away_ft_rate": 0.2838,
+        "away_ast_pct": 0.5938,
+        "away_oreb_pct": 0.3824,
+        "away_pts": 85.0,
+        "away_poss": 89.2
+      }
     },
     {
       "home_team": "Toronto Tempo",
@@ -372,8 +392,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -19.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -19.0,
+        "pace": 82.1,
+        "home_efg_pct": 0.5,
+        "home_ts_pct": 0.5411,
+        "home_tov_pct": 0.187,
+        "home_ft_rate": 0.2727,
+        "home_ast_pct": 0.6333,
+        "home_oreb_pct": 0.303,
+        "home_pts": 80.0,
+        "home_poss": 80.9,
+        "away_efg_pct": 0.5786,
+        "away_ts_pct": 0.6247,
+        "away_tov_pct": 0.1502,
+        "away_ft_rate": 0.3,
+        "away_ast_pct": 0.6857,
+        "away_oreb_pct": 0.3448,
+        "away_pts": 99.0,
+        "away_poss": 83.2
+      }
     },
     {
       "home_team": "Las Vegas Aces",
@@ -520,8 +560,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -6.0,
+      "ats_result": "W",
+      "actual_stats": {
+        "margin": -6.0,
+        "pace": 86.4,
+        "home_efg_pct": 0.5132,
+        "home_ts_pct": 0.5573,
+        "home_tov_pct": 0.1411,
+        "home_ft_rate": 0.2763,
+        "home_ast_pct": 0.6176,
+        "home_oreb_pct": 0.3333,
+        "home_pts": 95.0,
+        "home_poss": 86.2,
+        "away_efg_pct": 0.6567,
+        "away_ts_pct": 0.6861,
+        "away_tov_pct": 0.1876,
+        "away_ft_rate": 0.2239,
+        "away_ast_pct": 0.7027,
+        "away_oreb_pct": 0.1481,
+        "away_pts": 101.0,
+        "away_poss": 86.6
+      }
     },
     {
       "home_team": "Atlanta Dream",
