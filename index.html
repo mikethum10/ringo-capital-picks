@@ -453,6 +453,7 @@ function hasInjuries(g) {
 
 function buildUnifiedDriverTable(drivers) {
   if (!drivers || !drivers.length) return '<p class="text-slate-400 text-sm italic">SHAP not available.</p>';
+  drivers = drivers.slice(0, 10);
   const maxAbs = Math.max(...drivers.map(d => Math.abs(d.impact)));
   let html = `
     <div class="mt-2">
