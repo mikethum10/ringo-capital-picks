@@ -186,8 +186,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -7.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -7.0,
+        "pace": 85.6,
+        "home_efg_pct": 0.4521,
+        "home_ts_pct": 0.4959,
+        "home_tov_pct": 0.1621,
+        "home_ft_rate": 0.3014,
+        "home_ast_pct": 0.6207,
+        "home_oreb_pct": 0.2857,
+        "home_pts": 82.0,
+        "home_poss": 88.7,
+        "away_efg_pct": 0.5246,
+        "away_ts_pct": 0.5892,
+        "away_tov_pct": 0.1564,
+        "away_ft_rate": 0.541,
+        "away_ast_pct": 0.5185,
+        "away_oreb_pct": 0.1842,
+        "away_pts": 89.0,
+        "away_poss": 82.5
+      }
     },
     {
       "home_team": "Washington Mystics",
@@ -382,8 +402,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -5.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -5.0,
+        "pace": 87.5,
+        "home_efg_pct": 0.4562,
+        "home_ts_pct": 0.5013,
+        "home_tov_pct": 0.1229,
+        "home_ft_rate": 0.3625,
+        "home_ast_pct": 0.7059,
+        "home_oreb_pct": 0.4222,
+        "home_pts": 93.0,
+        "home_poss": 86.8,
+        "away_efg_pct": 0.5435,
+        "away_ts_pct": 0.6026,
+        "away_tov_pct": 0.1557,
+        "away_ft_rate": 0.4058,
+        "away_ast_pct": 0.5758,
+        "away_oreb_pct": 0.2581,
+        "away_pts": 98.0,
+        "away_poss": 88.3
+      }
     },
     {
       "home_team": "Los Angeles Sparks",
@@ -514,8 +554,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -27.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -27.0,
+        "pace": 86.8,
+        "home_efg_pct": 0.4295,
+        "home_ts_pct": 0.4586,
+        "home_tov_pct": 0.1826,
+        "home_ft_rate": 0.2051,
+        "home_ast_pct": 0.3793,
+        "home_oreb_pct": 0.375,
+        "home_pts": 78.0,
+        "home_poss": 89.0,
+        "away_efg_pct": 0.6739,
+        "away_ts_pct": 0.6865,
+        "away_tov_pct": 0.1547,
+        "away_ft_rate": 0.2464,
+        "away_ast_pct": 0.6512,
+        "away_oreb_pct": 0.2609,
+        "away_pts": 105.0,
+        "away_poss": 84.5
+      }
     },
     {
       "home_team": "Minnesota Lynx",
@@ -627,8 +687,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -1.0,
+      "ats_result": "W",
+      "actual_stats": {
+        "margin": -1.0,
+        "pace": 87.5,
+        "home_efg_pct": 0.5357,
+        "home_ts_pct": 0.5648,
+        "home_tov_pct": 0.1584,
+        "home_ft_rate": 0.3143,
+        "home_ast_pct": 0.5714,
+        "home_oreb_pct": 0.2059,
+        "home_pts": 90.0,
+        "home_poss": 87.7,
+        "away_efg_pct": 0.4726,
+        "away_ts_pct": 0.5278,
+        "away_tov_pct": 0.1883,
+        "away_ft_rate": 0.411,
+        "away_ast_pct": 0.7097,
+        "away_oreb_pct": 0.5135,
+        "away_pts": 91.0,
+        "away_poss": 87.2
+      }
     },
     {
       "home_team": "Golden State Valkyries",
@@ -814,8 +894,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 16.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 16.0,
+        "pace": 76.7,
+        "home_efg_pct": 0.5896,
+        "home_ts_pct": 0.634,
+        "home_tov_pct": 0.1072,
+        "home_ft_rate": 0.2687,
+        "home_ast_pct": 0.7576,
+        "home_oreb_pct": 0.2308,
+        "home_pts": 95.0,
+        "home_poss": 77.9,
+        "away_efg_pct": 0.5833,
+        "away_ts_pct": 0.6334,
+        "away_tov_pct": 0.2142,
+        "away_ft_rate": 0.3519,
+        "away_ast_pct": 0.7692,
+        "away_oreb_pct": 0.1429,
+        "away_pts": 79.0,
+        "away_poss": 75.4
+      }
     }
   ]
 }

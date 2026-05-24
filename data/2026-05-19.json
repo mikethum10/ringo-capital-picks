@@ -177,8 +177,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -8.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -8.0,
+        "pace": 84.1,
+        "home_efg_pct": 0.4857,
+        "home_ts_pct": 0.5466,
+        "home_tov_pct": 0.0986,
+        "home_ft_rate": 0.4,
+        "home_ast_pct": 0.625,
+        "home_oreb_pct": 0.2286,
+        "home_pts": 90.0,
+        "home_poss": 83.3,
+        "away_efg_pct": 0.5608,
+        "away_ts_pct": 0.5981,
+        "away_tov_pct": 0.1184,
+        "away_ft_rate": 0.2432,
+        "away_ast_pct": 0.4412,
+        "away_oreb_pct": 0.25,
+        "away_pts": 98.0,
+        "away_poss": 84.9
+      }
     }
   ]
 }

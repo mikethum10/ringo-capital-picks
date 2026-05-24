@@ -177,8 +177,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -7.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -7.0,
+        "pace": 84.2,
+        "home_efg_pct": 0.4863,
+        "home_ts_pct": 0.5046,
+        "home_tov_pct": 0.1608,
+        "home_ft_rate": 0.1644,
+        "home_ast_pct": 0.625,
+        "home_oreb_pct": 0.2105,
+        "home_pts": 79.0,
+        "home_poss": 85.3,
+        "away_efg_pct": 0.4925,
+        "away_ts_pct": 0.5513,
+        "away_tov_pct": 0.1522,
+        "away_ft_rate": 0.3731,
+        "away_ast_pct": 0.5667,
+        "away_oreb_pct": 0.25,
+        "away_pts": 86.0,
+        "away_poss": 83.0
+      }
     },
     {
       "home_team": "Atlanta Dream",
@@ -328,8 +348,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -1.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -1.0,
+        "pace": 89.4,
+        "home_efg_pct": 0.4041,
+        "home_ts_pct": 0.4704,
+        "home_tov_pct": 0.1271,
+        "home_ft_rate": 0.5068,
+        "home_ast_pct": 0.5556,
+        "home_oreb_pct": 0.2558,
+        "home_pts": 84.0,
+        "home_poss": 91.3,
+        "away_efg_pct": 0.4932,
+        "away_ts_pct": 0.5281,
+        "away_tov_pct": 0.1391,
+        "away_ft_rate": 0.2329,
+        "away_ast_pct": 0.6774,
+        "away_oreb_pct": 0.15,
+        "away_pts": 85.0,
+        "away_poss": 87.5
+      }
     },
     {
       "home_team": "Indiana Fever",
@@ -515,8 +555,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 11.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 11.0,
+        "pace": 87.3,
+        "home_efg_pct": 0.5,
+        "home_ts_pct": 0.5803,
+        "home_tov_pct": 0.1815,
+        "home_ft_rate": 0.3284,
+        "home_ast_pct": 0.7097,
+        "home_oreb_pct": 0.25,
+        "home_pts": 89.0,
+        "home_poss": 86.7,
+        "away_efg_pct": 0.3944,
+        "away_ts_pct": 0.4706,
+        "away_tov_pct": 0.088,
+        "away_ft_rate": 0.3803,
+        "away_ast_pct": 0.68,
+        "away_oreb_pct": 0.0882,
+        "away_pts": 78.0,
+        "away_poss": 87.9
+      }
     },
     {
       "home_team": "Los Angeles Sparks",
@@ -675,8 +735,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 4.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 4.0,
+        "pace": 81.8,
+        "home_efg_pct": 0.7155,
+        "home_ts_pct": 0.741,
+        "home_tov_pct": 0.1932,
+        "home_ft_rate": 0.3448,
+        "home_ast_pct": 0.7027,
+        "home_oreb_pct": 0.1111,
+        "home_pts": 99.0,
+        "home_poss": 80.8,
+        "away_efg_pct": 0.5286,
+        "away_ts_pct": 0.5961,
+        "away_tov_pct": 0.1403,
+        "away_ft_rate": 0.3143,
+        "away_ast_pct": 0.7097,
+        "away_oreb_pct": 0.3125,
+        "away_pts": 95.0,
+        "away_poss": 82.7
+      }
     }
   ]
 }

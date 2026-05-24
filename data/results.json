@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 2,
+    "W": 3,
     "L": 1,
     "P": 0
   },
@@ -11,12 +11,12 @@
       "P": 0
     },
     "STRONG": {
-      "W": 1,
+      "W": 2,
       "L": 1,
       "P": 0
     }
   },
-  "roi_units": 0.818,
+  "roi_units": 1.727,
   "bets": [
     {
       "date": "2026-05-09",
@@ -56,7 +56,20 @@
       "tier": "STRONG",
       "actual_margin": -4.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-05-10",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Atlanta Dream",
+      "bet_direction": "HOME",
+      "bet_team": "Minnesota Lynx",
+      "spread": 4.0,
+      "pred_margin": 5.0,
+      "edge": 9.02,
+      "tier": "STRONG",
+      "actual_margin": -1.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-05-23"
+  "updated": "2026-05-24"
 }

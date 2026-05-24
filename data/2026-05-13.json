@@ -177,8 +177,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 13.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 13.0,
+        "pace": 80.7,
+        "home_efg_pct": 0.5145,
+        "home_ts_pct": 0.559,
+        "home_tov_pct": 0.135,
+        "home_ft_rate": 0.2609,
+        "home_ast_pct": 0.7,
+        "home_oreb_pct": 0.2647,
+        "home_pts": 86.0,
+        "home_poss": 79.9,
+        "away_efg_pct": 0.5259,
+        "away_ts_pct": 0.5574,
+        "away_tov_pct": 0.2249,
+        "away_ft_rate": 0.2931,
+        "away_ast_pct": 0.6667,
+        "away_oreb_pct": 0.1111,
+        "away_pts": 73.0,
+        "away_poss": 81.5
+      }
     },
     {
       "home_team": "Connecticut Sun",
@@ -346,8 +366,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -29.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -29.0,
+        "pace": 84.9,
+        "home_efg_pct": 0.35,
+        "home_ts_pct": 0.4283,
+        "home_tov_pct": 0.1389,
+        "home_ft_rate": 0.3429,
+        "home_ast_pct": 0.6957,
+        "home_oreb_pct": 0.1905,
+        "home_pts": 69.0,
+        "home_poss": 85.6,
+        "away_efg_pct": 0.5764,
+        "away_ts_pct": 0.6032,
+        "away_tov_pct": 0.1559,
+        "away_ft_rate": 0.2917,
+        "away_ast_pct": 0.5385,
+        "away_oreb_pct": 0.3636,
+        "away_pts": 98.0,
+        "away_poss": 84.2
+      }
     },
     {
       "home_team": "Golden State Valkyries",
@@ -542,8 +582,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -6.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -6.0,
+        "pace": 78.6,
+        "home_efg_pct": 0.34,
+        "home_ts_pct": 0.384,
+        "home_tov_pct": 0.1182,
+        "home_ft_rate": 0.2133,
+        "home_ast_pct": 0.4545,
+        "home_oreb_pct": 0.3111,
+        "home_pts": 63.0,
+        "home_poss": 79.0,
+        "away_efg_pct": 0.4058,
+        "away_ts_pct": 0.441,
+        "away_tov_pct": 0.0928,
+        "away_ft_rate": 0.3043,
+        "away_ast_pct": 0.76,
+        "away_oreb_pct": 0.2222,
+        "away_pts": 69.0,
+        "away_poss": 78.2
+      }
     },
     {
       "home_team": "Los Angeles Sparks",
@@ -665,8 +725,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -9.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -9.0,
+        "pace": 81.2,
+        "home_efg_pct": 0.5088,
+        "home_ts_pct": 0.5735,
+        "home_tov_pct": 0.2184,
+        "home_ft_rate": 0.4386,
+        "home_ast_pct": 0.4643,
+        "home_oreb_pct": 0.1379,
+        "home_pts": 78.0,
+        "home_poss": 83.0,
+        "away_efg_pct": 0.5635,
+        "away_ts_pct": 0.6096,
+        "away_tov_pct": 0.1832,
+        "away_ft_rate": 0.3016,
+        "away_ast_pct": 0.7419,
+        "away_oreb_pct": 0.2857,
+        "away_pts": 87.0,
+        "away_poss": 79.4
+      }
     }
   ]
 }

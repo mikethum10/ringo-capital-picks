@@ -150,8 +150,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -29.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -29.0,
+        "pace": 84.9,
+        "home_efg_pct": 0.35,
+        "home_ts_pct": 0.4283,
+        "home_tov_pct": 0.1389,
+        "home_ft_rate": 0.3429,
+        "home_ast_pct": 0.6957,
+        "home_oreb_pct": 0.1905,
+        "home_pts": 69.0,
+        "home_poss": 85.6,
+        "away_efg_pct": 0.5764,
+        "away_ts_pct": 0.6032,
+        "away_tov_pct": 0.1559,
+        "away_ft_rate": 0.2917,
+        "away_ast_pct": 0.5385,
+        "away_oreb_pct": 0.3636,
+        "away_pts": 98.0,
+        "away_poss": 84.2
+      }
     },
     {
       "home_team": "Indiana Fever",
@@ -273,8 +293,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -2.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -2.0,
+        "pace": 96.3,
+        "home_efg_pct": 0.4837,
+        "home_ts_pct": 0.5082,
+        "home_tov_pct": 0.0988,
+        "home_ft_rate": 0.2065,
+        "home_ast_pct": 0.5833,
+        "home_oreb_pct": 0.234,
+        "home_pts": 102.0,
+        "home_poss": 100.4,
+        "away_efg_pct": 0.6029,
+        "away_ts_pct": 0.6474,
+        "away_tov_pct": 0.1994,
+        "away_ft_rate": 0.4118,
+        "away_ast_pct": 0.4737,
+        "away_oreb_pct": 0.3077,
+        "away_pts": 104.0,
+        "away_poss": 92.3
+      }
     },
     {
       "home_team": "Los Angeles Sparks",
@@ -424,8 +464,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 4.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 4.0,
+        "pace": 81.8,
+        "home_efg_pct": 0.7155,
+        "home_ts_pct": 0.741,
+        "home_tov_pct": 0.1932,
+        "home_ft_rate": 0.3448,
+        "home_ast_pct": 0.7027,
+        "home_oreb_pct": 0.1111,
+        "home_pts": 99.0,
+        "home_poss": 80.8,
+        "away_efg_pct": 0.5286,
+        "away_ts_pct": 0.5961,
+        "away_tov_pct": 0.1403,
+        "away_ft_rate": 0.3143,
+        "away_ast_pct": 0.7097,
+        "away_oreb_pct": 0.3125,
+        "away_pts": 95.0,
+        "away_poss": 82.7
+      }
     },
     {
       "home_team": "Phoenix Mercury",
@@ -584,8 +644,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 8.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 8.0,
+        "pace": 84.7,
+        "home_efg_pct": 0.4355,
+        "home_ts_pct": 0.5685,
+        "home_tov_pct": 0.1578,
+        "home_ft_rate": 0.6613,
+        "home_ast_pct": 0.5,
+        "home_oreb_pct": 0.3226,
+        "home_pts": 91.0,
+        "home_poss": 85.0,
+        "away_efg_pct": 0.4706,
+        "away_ts_pct": 0.5224,
+        "away_tov_pct": 0.1216,
+        "away_ft_rate": 0.3824,
+        "away_ast_pct": 0.5517,
+        "away_oreb_pct": 0.1667,
+        "away_pts": 83.0,
+        "away_poss": 84.4
+      }
     }
   ]
 }

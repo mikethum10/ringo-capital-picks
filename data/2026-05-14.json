@@ -141,8 +141,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -4.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -4.0,
+        "pace": 77.8,
+        "home_efg_pct": 0.5,
+        "home_ts_pct": 0.5608,
+        "home_tov_pct": 0.1255,
+        "home_ft_rate": 0.3284,
+        "home_ast_pct": 0.7097,
+        "home_oreb_pct": 0.2647,
+        "home_pts": 86.0,
+        "home_poss": 78.7,
+        "away_efg_pct": 0.6552,
+        "away_ts_pct": 0.6826,
+        "away_tov_pct": 0.205,
+        "away_ft_rate": 0.3103,
+        "away_ast_pct": 0.5714,
+        "away_oreb_pct": 0.2609,
+        "away_pts": 90.0,
+        "away_poss": 76.9
+      }
     },
     {
       "home_team": "Portland Fire",
@@ -355,8 +375,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 2.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 2.0,
+        "pace": 79.8,
+        "home_efg_pct": 0.6103,
+        "home_ts_pct": 0.6568,
+        "home_tov_pct": 0.1484,
+        "home_ft_rate": 0.2206,
+        "home_ast_pct": 0.4412,
+        "home_oreb_pct": 0.2581,
+        "home_pts": 98.0,
+        "home_poss": 79.6,
+        "away_efg_pct": 0.6371,
+        "away_ts_pct": 0.6865,
+        "away_tov_pct": 0.2047,
+        "away_ft_rate": 0.2903,
+        "away_ast_pct": 0.697,
+        "away_oreb_pct": 0.3077,
+        "away_pts": 96.0,
+        "away_poss": 79.9
+      }
     }
   ]
 }

@@ -132,8 +132,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -5.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -5.0,
+        "pace": 77.3,
+        "home_efg_pct": 0.411,
+        "home_ts_pct": 0.4548,
+        "home_tov_pct": 0.0918,
+        "home_ft_rate": 0.1918,
+        "home_ast_pct": 0.5357,
+        "home_oreb_pct": 0.175,
+        "home_pts": 72.0,
+        "home_poss": 80.2,
+        "away_efg_pct": 0.442,
+        "away_ts_pct": 0.5034,
+        "away_tov_pct": 0.1053,
+        "away_ft_rate": 0.2464,
+        "away_ast_pct": 0.5,
+        "away_oreb_pct": 0.2895,
+        "away_pts": 77.0,
+        "away_poss": 74.5
+      }
     },
     {
       "home_team": "Phoenix Mercury",
@@ -292,8 +312,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": -4.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": -4.0,
+        "pace": 84.0,
+        "home_efg_pct": 0.4296,
+        "home_ts_pct": 0.4911,
+        "home_tov_pct": 0.114,
+        "home_ft_rate": 0.4648,
+        "home_ast_pct": 0.7692,
+        "home_oreb_pct": 0.2093,
+        "home_pts": 84.0,
+        "home_poss": 87.5,
+        "away_efg_pct": 0.5547,
+        "away_ts_pct": 0.5901,
+        "away_tov_pct": 0.1675,
+        "away_ft_rate": 0.375,
+        "away_ast_pct": 0.625,
+        "away_oreb_pct": 0.2903,
+        "away_pts": 88.0,
+        "away_poss": 80.6
+      }
     },
     {
       "home_team": "Portland Fire",
@@ -497,8 +537,28 @@
         }
       ],
       "shap_drivers": [],
-      "actual_margin": null,
-      "ats_result": null
+      "actual_margin": 2.0,
+      "ats_result": null,
+      "actual_stats": {
+        "margin": 2.0,
+        "pace": 79.8,
+        "home_efg_pct": 0.6103,
+        "home_ts_pct": 0.6568,
+        "home_tov_pct": 0.1484,
+        "home_ft_rate": 0.2206,
+        "home_ast_pct": 0.4412,
+        "home_oreb_pct": 0.2581,
+        "home_pts": 98.0,
+        "home_poss": 79.6,
+        "away_efg_pct": 0.6371,
+        "away_ts_pct": 0.6865,
+        "away_tov_pct": 0.2047,
+        "away_ft_rate": 0.2903,
+        "away_ast_pct": 0.697,
+        "away_oreb_pct": 0.3077,
+        "away_pts": 96.0,
+        "away_poss": 79.9
+      }
     }
   ]
 }
