@@ -80,7 +80,7 @@
               <th class="px-4 py-2 text-left">Date</th>
               <th class="px-4 py-2 text-left">Matchup</th>
               <th class="px-4 py-2 text-left">Bet</th>
-              <th class="px-4 py-2 text-right">Line</th>
+              <th class="px-4 py-2 text-right">Market</th>
               <th class="px-4 py-2 text-right">Model</th>
               <th class="px-4 py-2 text-right">Edge</th>
               <th class="px-4 py-2 text-center">Tier</th>
@@ -408,6 +408,45 @@ function edgeSideIcon(side) {
   if (side === 'EVEN') return '<span class="text-slate-300">—</span>';
   return `<span class="font-medium text-slate-500">${side}</span>`;
 }
+
+// Convert pred_margin (positive = home wins) to sportsbook line: "Aces -6.8" or "Sparks -4.0"
+function modelLineStr(margin, homeTeam, awayTeam) {
+  if (margin == null) return 'N/A';
+  const hShort = homeTeam.split(' ').pop();
+  const aShort = awayTeam.split(' ').pop();
+  if (Math.abs(margin) < 0.05) return "Pick'em";
+  return margin > 0
+    ? `${hShort} -${margin.toFixed(1)}`
+    : `${aShort} -${Math.abs(margin).toFixed(1)}`;
+}
+
+// Convert edge to "team +X.XX" showing which side has value
+// Positive edge → home side has value; negative → away side has value
+function fmtEdge(edge, homeTeam, awayTeam) {
+  if (edge == null) return 'N/A';
+  const hShort = homeTeam.split(' ').pop();
+  const aShort = awayTeam.split(' ').pop();
+  const abs = Math.abs(edge).toFixed(2);
+  return edge >= 0 ? `${hShort} +${abs}` : `${aShort} +${abs}`;
+}
+
+// Convert home-team margin to "Winner +X" format: "Sparks +6.0" or "Aces +3.0"
+function actualStr(margin, homeTeam, awayTeam) {
+  if (margin == null) return '—';
+  const hShort = homeTeam.split(' ').pop();
+  const aShort = awayTeam.split(' ').pop();
+  if (Math.abs(margin) < 0.05) return 'TIE';
+  return margin > 0
+    ? `${hShort} +${margin.toFixed(1)}`
+    : `${aShort} +${Math.abs(margin).toFixed(1)}`;
+}
+
+// Market line abbreviated: "Aces -9.5"
+function marketLineStr(spread, homeTeam) {
+  if (spread == null) return 'N/A';
+  const hShort = homeTeam.split(' ').pop();
+  return `${hShort} ${(spread >= 0 ? '+' : '') + spread.toFixed(1)}`;
+}
 function hasInjuries(g) {
   return (g.inj_home && g.inj_home.length > 0) || (g.inj_away && g.inj_away.length > 0);
 }
@@ -458,9 +497,9 @@ function modelBreakdown(g) {
   const agreeColor = agree ? 'text-green-600' : 'text-amber-600';
   return `<div class="flex flex-wrap items-center gap-x-5 gap-y-1 pt-3 pb-3 border-b border-slate-100 text-sm">
     <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Model Breakdown</span>
-    <span><span class="text-xs text-slate-400 mr-1">Ridge</span><span class="font-mono">${signStr(g.pred_ridge)}</span></span>
-    <span><span class="text-xs text-slate-400 mr-1">XGBoost</span><span class="font-mono">${signStr(g.pred_xgb)}</span></span>
-    <span><span class="text-xs text-slate-400 mr-1">Ensemble</span><span class="font-mono font-semibold">${signStr(g.pred_margin)}</span></span>
+    <span><span class="text-xs text-slate-400 mr-1">Ridge</span><span class="font-mono">${modelLineStr(g.pred_ridge, g.home_team, g.away_team)}</span></span>
+    <span><span class="text-xs text-slate-400 mr-1">XGBoost</span><span class="font-mono">${modelLineStr(g.pred_xgb, g.home_team, g.away_team)}</span></span>
+    <span><span class="text-xs text-slate-400 mr-1">Ensemble</span><span class="font-mono font-semibold">${modelLineStr(g.pred_margin, g.home_team, g.away_team)}</span></span>
     <span class="${agreeColor} text-xs ml-auto">${diff.toFixed(1)} pt spread · ${agree ? 'Models agree' : 'Models diverge'}</span>
   </div>`;
 }
@@ -524,9 +563,9 @@ function buildInjurySection(g) {
         <span>Net injury delta: <span class="${delta >= 0 ? 'text-green-700' : 'text-red-700'} font-mono font-bold">${deltaStr}</span> → favors <strong>${favors}</strong></span>
       </div>
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-600">
-        <span>Base: <span class="font-mono">${signStr(g.pred_margin)}</span> (${g.tier || '—'})</span>
+        <span>Base: <span class="font-mono">${modelLineStr(g.pred_margin, g.home_team, g.away_team)}</span> (${g.tier || '—'})</span>
         <span class="text-slate-400">→</span>
-        <span>Adjusted: <span class="font-mono font-bold">${signStr(g.adj_margin)}</span> (${g.adj_tier || '—'})</span>
+        <span>Adjusted: <span class="font-mono font-bold">${modelLineStr(g.adj_margin, g.home_team, g.away_team)}</span> (${g.adj_tier || '—'})</span>
         ${flags ? `<span class="ml-1">${flags}</span>` : ''}
       </div>
     </div>` : '';
@@ -549,9 +588,9 @@ function gameCard(g, date) {
   const betTeam    = inj ? (g.adj_bet_team ?? g.bet_team)             : g.bet_team;
   const dispMargin = inj ? (g.adj_margin ?? g.pred_margin)            : g.pred_margin;
   const dispEdge   = inj ? (g.adj_edge ?? g.edge)                     : g.edge;
-  const spread     = g.spread_display ?? 'N/A';
-  const edgeStr    = dispEdge != null ? (dispEdge >= 0 ? '+' : '') + dispEdge.toFixed(2) : 'N/A';
-  const pred       = inj ? (g.adj_pred_display ?? g.pred_display ?? signStr(dispMargin)) : (g.pred_display ?? signStr(dispMargin));
+  const spread     = marketLineStr(g.spread, g.home_team);
+  const edgeStr    = fmtEdge(dispEdge, g.home_team, g.away_team);
+  const pred       = modelLineStr(dispMargin, g.home_team, g.away_team);
   const betLabel   = hasBet ? (inj ? (g.adj_bet_label ?? g.bet_label ?? `${betDir} ${betTeam}`) : (g.bet_label ?? `${betDir} ${betTeam}`)) : '—';
   const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
   const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
@@ -589,15 +628,15 @@ function gameCard(g, date) {
         </div>
         <div class="flex items-center gap-4 ml-4 shrink-0">
           <div class="text-right hidden sm:block">
-            <div class="text-xs text-slate-400">Line / Model / Edge</div>
-            <div class="font-mono text-sm text-slate-700">${spread} / ${pred} / <span class="${dispEdge != null && Math.abs(dispEdge) >= 2.5 ? 'text-green-600 font-bold' : ''}">${edgeStr}</span></div>
+            <div class="text-xs text-slate-400">Market / Model / Edge</div>
+            <div class="font-mono text-sm text-slate-700">${spread} / ${pred} / <span class="${dispEdge != null && Math.abs(dispEdge) >= 2.5 ? 'text-green-600 font-bold' : 'text-slate-500'}">${edgeStr}</span></div>
           </div>
           <span class="chevron text-slate-400 text-lg">&#8964;</span>
         </div>
       </summary>
       <div class="px-5 pb-5 border-t border-slate-100">
         <div class="sm:hidden mb-3 pt-3 grid grid-cols-3 text-center text-xs text-slate-500">
-          <div><div class="font-semibold text-slate-700 text-base">${spread}</div>Line</div>
+          <div><div class="font-semibold text-slate-700 text-base">${spread}</div>Market</div>
           <div><div class="font-semibold text-slate-700 text-base">${pred}</div>Model</div>
           <div><div class="font-semibold ${dispEdge != null && Math.abs(dispEdge) >= 2.5 ? 'text-green-600' : 'text-slate-700'} text-base">${edgeStr}</div>Edge</div>
         </div>
@@ -690,19 +729,22 @@ async function render() {
     document.getElementById('no-results').classList.remove('hidden');
   } else {
     tbody.innerHTML = [...pastBets].reverse().map(b => {
-      const spread = b.spread != null ? (b.spread>=0?'+':'')+b.spread.toFixed(1) : 'N/A';
-      const edge   = b.edge   != null ? (b.edge  >=0?'+':'')+b.edge.toFixed(2)   : 'N/A';
-      const actual = b.actual_margin != null ? signStr(b.actual_margin) : '—';
-      const ats    = b.ats_result ? `<span class="ats-${b.ats_result}">${b.ats_result}</span>` : '—';
+      const betSpread  = b.bet_direction === 'HOME' ? b.spread : (b.spread != null ? -b.spread : null);
+      const betStr     = b.bet_team ? `${b.bet_team.split(' ').pop()} ${betSpread != null ? (betSpread>=0?'+':'')+betSpread.toFixed(1) : ''}` : '—';
+      const market     = marketLineStr(b.spread, b.home_team ?? '');
+      const modelLine  = modelLineStr(b.pred_margin, b.home_team ?? '', b.away_team ?? '');
+      const edgeDisp   = fmtEdge(b.edge, b.home_team ?? '', b.away_team ?? '');
+      const actual     = actualStr(b.actual_margin, b.home_team ?? '', b.away_team ?? '');
+      const ats        = b.ats_result ? `<span class="ats-${b.ats_result}">${b.ats_result}</span>` : '—';
       return `<tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
         <td class="px-4 py-2 text-slate-400 whitespace-nowrap">${b.date}</td>
         <td class="px-4 py-2 whitespace-nowrap">${b.away_team} @ ${b.home_team}</td>
-        <td class="px-4 py-2 font-medium text-slate-700 whitespace-nowrap">${b.bet_direction} ${b.bet_team}</td>
-        <td class="px-4 py-2 text-right font-mono">${spread}</td>
-        <td class="px-4 py-2 text-right font-mono">${signStr(b.pred_margin)}</td>
-        <td class="px-4 py-2 text-right font-mono">${edge}</td>
+        <td class="px-4 py-2 font-medium text-slate-700 whitespace-nowrap font-mono">${betStr}</td>
+        <td class="px-4 py-2 text-right font-mono text-slate-500">${market}</td>
+        <td class="px-4 py-2 text-right font-mono">${modelLine}</td>
+        <td class="px-4 py-2 text-right font-mono text-slate-500">${edgeDisp}</td>
         <td class="px-4 py-2 text-center">${tierBadge(b.tier)}</td>
-        <td class="px-4 py-2 text-right font-mono">${actual}</td>
+        <td class="px-4 py-2 text-right font-mono font-semibold">${actual}</td>
         <td class="px-4 py-2 text-center">${ats}</td>
       </tr>`;
     }).join('');
@@ -786,7 +828,7 @@ function buildPostGameSection(g) {
   const actMargin = g.actual_margin;
   const marginDelta = (expMargin != null && actMargin != null) ? actMargin - expMargin : null;
   const marginDeltaCls = marginDelta != null ? (Math.abs(marginDelta)>5 ? 'text-amber-600 font-semibold' : 'text-slate-400') : '';
-  const marginStr = `Expected <strong>${expMargin!=null?(expMargin>=0?'+':'')+expMargin.toFixed(1):'—'}</strong> → Actual <strong>${actMargin!=null?(actMargin>=0?'+':'')+actMargin.toFixed(1):'—'}</strong>${marginDelta!=null?` <span class="${marginDeltaCls}">(${marginDelta>=0?'+':''}${marginDelta.toFixed(1)})</span>`:''}`;
+  const marginStr = `Market <strong>${marketLineStr(g.spread, g.home_team)}</strong> · Model <strong>${modelLineStr(expMargin, g.home_team, g.away_team)}</strong> · Actual <strong>${actualStr(actMargin, g.home_team, g.away_team)}</strong>${marginDelta!=null?` <span class="${marginDeltaCls}">(miss ${marginDelta>=0?'+':''}${marginDelta.toFixed(1)})</span>`:''}`;
 
   const homePts = act.home_pts != null ? Math.round(act.home_pts) : '—';
   const awayPts = act.away_pts != null ? Math.round(act.away_pts) : '—';
@@ -890,7 +932,7 @@ function buildGameLogCard(g) {
   const marginMiss = (g.pred_margin != null && g.actual_margin != null)
     ? g.actual_margin - g.pred_margin : null;
   const missStr = marginMiss != null
-    ? `<span class="font-mono text-xs ${Math.abs(marginMiss)>5?'text-amber-600 font-semibold':'text-slate-400'} ml-2">(model off ${marginMiss>=0?'+':''}${marginMiss.toFixed(1)})</span>`
+    ? `<span class="font-mono text-xs ${Math.abs(marginMiss)>5?'text-amber-600 font-semibold':'text-slate-400'} ml-1">(miss ${marginMiss>=0?'+':''}${marginMiss.toFixed(1)})</span>`
     : '';
 
   return `
@@ -903,8 +945,10 @@ function buildGameLogCard(g) {
             ${atsBadge}
             ${betLabel}
           </div>
-          <div class="text-xs text-slate-400 mt-0.5">
-            Model: ${signStr(g.pred_margin)} &nbsp;·&nbsp; Actual: <strong class="text-slate-600">${signStr(g.actual_margin)}</strong>${missStr}
+          <div class="text-xs text-slate-400 mt-0.5 font-mono">
+            Market: <span class="text-slate-500">${marketLineStr(g.spread, g.home_team)}</span>
+            &nbsp;·&nbsp; Model: <span class="text-slate-600">${modelLineStr(g.pred_margin, g.home_team, g.away_team)}</span>
+            &nbsp;·&nbsp; Actual: <strong class="text-slate-700">${actualStr(g.actual_margin, g.home_team, g.away_team)}</strong>${missStr}
           </div>
         </div>
         <div class="text-right ml-4 shrink-0">
