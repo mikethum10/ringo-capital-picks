@@ -49,6 +49,7 @@
   <div class="flex gap-0 border-b border-slate-200 -mb-1">
     <button id="tab-btn-today"     onclick="switchTab('today')"     class="tab-btn active">Today's Games</button>
     <button id="tab-btn-mypicks"   onclick="switchTab('mypicks')"   class="tab-btn">My Picks</button>
+    <button id="tab-btn-gamelog"   onclick="switchTab('gamelog')"   class="tab-btn">Game Log</button>
     <button id="tab-btn-teamstats" onclick="switchTab('teamstats')" class="tab-btn">Team Stats</button>
   </div>
 
@@ -94,6 +95,14 @@
     </section>
 
   </div><!-- /tab-today -->
+
+  <!-- ── TAB: GAME LOG ────────────────────────────────────────── -->
+  <div id="tab-gamelog" class="hidden space-y-4">
+    <p class="text-xs text-slate-400">Actual performance vs. pre-game rolling expectations for each completed game. Green ↑ = better than expected, Red ↓ = worse than expected (≥2 pct pt gap).</p>
+    <div id="gamelog-content">
+      <p class="text-slate-400 text-sm italic py-4">Loading…</p>
+    </div>
+  </div>
 
   <!-- ── TAB: MY PICKS ─────────────────────────────────────────── -->
   <div id="tab-mypicks" class="hidden space-y-6">
@@ -268,11 +277,12 @@ function refreshPickUI(id) {
 
 // ── Tab switching ────────────────────────────────────────────────────────────
 function switchTab(name) {
-  ['today', 'mypicks', 'teamstats'].forEach(t => {
+  ['today', 'mypicks', 'gamelog', 'teamstats'].forEach(t => {
     document.getElementById(`tab-${t}`).classList.toggle('hidden', t !== name);
     document.getElementById(`tab-btn-${t}`).classList.toggle('active', t === name);
   });
-  if (name === 'mypicks') renderMyPicks();
+  if (name === 'mypicks')   renderMyPicks();
+  if (name === 'gamelog')   renderGameLog();
   if (name === 'teamstats') renderTeamStats();
 }
 
@@ -597,7 +607,6 @@ function gameCard(g, date) {
           <h4 class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Model Drivers — how each stat moves the predicted margin</h4>
           ${buildUnifiedDriverTable(g.shap_drivers)}
         </div>
-        ${buildPostGameSection(g)}
       </div>
     </details>
     <!-- Pick logging row -->
@@ -818,6 +827,95 @@ function buildPostGameSection(g) {
       <div><span class="text-slate-400 mr-1">Pace:</span>${paceStr}</div>
       <div><span class="text-slate-400 mr-1">Margin:</span>${marginStr}</div>
     </div>
+  </div>`;
+}
+
+// ── Game Log tab ──────────────────────────────────────────────────────────────
+let _gameLogLoaded = false;
+
+async function renderGameLog() {
+  if (_gameLogLoaded) return;
+  const container = document.getElementById('gamelog-content');
+
+  const dates = await loadJSON('data/prediction_dates.json');
+  if (!dates || !dates.length) {
+    container.innerHTML = '<p class="text-slate-400 text-sm italic">No prediction dates found.</p>';
+    return;
+  }
+
+  // Load all prediction files (newest first), collect settled games
+  container.innerHTML = '<p class="text-slate-400 text-sm italic">Loading game data…</p>';
+  const byDate = {};
+  await Promise.all([...dates].reverse().map(async date => {
+    const data = await loadJSON(`data/${date}.json`);
+    if (!data) return;
+    const settled = (data.games || []).filter(g => g.actual_stats);
+    if (settled.length) byDate[date] = settled;
+  }));
+
+  const sortedDates = Object.keys(byDate).sort((a, b) => b.localeCompare(a));
+  if (!sortedDates.length) {
+    container.innerHTML = '<p class="text-slate-400 text-sm italic">No completed games with stats yet.</p>';
+    return;
+  }
+
+  let html = '';
+  for (const date of sortedDates) {
+    const label = new Date(date + 'T12:00:00').toLocaleDateString('en-US',
+      { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    html += `<div class="mb-8">
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-3 pb-1 border-b border-slate-200">${label}</h3>
+      <div class="space-y-4">`;
+    for (const g of byDate[date]) {
+      html += buildGameLogCard(g);
+    }
+    html += `</div></div>`;
+  }
+  container.innerHTML = html;
+  _gameLogLoaded = true;
+}
+
+function buildGameLogCard(g) {
+  const act = g.actual_stats;
+  const homeScore = act.home_pts != null ? Math.round(act.home_pts) : '?';
+  const awayScore = act.away_pts != null ? Math.round(act.away_pts) : '?';
+  const hasBet  = g.has_bet;
+  const ats     = g.ats_result;
+  const atsBadge = hasBet && ats
+    ? `<span class="ats-${ats} ml-2 text-sm">${ats}</span>`
+    : (hasBet ? '<span class="text-slate-300 text-xs ml-2">no result</span>' : '');
+  const betLabel = hasBet
+    ? `<span class="text-xs text-slate-500 ml-2">Model: <strong>${g.bet_label || (g.bet_direction + ' ' + g.bet_team)}</strong>${g.tier ? ` <span class="tier-${g.tier} px-1 py-0.5 rounded text-xs ml-1">${g.tier}</span>` : ''}</span>`
+    : '';
+  const marginMiss = (g.pred_margin != null && g.actual_margin != null)
+    ? g.actual_margin - g.pred_margin : null;
+  const missStr = marginMiss != null
+    ? `<span class="font-mono text-xs ${Math.abs(marginMiss)>5?'text-amber-600 font-semibold':'text-slate-400'} ml-2">(model off ${marginMiss>=0?'+':''}${marginMiss.toFixed(1)})</span>`
+    : '';
+
+  return `
+  <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <details>
+      <summary class="px-5 py-3 flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer list-none">
+        <div class="flex-1">
+          <div class="flex items-center flex-wrap gap-1">
+            <span class="font-semibold text-slate-900">${g.away_team} <span class="text-slate-400 font-normal">@</span> ${g.home_team}</span>
+            ${atsBadge}
+            ${betLabel}
+          </div>
+          <div class="text-xs text-slate-400 mt-0.5">
+            Model: ${signStr(g.pred_margin)} &nbsp;·&nbsp; Actual: <strong class="text-slate-600">${signStr(g.actual_margin)}</strong>${missStr}
+          </div>
+        </div>
+        <div class="text-right ml-4 shrink-0">
+          <div class="text-2xl font-bold text-slate-700">${awayScore}–${homeScore}</div>
+          <span class="chevron text-slate-400 text-lg">&#8964;</span>
+        </div>
+      </summary>
+      <div class="border-t border-slate-100">
+        ${buildPostGameSection(g)}
+      </div>
+    </details>
   </div>`;
 }
 
