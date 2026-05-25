@@ -198,6 +198,44 @@
         "away_oreb_pct": 0.25,
         "away_pts": 86.0,
         "away_poss": 83.0
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 4",
+            "detail": "4,221 mi cumulative \u00b7 4 cities",
+            "team": "away",
+            "severity": "warning"
+          },
+          {
+            "type": "away_from_home",
+            "label": "16 days from home",
+            "detail": "extended road stretch",
+            "team": "away",
+            "severity": "caution"
+          },
+          {
+            "type": "tz_east",
+            "label": "Traveled east 2 tz",
+            "detail": "1,278 mi leg",
+            "team": "away",
+            "severity": "info"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~6)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 4,
+        "away_trip_miles": 4221,
+        "away_tz_change": 2,
+        "away_days_from_home": 16.1,
+        "home_tz_return": 0,
+        "game_num": 6
       }
     },
     {
@@ -369,6 +407,37 @@
         "away_oreb_pct": 0.15,
         "away_pts": 85.0,
         "away_poss": 87.5
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 4",
+            "detail": "3,624 mi cumulative \u00b7 3 cities",
+            "team": "away",
+            "severity": "warning"
+          },
+          {
+            "type": "home_east_return",
+            "label": "Home returned east 1 tz",
+            "detail": "736 mi return \u00b7 circadian signal",
+            "team": "home",
+            "severity": "caution"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~7)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 4,
+        "away_trip_miles": 3624,
+        "away_tz_change": 0,
+        "away_days_from_home": 6.2,
+        "home_tz_return": 1,
+        "game_num": 7
       }
     },
     {
@@ -576,6 +645,30 @@
         "away_oreb_pct": 0.0882,
         "away_pts": 78.0,
         "away_poss": 87.9
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 3",
+            "detail": "3,308 mi cumulative \u00b7 3 cities",
+            "team": "away",
+            "severity": "caution"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~6)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 3,
+        "away_trip_miles": 3308,
+        "away_tz_change": 0,
+        "away_days_from_home": 4.9,
+        "home_tz_return": 0,
+        "game_num": 6
       }
     },
     {
@@ -756,6 +849,30 @@
         "away_oreb_pct": 0.3125,
         "away_pts": 95.0,
         "away_poss": 82.7
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 2",
+            "detail": "2,173 mi cumulative \u00b7 1 city",
+            "team": "away",
+            "severity": "caution"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~6)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 2,
+        "away_trip_miles": 2173,
+        "away_tz_change": 0,
+        "away_days_from_home": 2.1,
+        "home_tz_return": 0,
+        "game_num": 6
       }
     }
   ]

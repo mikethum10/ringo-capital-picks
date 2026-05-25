@@ -162,6 +162,37 @@
         "away_oreb_pct": 0.2609,
         "away_pts": 90.0,
         "away_poss": 76.9
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 2",
+            "detail": "2,146 mi cumulative \u00b7 2 cities",
+            "team": "away",
+            "severity": "caution"
+          },
+          {
+            "type": "tz_east",
+            "label": "Traveled east 2 tz",
+            "detail": "868 mi leg",
+            "team": "away",
+            "severity": "info"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~6)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 2,
+        "away_trip_miles": 2146,
+        "away_tz_change": 2,
+        "away_days_from_home": 2.1,
+        "home_tz_return": 0,
+        "game_num": 6
       }
     },
     {
@@ -396,6 +427,30 @@
         "away_oreb_pct": 0.3077,
         "away_pts": 96.0,
         "away_poss": 79.9
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 3",
+            "detail": "2,553 mi cumulative \u00b7 2 cities",
+            "team": "away",
+            "severity": "caution"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~6)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 3,
+        "away_trip_miles": 2553,
+        "away_tz_change": 0,
+        "away_days_from_home": 4.1,
+        "home_tz_return": 0,
+        "game_num": 6
       }
     }
   ]

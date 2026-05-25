@@ -179,6 +179,30 @@
         "away_oreb_pct": 0.0882,
         "away_pts": 73.0,
         "away_poss": 78.5
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "tz_east",
+            "label": "Traveled east 3 tz",
+            "detail": "1,881 mi leg",
+            "team": "away",
+            "severity": "info"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~7)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 1,
+        "away_trip_miles": 1881,
+        "away_tz_change": 3,
+        "away_days_from_home": 0.0,
+        "home_tz_return": 0,
+        "game_num": 7
       }
     },
     {
@@ -349,6 +373,23 @@
         "away_oreb_pct": 0.2727,
         "away_pts": 99.0,
         "away_poss": 81.1
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~7)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 1,
+        "away_trip_miles": 814,
+        "away_tz_change": 0,
+        "away_days_from_home": 0.0,
+        "home_tz_return": 0,
+        "game_num": 7
       }
     },
     {
@@ -556,6 +597,30 @@
         "away_oreb_pct": 0.3438,
         "away_pts": 80.0,
         "away_poss": 79.5
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 2",
+            "detail": "2,654 mi cumulative \u00b7 2 cities",
+            "team": "away",
+            "severity": "caution"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~8)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 2,
+        "away_trip_miles": 2654,
+        "away_tz_change": 0,
+        "away_days_from_home": 3.1,
+        "home_tz_return": -3,
+        "game_num": 8
       }
     }
   ]

@@ -198,6 +198,30 @@
         "away_oreb_pct": 0.25,
         "away_pts": 98.0,
         "away_poss": 84.9
+      },
+      "context": {
+        "flags": [
+          {
+            "type": "road_trip",
+            "label": "Road Trip Game 3",
+            "detail": "2,531 mi cumulative \u00b7 2 cities",
+            "team": "away",
+            "severity": "caution"
+          },
+          {
+            "type": "early_season",
+            "label": "Early Season (Game ~7)",
+            "detail": "model edges 60% ATS historically in games 1\u201310",
+            "team": "game",
+            "severity": "positive"
+          }
+        ],
+        "away_road_depth": 3,
+        "away_trip_miles": 2531,
+        "away_tz_change": 0,
+        "away_days_from_home": 4.0,
+        "home_tz_return": 0,
+        "game_num": 7
       }
     }
   ]
