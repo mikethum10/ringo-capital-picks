@@ -1,39 +1,39 @@
 {
   "date": "2026-05-25",
-  "generated_at": "2026-05-25T10:10:37.406587-04:00",
+  "generated_at": "2026-05-25T10:27:01.298141-04:00",
   "games": [
     {
       "home_team": "New York Liberty",
       "away_team": "Portland Fire",
-      "spread": null,
-      "pred_margin": 17.8,
-      "pred_ridge": 14.5,
-      "pred_xgb": 19.9,
-      "edge": null,
-      "tier": "NO SPREAD",
-      "bet_direction": null,
-      "bet_team": null,
+      "spread": -12.5,
+      "pred_margin": 16.2,
+      "pred_ridge": 16.7,
+      "pred_xgb": 15.9,
+      "edge": 3.71,
+      "tier": "--",
+      "bet_direction": "HOME",
+      "bet_team": "New York Liberty",
       "has_bet": false,
-      "spread_display": "N/A",
-      "pred_display": "New York Liberty by 17.8",
-      "bet_label": "--",
-      "inj_delta": -1.2,
-      "adj_margin": 16.6,
-      "adj_pred_display": "New York Liberty by 16.6",
-      "adj_edge": "N/A",
-      "adj_tier": "NO SPREAD",
-      "adj_bet_direction": null,
-      "adj_bet_team": null,
+      "spread_display": "New York Liberty -12.5",
+      "pred_display": "New York Liberty by 16.2",
+      "bet_label": "New York Liberty -12.5",
+      "inj_delta": -0.9,
+      "adj_margin": 15.3,
+      "adj_pred_display": "New York Liberty by 15.3",
+      "adj_edge": 2.8,
+      "adj_tier": "--",
+      "adj_bet_direction": "HOME",
+      "adj_bet_team": "New York Liberty",
       "adj_has_bet": false,
-      "adj_bet_label": "--",
+      "adj_bet_label": "New York Liberty -12.5",
       "inj_home": [
         {
           "player": "Betnijah Laney-Hamilton",
           "status": "GTD",
           "gtd": true,
-          "impact": 2.4,
+          "impact": 1.8,
           "raw_impact": 3.0,
-          "miss_frac": 0.2,
+          "miss_frac": 0.4,
           "tier": "STARTER",
           "avg_min": 21.4,
           "found": true
@@ -67,9 +67,9 @@
         {
           "key": "net_rtg_r10",
           "label": "Net Rating L10",
-          "home_val": 5.7164,
+          "home_val": 2.4156,
           "away_val": -11.3672,
-          "home_display": "+5.7",
+          "home_display": "+2.4",
           "away_display": "-11.4",
           "edge_side": "HOME",
           "higher_is_better": true
@@ -77,9 +77,9 @@
         {
           "key": "margin_r10",
           "label": "Avg Margin L10",
-          "home_val": 4.9,
+          "home_val": 2.4,
           "away_val": -9.4,
-          "home_display": "+4.9",
+          "home_display": "+2.4",
           "away_display": "-9.4",
           "edge_side": "HOME",
           "higher_is_better": true
@@ -87,9 +87,9 @@
         {
           "key": "pq_pm_per_min_r10",
           "label": "Player Quality L10",
-          "home_val": 0.0725,
+          "home_val": 0.0981,
           "away_val": -0.2608,
-          "home_display": "+0.073",
+          "home_display": "+0.098",
           "away_display": "-0.261",
           "edge_side": "HOME",
           "higher_is_better": true
@@ -97,9 +97,9 @@
         {
           "key": "pq_efg_pct_r10",
           "label": "eFG% L10",
-          "home_val": 0.4701,
+          "home_val": 0.4932,
           "away_val": 0.4557,
-          "home_display": "47.0%",
+          "home_display": "49.3%",
           "away_display": "45.6%",
           "edge_side": "HOME",
           "higher_is_better": true
@@ -107,9 +107,9 @@
         {
           "key": "pq_tov_pct_r10",
           "label": "Turnover% L10",
-          "home_val": 0.1407,
+          "home_val": 0.1257,
           "away_val": 0.1621,
-          "home_display": "14.1%",
+          "home_display": "12.6%",
           "away_display": "16.2%",
           "edge_side": "HOME",
           "higher_is_better": false
@@ -117,9 +117,9 @@
         {
           "key": "pq_oreb_pct_r10",
           "label": "Off Reb% L10",
-          "home_val": 0.0265,
+          "home_val": 0.0284,
           "away_val": 0.0192,
-          "home_display": "2.6%",
+          "home_display": "2.8%",
           "away_display": "1.9%",
           "edge_side": "HOME",
           "higher_is_better": true
@@ -127,9 +127,9 @@
         {
           "key": "pace_r10",
           "label": "Pace L10",
-          "home_val": 80.3247,
+          "home_val": 80.7554,
           "away_val": 81.5772,
-          "home_display": "80.3",
+          "home_display": "80.8",
           "away_display": "81.6",
           "edge_side": null,
           "higher_is_better": null
@@ -137,11 +137,11 @@
         {
           "key": "days_rest",
           "label": "Days Rest",
-          "home_val": 4.0,
+          "home_val": 1.0,
           "away_val": 2.0,
-          "home_display": "4",
+          "home_display": "1",
           "away_display": "2",
-          "edge_side": "HOME",
+          "edge_side": "AWAY",
           "higher_is_better": true
         }
       ],
@@ -150,7 +150,7 @@
           "feature": "away_pq_ast_pct_r10",
           "label": "Assist% L10",
           "side": "AWAY",
-          "impact": 6.568,
+          "impact": 5.807,
           "value": 0.0475,
           "value_str": "4.8%",
           "direction": "home_cover"
@@ -159,216 +159,216 @@
           "feature": "home_pq_pm_per_min_r10",
           "label": "Player Quality L10",
           "side": "HOME",
-          "impact": 2.336,
-          "value": 0.0725,
-          "value_str": "+0.073",
+          "impact": 2.257,
+          "value": 0.0981,
+          "value_str": "+0.098",
           "direction": "home_cover"
         },
         {
           "feature": "away_pq_pm_per_min_r10",
           "label": "Player Quality L10",
           "side": "AWAY",
-          "impact": 2.022,
+          "impact": 1.589,
           "value": -0.2608,
           "value_str": "-0.261",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_net_rtg_r10",
-          "label": "Net Rating L10",
-          "side": "AWAY",
-          "impact": 1.522,
-          "value": -11.3672,
-          "value_str": "-11.4",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_margin_r10",
-          "label": "Avg Margin L10",
-          "side": "AWAY",
-          "impact": 1.092,
-          "value": -9.4,
-          "value_str": "-9.4",
           "direction": "home_cover"
         },
         {
           "feature": "home_pq_tov_pct_r10",
           "label": "Turnover% L10",
           "side": "HOME",
-          "impact": 0.978,
-          "value": 0.1407,
-          "value_str": "14.1%",
-          "direction": "home_cover"
+          "impact": -1.299,
+          "value": 0.1257,
+          "value_str": "12.6%",
+          "direction": "away_cover"
         },
         {
-          "feature": "home_pq_ast_pct_r10",
-          "label": "Assist% L10",
-          "side": "HOME",
-          "impact": 0.897,
-          "value": 0.0973,
-          "value_str": "9.7%",
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": 1.283,
+          "value": -11.3672,
+          "value_str": "-11.4",
           "direction": "home_cover"
         },
         {
           "feature": "away_pq_oreb_pct_r10",
           "label": "Off Reb% L10",
           "side": "AWAY",
-          "impact": 0.799,
+          "impact": 1.21,
           "value": 0.0192,
           "value_str": "1.9%",
           "direction": "home_cover"
         },
         {
-          "feature": "home_pq_ft_rate_r10",
-          "label": "FT Rate L10",
-          "side": "HOME",
-          "impact": -0.736,
-          "value": 0.3669,
-          "value_str": "0.367",
-          "direction": "away_cover"
-        },
-        {
-          "feature": "home_days_rest",
-          "label": "Days Rest",
-          "side": "HOME",
-          "impact": 0.603,
-          "value": 4.0,
-          "value_str": "4d",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_oreb_pct_r10",
-          "label": "Off Reb% L10",
-          "side": "HOME",
-          "impact": 0.564,
-          "value": 0.0265,
-          "value_str": "2.6%",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_margin_r10",
+          "feature": "away_margin_r10",
           "label": "Avg Margin L10",
-          "side": "HOME",
-          "impact": 0.558,
-          "value": 4.9,
-          "value_str": "+4.9",
+          "side": "AWAY",
+          "impact": 1.018,
+          "value": -9.4,
+          "value_str": "-9.4",
           "direction": "home_cover"
-        },
-        {
-          "feature": "home_pq_efg_pct_r10",
-          "label": "eFG% L10",
-          "side": "HOME",
-          "impact": -0.417,
-          "value": 0.4701,
-          "value_str": "47.0%",
-          "direction": "away_cover"
         },
         {
           "feature": "home_pace_r10",
           "label": "Pace L10",
           "side": "HOME",
-          "impact": -0.395,
-          "value": 80.3247,
-          "value_str": "80.3",
+          "impact": -0.597,
+          "value": 80.7554,
+          "value_str": "80.8",
           "direction": "away_cover"
+        },
+        {
+          "feature": "home_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "HOME",
+          "impact": 0.498,
+          "value": 2.4,
+          "value_str": "+2.4",
+          "direction": "home_cover"
         },
         {
           "feature": "away_pq_ts_pct_r10",
           "label": "True Shoot% L10",
           "side": "AWAY",
-          "impact": 0.389,
+          "impact": 0.493,
           "value": 0.4893,
           "value_str": "48.9%",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_efg_pct_r10",
-          "label": "eFG% L10",
-          "side": "AWAY",
-          "impact": 0.352,
-          "value": 0.4557,
-          "value_str": "45.6%",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "home_net_rtg_r10",
-          "label": "Net Rating L10",
-          "side": "HOME",
-          "impact": 0.292,
-          "value": 5.7164,
-          "value_str": "+5.7",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_pq_pm_per_min_r5",
-          "label": "Player Quality L5",
-          "side": "AWAY",
-          "impact": 0.274,
-          "value": -0.3211,
-          "value_str": "-0.321",
           "direction": "home_cover"
         },
         {
           "feature": "home_pq_ts_pct_r10",
           "label": "True Shoot% L10",
           "side": "HOME",
-          "impact": -0.219,
-          "value": 0.5156,
-          "value_str": "51.6%",
-          "direction": "away_cover"
+          "impact": 0.406,
+          "value": 0.5381,
+          "value_str": "53.8%",
+          "direction": "home_cover"
         },
         {
-          "feature": "away_margin_r5",
-          "label": "Avg Margin L5",
+          "feature": "away_pq_efg_pct_r10",
+          "label": "eFG% L10",
           "side": "AWAY",
-          "impact": 0.2,
-          "value": -9.4,
-          "value_str": "-9.4",
+          "impact": 0.403,
+          "value": 0.4557,
+          "value_str": "45.6%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "HOME",
+          "impact": 0.393,
+          "value": 0.1176,
+          "value_str": "11.8%",
           "direction": "home_cover"
         },
         {
           "feature": "away_pq_tov_pct_r10",
           "label": "Turnover% L10",
           "side": "AWAY",
-          "impact": 0.149,
+          "impact": 0.312,
           "value": 0.1621,
           "value_str": "16.2%",
           "direction": "home_cover"
         },
         {
+          "feature": "home_pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "side": "HOME",
+          "impact": 0.275,
+          "value": 0.0284,
+          "value_str": "2.8%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "HOME",
+          "impact": -0.204,
+          "value": 2.4156,
+          "value_str": "+2.4",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r5",
+          "label": "Player Quality L5",
+          "side": "AWAY",
+          "impact": 0.17,
+          "value": -0.3211,
+          "value_str": "-0.321",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r5",
+          "label": "Avg Margin L5",
+          "side": "AWAY",
+          "impact": 0.15,
+          "value": -9.4,
+          "value_str": "-9.4",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "HOME",
+          "impact": -0.129,
+          "value": 0.3154,
+          "value_str": "0.315",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "side": "HOME",
+          "impact": -0.1,
+          "value": 0.4932,
+          "value_str": "49.3%",
+          "direction": "away_cover"
+        },
+        {
           "feature": "away_pq_ft_rate_r10",
           "label": "FT Rate L10",
           "side": "AWAY",
-          "impact": -0.079,
+          "impact": -0.087,
           "value": 0.351,
           "value_str": "0.351",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_days_rest",
+          "label": "Days Rest",
+          "side": "HOME",
+          "impact": -0.086,
+          "value": 1.0,
+          "value_str": "1d",
           "direction": "away_cover"
         },
         {
           "feature": "away_net_rtg_r5",
           "label": "Net Rating L5",
           "side": "AWAY",
-          "impact": 0.056,
+          "impact": 0.018,
           "value": -11.3672,
           "value_str": "-11.4",
-          "direction": "home_cover"
-        },
-        {
-          "feature": "away_days_rest",
-          "label": "Days Rest",
-          "side": "AWAY",
-          "impact": 0.048,
-          "value": 2.0,
-          "value_str": "2d",
           "direction": "home_cover"
         },
         {
           "feature": "away_pace_r10",
           "label": "Pace L10",
           "side": "AWAY",
-          "impact": 0.004,
+          "impact": 0.015,
           "value": 81.5772,
           "value_str": "81.6",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 0.013,
+          "value": 2.0,
+          "value_str": "2d",
           "direction": "home_cover"
         }
       ],
@@ -382,13 +382,6 @@
             "detail": "2,666 mi cumulative \u00b7 3 cities",
             "team": "away",
             "severity": "caution"
-          },
-          {
-            "type": "rest_adv_home",
-            "label": "Home rested +2 days",
-            "detail": "4d vs 2d",
-            "team": "game",
-            "severity": "info"
           },
           {
             "type": "early_season",
@@ -409,27 +402,27 @@
     {
       "home_team": "Golden State Valkyries",
       "away_team": "Connecticut Sun",
-      "spread": null,
+      "spread": -12.5,
       "pred_margin": 17.5,
       "pred_ridge": 16.2,
       "pred_xgb": 18.4,
-      "edge": null,
-      "tier": "NO SPREAD",
-      "bet_direction": null,
-      "bet_team": null,
+      "edge": 5.01,
+      "tier": "--",
+      "bet_direction": "HOME",
+      "bet_team": "Golden State Valkyries",
       "has_bet": false,
-      "spread_display": "N/A",
+      "spread_display": "Golden State Valkyries -12.5",
       "pred_display": "Golden State Valkyries by 17.5",
-      "bet_label": "--",
+      "bet_label": "Golden State Valkyries -12.5",
       "inj_delta": 0.4,
       "adj_margin": 17.9,
       "adj_pred_display": "Golden State Valkyries by 17.9",
-      "adj_edge": "N/A",
-      "adj_tier": "NO SPREAD",
-      "adj_bet_direction": null,
-      "adj_bet_team": null,
+      "adj_edge": 5.4,
+      "adj_tier": "--",
+      "adj_bet_direction": "HOME",
+      "adj_bet_team": "Golden State Valkyries",
       "adj_has_bet": false,
-      "adj_bet_label": "--",
+      "adj_bet_label": "Golden State Valkyries -12.5",
       "inj_home": [
         {
           "player": "Juste Jocyte",
