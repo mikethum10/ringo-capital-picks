@@ -1,0 +1,1086 @@
+{
+  "date": "2026-05-08",
+  "generated_at": "2026-05-28T21:56:28.844462-04:00",
+  "games": [
+    {
+      "home_team": "New York Liberty",
+      "away_team": "Connecticut Sun",
+      "spread": null,
+      "pred_margin": 12.1,
+      "pred_ridge": 11.2,
+      "pred_xgb": 12.7,
+      "edge": null,
+      "tier": "NO SPREAD",
+      "bet_direction": null,
+      "bet_team": null,
+      "has_bet": false,
+      "spread_display": "N/A",
+      "pred_display": "New York Liberty by 12.1",
+      "bet_label": "--",
+      "inj_delta": 0.0,
+      "adj_margin": 12.1,
+      "adj_pred_display": "New York Liberty by 12.1",
+      "adj_edge": null,
+      "adj_tier": "NO SPREAD",
+      "adj_bet_direction": null,
+      "adj_bet_team": null,
+      "adj_has_bet": false,
+      "adj_bet_label": "--",
+      "inj_home": [],
+      "inj_away": [],
+      "inj_source": "none",
+      "stats": [
+        {
+          "key": "net_rtg_r10",
+          "label": "Net Rating L10",
+          "home_val": 0.3291,
+          "away_val": -10.4285,
+          "home_display": "+0.3",
+          "away_display": "-10.4",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "margin_r10",
+          "label": "Avg Margin L10",
+          "home_val": 0.0,
+          "away_val": -7.8,
+          "home_display": "+0.0",
+          "away_display": "-7.8",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "home_val": -0.0727,
+          "away_val": -0.209,
+          "home_display": "-0.073",
+          "away_display": "-0.209",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "home_val": 0.3906,
+          "away_val": 0.4106,
+          "home_display": "39.1%",
+          "away_display": "41.1%",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "home_val": 0.1515,
+          "away_val": 0.1445,
+          "home_display": "15.1%",
+          "away_display": "14.5%",
+          "edge_side": "AWAY",
+          "higher_is_better": false
+        },
+        {
+          "key": "pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "home_val": 0.0163,
+          "away_val": 0.0316,
+          "home_display": "1.6%",
+          "away_display": "3.2%",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pace_r10",
+          "label": "Pace L10",
+          "home_val": 75.6251,
+          "away_val": 78.5175,
+          "home_display": "75.6",
+          "away_display": "78.5",
+          "edge_side": null,
+          "higher_is_better": null
+        },
+        {
+          "key": "days_rest",
+          "label": "Days Rest",
+          "home_val": 10.0,
+          "away_val": 10.0,
+          "home_display": "10",
+          "away_display": "10",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        }
+      ],
+      "shap_drivers": [
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": 4.481,
+          "value": 0.0551,
+          "value_str": "5.5%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.212,
+          "value": 10.0,
+          "value_str": "10d",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "HOME",
+          "impact": -2.21,
+          "value": 0.0711,
+          "value_str": "7.1%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pace_r10",
+          "label": "Pace L10",
+          "side": "HOME",
+          "impact": -1.428,
+          "value": 75.6251,
+          "value_str": "75.6",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "AWAY",
+          "impact": 1.41,
+          "value": -7.8,
+          "value_str": "-7.8",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "side": "AWAY",
+          "impact": 1.388,
+          "value": 0.0316,
+          "value_str": "3.2%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": -1.285,
+          "value": -0.0727,
+          "value_str": "-0.073",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": 1.197,
+          "value": -0.209,
+          "value_str": "-0.209",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": 1.189,
+          "value": -10.4285,
+          "value_str": "-10.4",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "side": "HOME",
+          "impact": 1.185,
+          "value": 0.3906,
+          "value_str": "39.1%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r5",
+          "label": "Avg Margin L5",
+          "side": "AWAY",
+          "impact": -1.069,
+          "value": -15.8,
+          "value_str": "-15.8",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_net_rtg_r5",
+          "label": "Net Rating L5",
+          "side": "AWAY",
+          "impact": 0.94,
+          "value": -20.7807,
+          "value_str": "-20.8",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_days_rest",
+          "label": "Days Rest",
+          "side": "HOME",
+          "impact": -0.777,
+          "value": 10.0,
+          "value_str": "10d",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_ts_pct_r10",
+          "label": "True Shoot% L10",
+          "side": "AWAY",
+          "impact": 0.719,
+          "value": 0.4433,
+          "value_str": "44.3%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "side": "AWAY",
+          "impact": 0.695,
+          "value": 0.4106,
+          "value_str": "41.1%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "HOME",
+          "impact": -0.58,
+          "value": 0.3291,
+          "value_str": "+0.3",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "HOME",
+          "impact": 0.531,
+          "value": 0.2028,
+          "value_str": "0.203",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "AWAY",
+          "impact": 0.473,
+          "value": 0.3342,
+          "value_str": "0.334",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "HOME",
+          "impact": 0.265,
+          "value": 0.1515,
+          "value_str": "15.1%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "HOME",
+          "impact": -0.259,
+          "value": 0.0,
+          "value_str": "+0.0",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_ts_pct_r10",
+          "label": "True Shoot% L10",
+          "side": "HOME",
+          "impact": 0.248,
+          "value": 0.4229,
+          "value_str": "42.3%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pace_r10",
+          "label": "Pace L10",
+          "side": "AWAY",
+          "impact": 0.188,
+          "value": 78.5175,
+          "value_str": "78.5",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r5",
+          "label": "Player Quality L5",
+          "side": "AWAY",
+          "impact": 0.157,
+          "value": -0.2743,
+          "value_str": "-0.274",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "side": "HOME",
+          "impact": 0.152,
+          "value": 0.0163,
+          "value_str": "1.6%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "AWAY",
+          "impact": -0.142,
+          "value": 0.1445,
+          "value_str": "14.5%",
+          "direction": "away_cover"
+        }
+      ],
+      "actual_margin": 31.0,
+      "ats_result": null,
+      "context": {},
+      "actual_stats": {
+        "margin": 31.0,
+        "pace": 91.6,
+        "home_efg_pct": 0.597,
+        "home_ts_pct": 0.6572,
+        "home_tov_pct": 0.1656,
+        "home_ft_rate": 0.4627,
+        "home_ast_pct": 0.7429,
+        "home_oreb_pct": 0.2593,
+        "home_pts": 106.0,
+        "home_poss": 89.6,
+        "away_efg_pct": 0.4096,
+        "away_ts_pct": 0.4185,
+        "away_tov_pct": 0.1515,
+        "away_ft_rate": 0.1807,
+        "away_ast_pct": 0.6562,
+        "away_oreb_pct": 0.2857,
+        "away_pts": 75.0,
+        "away_poss": 93.6
+      }
+    },
+    {
+      "home_team": "Toronto Tempo",
+      "away_team": "Washington Mystics",
+      "spread": null,
+      "pred_margin": 19.0,
+      "pred_ridge": 13.1,
+      "pred_xgb": 22.9,
+      "edge": null,
+      "tier": "NO SPREAD",
+      "bet_direction": null,
+      "bet_team": null,
+      "has_bet": false,
+      "spread_display": "N/A",
+      "pred_display": "Toronto Tempo by 19.0",
+      "bet_label": "--",
+      "inj_delta": 0.0,
+      "adj_margin": 19.0,
+      "adj_pred_display": "Toronto Tempo by 19.0",
+      "adj_edge": null,
+      "adj_tier": "NO SPREAD",
+      "adj_bet_direction": null,
+      "adj_bet_team": null,
+      "adj_has_bet": false,
+      "adj_bet_label": "--",
+      "inj_home": [],
+      "inj_away": [],
+      "inj_source": "none",
+      "stats": [
+        {
+          "key": "net_rtg_r10",
+          "label": "Net Rating L10",
+          "home_val": 0.1923,
+          "away_val": -18.9315,
+          "home_display": "+0.2",
+          "away_display": "-18.9",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "margin_r10",
+          "label": "Avg Margin L10",
+          "home_val": 0.2,
+          "away_val": -14.4,
+          "home_display": "+0.2",
+          "away_display": "-14.4",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "home_val": -0.1104,
+          "away_val": -0.4162,
+          "home_display": "-0.110",
+          "away_display": "-0.416",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "home_val": 0.4346,
+          "away_val": 0.5011,
+          "home_display": "43.5%",
+          "away_display": "50.1%",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "home_val": 0.184,
+          "away_val": 0.1471,
+          "home_display": "18.4%",
+          "away_display": "14.7%",
+          "edge_side": "AWAY",
+          "higher_is_better": false
+        },
+        {
+          "key": "pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "home_val": 0.0204,
+          "away_val": 0.0303,
+          "home_display": "2.0%",
+          "away_display": "3.0%",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pace_r10",
+          "label": "Pace L10",
+          "home_val": 80.5738,
+          "away_val": 77.4018,
+          "home_display": "80.6",
+          "away_display": "77.4",
+          "edge_side": null,
+          "higher_is_better": null
+        },
+        {
+          "key": "days_rest",
+          "label": "Days Rest",
+          "home_val": 10.0,
+          "away_val": 10.0,
+          "home_display": "10",
+          "away_display": "10",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        }
+      ],
+      "shap_drivers": [
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": 4.592,
+          "value": 0.078,
+          "value_str": "7.8%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "AWAY",
+          "impact": 3.491,
+          "value": -14.4,
+          "value_str": "-14.4",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": 2.753,
+          "value": -0.4162,
+          "value_str": "-0.416",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "side": "HOME",
+          "impact": 2.4,
+          "value": 0.4346,
+          "value_str": "43.5%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 2.346,
+          "value": 10.0,
+          "value_str": "10d",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": 2.027,
+          "value": -18.9315,
+          "value_str": "-18.9",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pace_r10",
+          "label": "Pace L10",
+          "side": "AWAY",
+          "impact": 1.691,
+          "value": 77.4018,
+          "value_str": "77.4",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": -1.639,
+          "value": -0.1104,
+          "value_str": "-0.110",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r5",
+          "label": "Player Quality L5",
+          "side": "AWAY",
+          "impact": 1.495,
+          "value": -0.4791,
+          "value_str": "-0.479",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r5",
+          "label": "Net Rating L5",
+          "side": "AWAY",
+          "impact": 1.174,
+          "value": -21.7151,
+          "value_str": "-21.7",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "side": "AWAY",
+          "impact": 0.966,
+          "value": 0.0303,
+          "value_str": "3.0%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ts_pct_r10",
+          "label": "True Shoot% L10",
+          "side": "HOME",
+          "impact": -0.874,
+          "value": 0.4855,
+          "value_str": "48.5%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "HOME",
+          "impact": 0.773,
+          "value": 0.1114,
+          "value_str": "11.1%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_days_rest",
+          "label": "Days Rest",
+          "side": "HOME",
+          "impact": -0.738,
+          "value": 10.0,
+          "value_str": "10d",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "AWAY",
+          "impact": 0.456,
+          "value": 0.3051,
+          "value_str": "0.305",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "HOME",
+          "impact": 0.426,
+          "value": 0.184,
+          "value_str": "18.4%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "HOME",
+          "impact": -0.359,
+          "value": 0.1923,
+          "value_str": "+0.2",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pace_r10",
+          "label": "Pace L10",
+          "side": "HOME",
+          "impact": -0.354,
+          "value": 80.5738,
+          "value_str": "80.6",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_margin_r5",
+          "label": "Avg Margin L5",
+          "side": "AWAY",
+          "impact": 0.312,
+          "value": -16.8,
+          "value_str": "-16.8",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "side": "AWAY",
+          "impact": 0.278,
+          "value": 0.5011,
+          "value_str": "50.1%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_ts_pct_r10",
+          "label": "True Shoot% L10",
+          "side": "AWAY",
+          "impact": -0.254,
+          "value": 0.5395,
+          "value_str": "54.0%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "HOME",
+          "impact": -0.227,
+          "value": 0.2,
+          "value_str": "+0.2",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "side": "HOME",
+          "impact": 0.146,
+          "value": 0.0204,
+          "value_str": "2.0%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "HOME",
+          "impact": 0.037,
+          "value": 0.311,
+          "value_str": "0.311",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "AWAY",
+          "impact": -0.021,
+          "value": 0.1471,
+          "value_str": "14.7%",
+          "direction": "away_cover"
+        }
+      ],
+      "actual_margin": -3.0,
+      "ats_result": null,
+      "context": {},
+      "actual_stats": {
+        "margin": -3.0,
+        "pace": 84.1,
+        "home_efg_pct": 0.3095,
+        "home_ts_pct": 0.4145,
+        "home_tov_pct": 0.1695,
+        "home_ft_rate": 0.5556,
+        "home_ast_pct": 0.5882,
+        "home_oreb_pct": 0.2045,
+        "home_pts": 65.0,
+        "home_poss": 85.4,
+        "away_efg_pct": 0.4297,
+        "away_ts_pct": 0.4615,
+        "away_tov_pct": 0.1963,
+        "away_ft_rate": 0.3438,
+        "away_ast_pct": 0.56,
+        "away_oreb_pct": 0.2432,
+        "away_pts": 68.0,
+        "away_poss": 82.7
+      }
+    },
+    {
+      "home_team": "Seattle Storm",
+      "away_team": "Golden State Valkyries",
+      "spread": null,
+      "pred_margin": -0.8,
+      "pred_ridge": -2.1,
+      "pred_xgb": 0.1,
+      "edge": null,
+      "tier": "NO SPREAD",
+      "bet_direction": null,
+      "bet_team": null,
+      "has_bet": false,
+      "spread_display": "N/A",
+      "pred_display": "Golden State Valkyries by 0.8",
+      "bet_label": "--",
+      "inj_delta": 0.0,
+      "adj_margin": -0.8,
+      "adj_pred_display": "Golden State Valkyries by 0.8",
+      "adj_edge": null,
+      "adj_tier": "NO SPREAD",
+      "adj_bet_direction": null,
+      "adj_bet_team": null,
+      "adj_has_bet": false,
+      "adj_bet_label": "--",
+      "inj_home": [],
+      "inj_away": [],
+      "inj_source": "none",
+      "stats": [
+        {
+          "key": "net_rtg_r10",
+          "label": "Net Rating L10",
+          "home_val": -3.7453,
+          "away_val": 2.113,
+          "home_display": "-3.7",
+          "away_display": "+2.1",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "margin_r10",
+          "label": "Avg Margin L10",
+          "home_val": -3.0,
+          "away_val": 1.4,
+          "home_display": "-3.0",
+          "away_display": "+1.4",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "home_val": 0.0072,
+          "away_val": -0.0606,
+          "home_display": "+0.007",
+          "away_display": "-0.061",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "home_val": 0.5251,
+          "away_val": 0.4631,
+          "home_display": "52.5%",
+          "away_display": "46.3%",
+          "edge_side": "HOME",
+          "higher_is_better": true
+        },
+        {
+          "key": "pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "home_val": 0.1508,
+          "away_val": 0.1565,
+          "home_display": "15.1%",
+          "away_display": "15.6%",
+          "edge_side": "HOME",
+          "higher_is_better": false
+        },
+        {
+          "key": "pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "home_val": 0.0174,
+          "away_val": 0.0245,
+          "home_display": "1.7%",
+          "away_display": "2.5%",
+          "edge_side": "AWAY",
+          "higher_is_better": true
+        },
+        {
+          "key": "pace_r10",
+          "label": "Pace L10",
+          "home_val": 79.1078,
+          "away_val": 76.2131,
+          "home_display": "79.1",
+          "away_display": "76.2",
+          "edge_side": null,
+          "higher_is_better": null
+        },
+        {
+          "key": "days_rest",
+          "label": "Days Rest",
+          "home_val": 10.0,
+          "away_val": 10.0,
+          "home_display": "10",
+          "away_display": "10",
+          "edge_side": "EVEN",
+          "higher_is_better": true
+        }
+      ],
+      "shap_drivers": [
+        {
+          "feature": "home_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "HOME",
+          "impact": -7.07,
+          "value": 0.0604,
+          "value_str": "6.0%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_days_rest",
+          "label": "Days Rest",
+          "side": "AWAY",
+          "impact": 3.783,
+          "value": 10.0,
+          "value_str": "10d",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_ast_pct_r10",
+          "label": "Assist% L10",
+          "side": "AWAY",
+          "impact": -2.15,
+          "value": 0.1146,
+          "value_str": "11.5%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "HOME",
+          "impact": -1.377,
+          "value": -3.7453,
+          "value_str": "-3.7",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_days_rest",
+          "label": "Days Rest",
+          "side": "HOME",
+          "impact": 1.24,
+          "value": 10.0,
+          "value_str": "10d",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ts_pct_r10",
+          "label": "True Shoot% L10",
+          "side": "HOME",
+          "impact": 1.194,
+          "value": 0.5519,
+          "value_str": "55.2%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pace_r10",
+          "label": "Pace L10",
+          "side": "AWAY",
+          "impact": 1.117,
+          "value": 76.2131,
+          "value_str": "76.2",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "side": "AWAY",
+          "impact": -0.884,
+          "value": 0.0245,
+          "value_str": "2.5%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r5",
+          "label": "Player Quality L5",
+          "side": "AWAY",
+          "impact": 0.867,
+          "value": -0.1495,
+          "value_str": "-0.150",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "HOME",
+          "impact": 0.785,
+          "value": 0.0072,
+          "value_str": "+0.007",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r5",
+          "label": "Net Rating L5",
+          "side": "AWAY",
+          "impact": 0.769,
+          "value": -13.9,
+          "value_str": "-13.9",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "AWAY",
+          "impact": -0.764,
+          "value": 0.258,
+          "value_str": "0.258",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_margin_r5",
+          "label": "Avg Margin L5",
+          "side": "AWAY",
+          "impact": 0.669,
+          "value": -11.2,
+          "value_str": "-11.2",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "AWAY",
+          "impact": -0.603,
+          "value": 1.4,
+          "value_str": "+1.4",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_margin_r10",
+          "label": "Avg Margin L10",
+          "side": "HOME",
+          "impact": -0.547,
+          "value": -3.0,
+          "value_str": "-3.0",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_pm_per_min_r10",
+          "label": "Player Quality L10",
+          "side": "AWAY",
+          "impact": 0.475,
+          "value": -0.0606,
+          "value_str": "-0.061",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "side": "AWAY",
+          "impact": 0.416,
+          "value": 0.4631,
+          "value_str": "46.3%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "AWAY",
+          "impact": 0.402,
+          "value": 0.1565,
+          "value_str": "15.6%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_oreb_pct_r10",
+          "label": "Off Reb% L10",
+          "side": "HOME",
+          "impact": 0.323,
+          "value": 0.0174,
+          "value_str": "1.7%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "away_net_rtg_r10",
+          "label": "Net Rating L10",
+          "side": "AWAY",
+          "impact": -0.296,
+          "value": 2.113,
+          "value_str": "+2.1",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pq_efg_pct_r10",
+          "label": "eFG% L10",
+          "side": "HOME",
+          "impact": -0.293,
+          "value": 0.5251,
+          "value_str": "52.5%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "away_pq_ts_pct_r10",
+          "label": "True Shoot% L10",
+          "side": "AWAY",
+          "impact": -0.256,
+          "value": 0.5096,
+          "value_str": "51.0%",
+          "direction": "away_cover"
+        },
+        {
+          "feature": "home_pace_r10",
+          "label": "Pace L10",
+          "side": "HOME",
+          "impact": 0.194,
+          "value": 79.1078,
+          "value_str": "79.1",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_tov_pct_r10",
+          "label": "Turnover% L10",
+          "side": "HOME",
+          "impact": 0.176,
+          "value": 0.1508,
+          "value_str": "15.1%",
+          "direction": "home_cover"
+        },
+        {
+          "feature": "home_pq_ft_rate_r10",
+          "label": "FT Rate L10",
+          "side": "HOME",
+          "impact": -0.156,
+          "value": 0.2855,
+          "value_str": "0.285",
+          "direction": "away_cover"
+        }
+      ],
+      "actual_margin": -11.0,
+      "ats_result": null,
+      "context": {},
+      "actual_stats": {
+        "margin": -11.0,
+        "pace": 77.8,
+        "home_efg_pct": 0.4841,
+        "home_ts_pct": 0.5342,
+        "home_tov_pct": 0.1575,
+        "home_ft_rate": 0.4286,
+        "home_ast_pct": 0.6154,
+        "home_oreb_pct": 0.3714,
+        "home_pts": 80.0,
+        "home_poss": 75.9,
+        "away_efg_pct": 0.5203,
+        "away_ts_pct": 0.5437,
+        "away_tov_pct": 0.0971,
+        "away_ft_rate": 0.2973,
+        "away_ast_pct": 0.7097,
+        "away_oreb_pct": 0.3171,
+        "away_pts": 91.0,
+        "away_poss": 79.7
+      }
+    }
+  ]
+}
