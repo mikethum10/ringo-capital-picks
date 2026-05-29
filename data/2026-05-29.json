@@ -1,31 +1,31 @@
 {
   "date": "2026-05-29",
-  "generated_at": "2026-05-29T09:40:15.809687-04:00",
+  "generated_at": "2026-05-29T18:39:35.134496-04:00",
   "games": [
     {
       "home_team": "New York Liberty",
       "away_team": "Phoenix Mercury",
-      "spread": -6.5,
+      "spread": -5.5,
       "pred_margin": 2.1,
       "pred_ridge": 1.4,
       "pred_xgb": 2.6,
-      "edge": -4.38,
-      "tier": "MEDIUM",
+      "edge": -3.38,
+      "tier": "LEAN",
       "bet_direction": "AWAY",
       "bet_team": "Phoenix Mercury",
       "has_bet": true,
-      "spread_display": "New York Liberty -6.5",
+      "spread_display": "New York Liberty -5.5",
       "pred_display": "New York Liberty by 2.1",
-      "bet_label": "Phoenix Mercury +6.5",
-      "inj_delta": 0.0,
-      "adj_margin": 2.1,
-      "adj_pred_display": "New York Liberty by 2.1",
-      "adj_edge": -4.4,
-      "adj_tier": "MEDIUM",
+      "bet_label": "Phoenix Mercury +5.5",
+      "inj_delta": 1.5,
+      "adj_margin": 3.6,
+      "adj_pred_display": "New York Liberty by 3.6",
+      "adj_edge": -1.9,
+      "adj_tier": "--",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Phoenix Mercury",
-      "adj_has_bet": true,
-      "adj_bet_label": "Phoenix Mercury +6.5",
+      "adj_has_bet": false,
+      "adj_bet_label": "Phoenix Mercury +5.5",
       "inj_home": [
         {
           "player": "Marine Fauthoux",
@@ -48,9 +48,31 @@
           "tier": null,
           "avg_min": null,
           "found": false
+        },
+        {
+          "player": "Anneli Maley",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 0.6,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_away": [
+        {
+          "player": "DeWanna Bonner",
+          "status": "GTD",
+          "gtd": true,
+          "impact": 3.0,
+          "raw_impact": 3.0,
+          "miss_frac": 0.0,
+          "tier": "STARTER",
+          "avg_min": 26.4,
+          "found": true
+        },
         {
           "player": "Sami Whitcomb",
           "status": "OUT",
@@ -417,15 +439,38 @@
       "adj_bet_team": "Washington Mystics",
       "adj_has_bet": false,
       "adj_bet_label": "Washington Mystics -2.5",
-      "inj_home": [],
-      "inj_away": [
+      "inj_home": [
         {
-          "player": "Sania Feagin",
-          "status": "GTD",
-          "gtd": true,
+          "player": "Darianna Littlepage-Buggs",
+          "status": "OUT",
+          "gtd": false,
           "impact": 0.0,
           "raw_impact": 0.0,
           "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
+        }
+      ],
+      "inj_away": [
+        {
+          "player": "Sania Feagin",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
+        },
+        {
+          "player": "Kate Martin",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 0.2,
           "tier": null,
           "avg_min": null,
           "found": false
@@ -440,6 +485,17 @@
           "tier": "STAR",
           "avg_min": 31.4,
           "found": true
+        },
+        {
+          "player": "Laura Ziegler",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_source": "rotowire",
@@ -857,6 +913,17 @@
           "tier": "STARTER",
           "avg_min": 25.3,
           "found": true
+        },
+        {
+          "player": "Maddy Westbeld",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_away": [
