@@ -626,22 +626,29 @@ function buildInjurySection(g) {
 
 function gameCard(g, date) {
   const inj = hasInjuries(g);
-  const hasBet     = inj ? (g.adj_has_bet ?? g.has_bet)               : g.has_bet;
-  const tier       = inj ? (g.adj_tier ?? g.tier)                     : g.tier;
-  const betDir     = inj ? (g.adj_bet_direction ?? g.bet_direction)   : g.bet_direction;
-  const betTeam    = inj ? (g.adj_bet_team ?? g.bet_team)             : g.bet_team;
+  const hasBet     = g.has_bet;               // always base model
+  const tier       = g.tier;                  // always base model
+  const betDir     = g.bet_direction;
+  const betTeam    = g.bet_team;
+  const betRemoved = inj && g.has_bet && !g.adj_has_bet;
   const spread     = marketLineStr(g.spread, g.home_team);
   const edgeStr    = fmtEdge(g.edge, g.home_team, g.away_team);
   const pred       = modelLineStr(g.pred_margin, g.home_team, g.away_team);
   const hasAdjDiff = inj && g.adj_margin != null && g.adj_margin !== g.pred_margin;
   const adjPred    = hasAdjDiff ? modelLineStr(g.adj_margin, g.home_team, g.away_team) : null;
-  const betLabel   = hasBet ? (inj ? (g.adj_bet_label ?? g.bet_label ?? `${betDir} ${betTeam}`) : (g.bet_label ?? `${betDir} ${betTeam}`)) : '—';
+  const betLabel   = hasBet
+    ? (betRemoved
+        ? `<s class="text-slate-400">${g.bet_label}</s><span class="text-orange-500 text-xs font-normal ml-1">· removed by injuries</span>`
+        : (g.bet_label ?? `${betDir} ${betTeam}`))
+    : '—';
   const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
   const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
   const isSideFlip  = inj && g.has_bet && g.adj_has_bet && baseBetStr !== adjBetStr;
   const isBetAppear = inj && !g.has_bet && g.adj_has_bet;
   const borderCls = hasBet
-    ? (tier === 'STRONG' ? 'border-l-4 border-green-500' : tier === 'MEDIUM' ? 'border-l-4 border-blue-500' : 'border-l-4 border-amber-500')
+    ? (betRemoved
+        ? 'border-l-4 border-orange-300'
+        : (tier === 'STRONG' ? 'border-l-4 border-green-500' : tier === 'MEDIUM' ? 'border-l-4 border-blue-500' : 'border-l-4 border-amber-500'))
     : 'border-l-4 border-slate-200';
   const resultBadge = g.ats_result
     ? `<span class="ats-${g.ats_result} ml-2">${g.ats_result}</span>`
@@ -748,8 +755,8 @@ async function render() {
     // Cache today's games for pick results
     dateCache[date] = pred.games || [];
 
-    const effHasBet = g => hasInjuries(g) ? (g.adj_has_bet ?? g.has_bet) : g.has_bet;
-    const effTier   = g => hasInjuries(g) ? (g.adj_tier ?? g.tier)       : g.tier;
+    const effHasBet = g => g.has_bet;           // always base model
+    const effTier   = g => g.tier;              // always base model
     const bets    = (pred.games||[]).filter(effHasBet).sort((a,b) => (TIER_ORDER[effTier(a)]??9) - (TIER_ORDER[effTier(b)]??9));
     const nonBets = (pred.games||[]).filter(g => !effHasBet(g));
 
