@@ -630,11 +630,11 @@ function gameCard(g, date) {
   const tier       = inj ? (g.adj_tier ?? g.tier)                     : g.tier;
   const betDir     = inj ? (g.adj_bet_direction ?? g.bet_direction)   : g.bet_direction;
   const betTeam    = inj ? (g.adj_bet_team ?? g.bet_team)             : g.bet_team;
-  const dispMargin = inj ? (g.adj_margin ?? g.pred_margin)            : g.pred_margin;
-  const dispEdge   = inj ? (g.adj_edge ?? g.edge)                     : g.edge;
   const spread     = marketLineStr(g.spread, g.home_team);
-  const edgeStr    = fmtEdge(dispEdge, g.home_team, g.away_team);
-  const pred       = modelLineStr(dispMargin, g.home_team, g.away_team);
+  const edgeStr    = fmtEdge(g.edge, g.home_team, g.away_team);
+  const pred       = modelLineStr(g.pred_margin, g.home_team, g.away_team);
+  const hasAdjDiff = inj && g.adj_margin != null && g.adj_margin !== g.pred_margin;
+  const adjPred    = hasAdjDiff ? modelLineStr(g.adj_margin, g.home_team, g.away_team) : null;
   const betLabel   = hasBet ? (inj ? (g.adj_bet_label ?? g.bet_label ?? `${betDir} ${betTeam}`) : (g.bet_label ?? `${betDir} ${betTeam}`)) : '—';
   const baseBetStr = ((g.bet_direction || '') + ' ' + (g.bet_team || '')).trim();
   const adjBetStr  = ((g.adj_bet_direction || '') + ' ' + (g.adj_bet_team || '')).trim();
@@ -673,7 +673,8 @@ function gameCard(g, date) {
         <div class="flex items-center gap-4 ml-4 shrink-0">
           <div class="text-right hidden sm:block">
             <div class="text-xs text-slate-400">Market / Model / Edge</div>
-            <div class="font-mono text-sm text-slate-700">${spread} / ${pred} / <span class="${dispEdge != null && Math.abs(dispEdge) >= 2.5 ? 'text-green-600 font-bold' : 'text-slate-500'}">${edgeStr}</span></div>
+            <div class="font-mono text-sm text-slate-700">${spread} / ${pred} / <span class="${g.edge != null && Math.abs(g.edge) >= 2.5 ? 'text-green-600 font-bold' : 'text-slate-500'}">${edgeStr}</span></div>
+            ${adjPred ? `<div class="font-mono text-xs text-amber-600 mt-0.5">Adj: ${adjPred} <span class="text-slate-400">(w/ injuries)</span></div>` : ''}
           </div>
           <span class="chevron text-slate-400 text-lg">&#8964;</span>
         </div>
@@ -681,8 +682,12 @@ function gameCard(g, date) {
       <div class="px-5 pb-5 border-t border-slate-100">
         <div class="sm:hidden mb-3 pt-3 grid grid-cols-3 text-center text-xs text-slate-500">
           <div><div class="font-semibold text-slate-700 text-base">${spread}</div>Market</div>
-          <div><div class="font-semibold text-slate-700 text-base">${pred}</div>Model</div>
-          <div><div class="font-semibold ${dispEdge != null && Math.abs(dispEdge) >= 2.5 ? 'text-green-600' : 'text-slate-700'} text-base">${edgeStr}</div>Edge</div>
+          <div>
+            <div class="font-semibold text-slate-700 text-base">${pred}</div>
+            ${adjPred ? `<div class="font-semibold text-amber-600 text-xs">${adjPred}</div>` : ''}
+            Model${adjPred ? ' / Adj' : ''}
+          </div>
+          <div><div class="font-semibold ${g.edge != null && Math.abs(g.edge) >= 2.5 ? 'text-green-600' : 'text-slate-700'} text-base">${edgeStr}</div>Edge</div>
         </div>
         ${modelBreakdown(g)}
         ${buildInjurySection(g)}
