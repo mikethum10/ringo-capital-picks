@@ -1,27 +1,27 @@
 {
   "record": {
-    "W": 2,
-    "L": 2,
+    "W": 5,
+    "L": 4,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
-      "W": 0,
+      "W": 1,
       "L": 1,
       "P": 0
     },
     "STRONG": {
-      "W": 1,
-      "L": 1,
+      "W": 2,
+      "L": 3,
       "P": 0
     },
     "LEAN": {
-      "W": 1,
+      "W": 2,
       "L": 0,
       "P": 0
     }
   },
-  "roi_units": -0.182,
+  "roi_units": 0.545,
   "bets": [
     {
       "date": "2026-05-09",
@@ -50,14 +50,14 @@
       "ats_result": "L"
     },
     {
-      "date": "2026-05-10",
+      "date": "2026-05-09",
       "home_team": "Minnesota Lynx",
       "away_team": "Atlanta Dream",
       "bet_direction": "HOME",
       "bet_team": "Minnesota Lynx",
-      "spread": 4.0,
+      "spread": 4.5,
       "pred_margin": 5.0,
-      "edge": 9.02,
+      "edge": 9.52,
       "tier": "STRONG",
       "actual_margin": -1.0,
       "ats_result": "W"
@@ -74,7 +74,72 @@
       "tier": "LEAN",
       "actual_margin": -6.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-05-23",
+      "home_team": "Atlanta Dream",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "AWAY",
+      "bet_team": "Phoenix Mercury",
+      "spread": -5.5,
+      "pred_margin": 2.9,
+      "edge": -2.58,
+      "tier": "LEAN",
+      "actual_margin": 2.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-05-23",
+      "home_team": "New York Liberty",
+      "away_team": "Dallas Wings",
+      "bet_direction": "AWAY",
+      "bet_team": "Dallas Wings",
+      "spread": -7.5,
+      "pred_margin": 2.5,
+      "edge": -4.95,
+      "tier": "MEDIUM",
+      "actual_margin": -15.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-05-23",
+      "home_team": "Seattle Storm",
+      "away_team": "Washington Mystics",
+      "bet_direction": "HOME",
+      "bet_team": "Seattle Storm",
+      "spread": 3.0,
+      "pred_margin": 10.3,
+      "edge": 13.27,
+      "tier": "STRONG",
+      "actual_margin": 12.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-05-27",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Atlanta Dream",
+      "bet_direction": "AWAY",
+      "bet_team": "Atlanta Dream",
+      "spread": 2.5,
+      "pred_margin": -8.1,
+      "edge": -5.64,
+      "tier": "STRONG",
+      "actual_margin": 15.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-05-27",
+      "home_team": "Seattle Storm",
+      "away_team": "Washington Mystics",
+      "bet_direction": "HOME",
+      "bet_team": "Seattle Storm",
+      "spread": 2.5,
+      "pred_margin": 13.5,
+      "edge": 15.98,
+      "tier": "STRONG",
+      "actual_margin": -14.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-05-24"
+  "updated": "2026-05-28"
 }

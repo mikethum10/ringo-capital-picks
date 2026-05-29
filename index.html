@@ -964,7 +964,7 @@ async function renderGameLog() {
     html += `</div></div>`;
   }
   container.innerHTML = html;
-  _gameLogLoaded = true;
+  if (sortedDates.length) _gameLogLoaded = true;
 }
 
 function buildGameLogCard(g) {
