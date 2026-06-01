@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "generated_at": "2026-06-01T12:03:21.155415-04:00",
+  "generated_at": "2026-06-01T19:04:19.704368-04:00",
   "games": [
     {
       "home_team": "Dallas Wings",
@@ -17,10 +17,10 @@
       "spread_display": "Dallas Wings -12.5",
       "pred_display": "Dallas Wings by 8.0",
       "bet_label": "Seattle Storm +12.5",
-      "inj_delta": -1.1,
-      "adj_margin": 6.8,
-      "adj_pred_display": "Dallas Wings by 6.8",
-      "adj_edge": -5.7,
+      "inj_delta": -1.0,
+      "adj_margin": 7.0,
+      "adj_pred_display": "Dallas Wings by 7.0",
+      "adj_edge": -5.5,
       "adj_tier": "STRONG",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Seattle Storm",
@@ -28,15 +28,15 @@
       "adj_bet_label": "Seattle Storm +12.5",
       "inj_home": [
         {
-          "player": "Alysha Clark",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.3,
-          "raw_impact": 0.5,
-          "miss_frac": 0.4,
-          "tier": "BENCH",
-          "avg_min": 7.6,
-          "found": true
+          "player": "Dulcy Fankam Mendjiadeu",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         },
         {
           "player": "Awak Kuier",
@@ -48,6 +48,17 @@
           "tier": "ROTATION",
           "avg_min": 12.0,
           "found": true
+        },
+        {
+          "player": "Costanza Verona",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_away": [
@@ -436,27 +447,27 @@
     {
       "home_team": "Phoenix Mercury",
       "away_team": "Minnesota Lynx",
-      "spread": 3.5,
+      "spread": 2.5,
       "pred_margin": -2.4,
       "pred_ridge": -2.2,
       "pred_xgb": -2.5,
-      "edge": 1.13,
+      "edge": 0.13,
       "tier": "--",
       "bet_direction": "HOME",
       "bet_team": "Phoenix Mercury",
       "has_bet": false,
-      "spread_display": "Minnesota Lynx -3.5",
+      "spread_display": "Minnesota Lynx -2.5",
       "pred_display": "Minnesota Lynx by 2.4",
-      "bet_label": "Phoenix Mercury +3.5",
+      "bet_label": "Phoenix Mercury +2.5",
       "inj_delta": 0.0,
       "adj_margin": -2.4,
       "adj_pred_display": "Minnesota Lynx by 2.4",
-      "adj_edge": 1.1,
+      "adj_edge": 0.1,
       "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Phoenix Mercury",
       "adj_has_bet": false,
-      "adj_bet_label": "Phoenix Mercury +3.5",
+      "adj_bet_label": "Phoenix Mercury +2.5",
       "inj_home": [
         {
           "player": "Sami Whitcomb",
