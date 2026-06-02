@@ -1,6 +1,6 @@
 {
   "date": "2026-06-02",
-  "generated_at": "2026-06-02T10:03:32.159030-04:00",
+  "generated_at": "2026-06-02T19:05:04.337932-04:00",
   "games": [
     {
       "home_team": "Atlanta Dream",
@@ -17,10 +17,10 @@
       "spread_display": "Atlanta Dream -13.5",
       "pred_display": "Atlanta Dream by 17.3",
       "bet_label": "Atlanta Dream -13.5",
-      "inj_delta": 0.8,
-      "adj_margin": 18.1,
-      "adj_pred_display": "Atlanta Dream by 18.1",
-      "adj_edge": 4.6,
+      "inj_delta": 1.6,
+      "adj_margin": 18.9,
+      "adj_pred_display": "Atlanta Dream by 18.9",
+      "adj_edge": 5.4,
       "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Atlanta Dream",
@@ -37,6 +37,17 @@
           "tier": "STARTER",
           "avg_min": 26.3,
           "found": true
+        },
+        {
+          "player": "Amy Okonkwo",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 0.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_away": [
@@ -49,6 +60,28 @@
           "miss_frac": 0.2,
           "tier": "ROTATION",
           "avg_min": 18.3,
+          "found": true
+        },
+        {
+          "player": "Ashlon Jackson",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 0.2,
+          "tier": null,
+          "avg_min": null,
+          "found": false
+        },
+        {
+          "player": "Hailey Van Lith",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.8,
+          "raw_impact": 1.0,
+          "miss_frac": 0.2,
+          "tier": "ROTATION",
+          "avg_min": 17.6,
           "found": true
         }
       ],
