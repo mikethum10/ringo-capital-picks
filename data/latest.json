@@ -1,6 +1,6 @@
 {
   "date": "2026-06-04",
-  "generated_at": "2026-06-04T08:44:57.798770-04:00",
+  "generated_at": "2026-06-04T18:23:49.458616-04:00",
   "games": [
     {
       "home_team": "Indiana Fever",
@@ -17,37 +17,37 @@
       "spread_display": "Indiana Fever -1.5",
       "pred_display": "Indiana Fever by 0.2",
       "bet_label": "Atlanta Dream +1.5",
-      "inj_delta": -1.3,
-      "adj_margin": -1.1,
-      "adj_pred_display": "Atlanta Dream by 1.1",
-      "adj_edge": -2.6,
-      "adj_tier": "LEAN",
+      "inj_delta": 0.0,
+      "adj_margin": 0.2,
+      "adj_pred_display": "Indiana Fever by 0.2",
+      "adj_edge": -1.3,
+      "adj_tier": "--",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Atlanta Dream",
-      "adj_has_bet": true,
+      "adj_has_bet": false,
       "adj_bet_label": "Atlanta Dream +1.5",
       "inj_home": [
         {
-          "player": "Caitlin Clark",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 2.4,
-          "raw_impact": 3.0,
-          "miss_frac": 0.2,
-          "tier": "STARTER",
-          "avg_min": 25.2,
+          "player": "Bree Hall",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.5,
+          "miss_frac": 1.0,
+          "tier": "BENCH",
+          "avg_min": 5.0,
           "found": true
         },
         {
-          "player": "Damiris Dantas",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.2,
-          "raw_impact": 1.0,
-          "miss_frac": 0.8,
-          "tier": "ROTATION",
-          "avg_min": 13.0,
-          "found": true
+          "player": "Justine Pissott",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_away": [
@@ -61,6 +61,17 @@
           "tier": "STARTER",
           "avg_min": 26.3,
           "found": true
+        },
+        {
+          "player": "Amy Okonkwo",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 0.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_source": "rotowire",
@@ -403,27 +414,27 @@
     {
       "home_team": "Minnesota Lynx",
       "away_team": "Golden State Valkyries",
-      "spread": -2.5,
+      "spread": -3.5,
       "pred_margin": 2.5,
       "pred_ridge": 3.2,
       "pred_xgb": 2.0,
-      "edge": 0.0,
+      "edge": -1.0,
       "tier": "--",
-      "bet_direction": "HOME",
-      "bet_team": "Minnesota Lynx",
+      "bet_direction": "AWAY",
+      "bet_team": "Golden State Valkyries",
       "has_bet": false,
-      "spread_display": "Minnesota Lynx -2.5",
+      "spread_display": "Minnesota Lynx -3.5",
       "pred_display": "Minnesota Lynx by 2.5",
-      "bet_label": "Minnesota Lynx -2.5",
+      "bet_label": "Golden State Valkyries +3.5",
       "inj_delta": 0.0,
       "adj_margin": 2.5,
       "adj_pred_display": "Minnesota Lynx by 2.5",
-      "adj_edge": 0.0,
+      "adj_edge": -1.0,
       "adj_tier": "--",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Golden State Valkyries",
       "adj_has_bet": false,
-      "adj_bet_label": "Golden State Valkyries +2.5",
+      "adj_bet_label": "Golden State Valkyries +3.5",
       "inj_home": [
         {
           "player": "Napheesa Collier",
@@ -448,30 +459,7 @@
           "found": true
         }
       ],
-      "inj_away": [
-        {
-          "player": "Ashten Prechtel",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.0,
-          "raw_impact": 0.0,
-          "miss_frac": 0.8,
-          "tier": null,
-          "avg_min": null,
-          "found": false
-        },
-        {
-          "player": "Miela Sowah",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.0,
-          "raw_impact": 0.0,
-          "miss_frac": 1.0,
-          "tier": null,
-          "avg_min": null,
-          "found": false
-        }
-      ],
+      "inj_away": [],
       "inj_source": "rotowire",
       "stats": [
         {
