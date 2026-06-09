@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 13,
+    "W": 14,
     "L": 9,
     "P": 0
   },
@@ -11,7 +11,7 @@
       "P": 0
     },
     "STRONG": {
-      "W": 4,
+      "W": 5,
       "L": 4,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 2.817,
+  "roi_units": 3.726,
   "bets": [
     {
       "date": "2026-05-09",
@@ -308,7 +308,20 @@
       "tier": "STRONG",
       "actual_margin": -20.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-06-08",
+      "home_team": "Connecticut Sun",
+      "away_team": "New York Liberty",
+      "bet_direction": "HOME",
+      "bet_team": "Connecticut Sun",
+      "spread": 12.5,
+      "pred_margin": -3.4,
+      "edge": 9.06,
+      "tier": "STRONG",
+      "actual_margin": -3.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-06-08"
+  "updated": "2026-06-09"
 }
