@@ -1,6 +1,6 @@
 {
   "date": "2026-06-08",
-  "generated_at": "2026-06-08T18:42:35.149754-04:00",
+  "generated_at": "2026-06-08T20:04:21.165339-04:00",
   "games": [
     {
       "home_team": "Connecticut Sun",
@@ -17,14 +17,14 @@
       "spread_display": "New York Liberty -12.5",
       "pred_display": "New York Liberty by 3.4",
       "bet_label": "Connecticut Sun +12.5",
-      "inj_delta": -6.0,
-      "adj_margin": -9.4,
-      "adj_pred_display": "New York Liberty by 9.4",
-      "adj_edge": 3.1,
-      "adj_tier": "--",
+      "inj_delta": -2.6,
+      "adj_margin": -6.0,
+      "adj_pred_display": "New York Liberty by 6.0",
+      "adj_edge": 6.5,
+      "adj_tier": "MEDIUM",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Connecticut Sun",
-      "adj_has_bet": false,
+      "adj_has_bet": true,
       "adj_bet_label": "Connecticut Sun +12.5",
       "inj_home": [
         {
@@ -42,9 +42,9 @@
           "player": "Ashlon Jackson",
           "status": "OUT",
           "gtd": false,
-          "impact": 0.6,
+          "impact": 0.4,
           "raw_impact": 1.0,
-          "miss_frac": 0.4,
+          "miss_frac": 0.6,
           "tier": "ROTATION",
           "avg_min": 11.2,
           "found": true
@@ -53,9 +53,9 @@
           "player": "Aneesah Morrow",
           "status": "OUT",
           "gtd": false,
-          "impact": 3.0,
+          "impact": 2.4,
           "raw_impact": 3.0,
-          "miss_frac": 0.0,
+          "miss_frac": 0.2,
           "tier": "STARTER",
           "avg_min": 25.0,
           "found": true
@@ -64,9 +64,9 @@
           "player": "Hailey Van Lith",
           "status": "OUT",
           "gtd": false,
-          "impact": 0.6,
+          "impact": 0.4,
           "raw_impact": 1.0,
-          "miss_frac": 0.4,
+          "miss_frac": 0.6,
           "tier": "ROTATION",
           "avg_min": 16.4,
           "found": true
@@ -85,12 +85,23 @@
           "found": false
         },
         {
+          "player": "Jonquel Jones",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 2.4,
+          "raw_impact": 3.0,
+          "miss_frac": 0.2,
+          "tier": "STARTER",
+          "avg_min": 27.4,
+          "found": true
+        },
+        {
           "player": "Anneli Maley",
           "status": "OUT",
           "gtd": false,
           "impact": 0.0,
           "raw_impact": 0.0,
-          "miss_frac": 0.8,
+          "miss_frac": 1.0,
           "tier": null,
           "avg_min": null,
           "found": false

@@ -1,27 +1,27 @@
 {
   "record": {
-    "W": 5,
-    "L": 4,
+    "W": 13,
+    "L": 9,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
-      "W": 1,
-      "L": 1,
+      "W": 7,
+      "L": 4,
       "P": 0
     },
     "STRONG": {
-      "W": 2,
-      "L": 3,
+      "W": 4,
+      "L": 4,
       "P": 0
     },
     "LEAN": {
       "W": 2,
-      "L": 0,
+      "L": 1,
       "P": 0
     }
   },
-  "roi_units": 0.545,
+  "roi_units": 2.817,
   "bets": [
     {
       "date": "2026-05-09",
@@ -139,7 +139,176 @@
       "tier": "STRONG",
       "actual_margin": -14.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-05-30",
+      "home_team": "Connecticut Sun",
+      "away_team": "Los Angeles Sparks",
+      "bet_direction": "AWAY",
+      "bet_team": "Los Angeles Sparks",
+      "spread": 3.5,
+      "pred_margin": -7.6,
+      "edge": -4.09,
+      "tier": "MEDIUM",
+      "actual_margin": 3.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-06-01",
+      "home_team": "Dallas Wings",
+      "away_team": "Seattle Storm",
+      "bet_direction": "AWAY",
+      "bet_team": "Seattle Storm",
+      "spread": -12.5,
+      "pred_margin": 8.0,
+      "edge": -4.53,
+      "tier": "MEDIUM",
+      "actual_margin": 23.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-06-02",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Portland Fire",
+      "bet_direction": "HOME",
+      "bet_team": "Golden State Valkyries",
+      "spread": -9.5,
+      "pred_margin": 15.5,
+      "edge": 6.05,
+      "tier": "MEDIUM",
+      "actual_margin": 18.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-03",
+      "home_team": "New York Liberty",
+      "away_team": "Toronto Tempo",
+      "bet_direction": "AWAY",
+      "bet_team": "Toronto Tempo",
+      "spread": -8.5,
+      "pred_margin": 4.6,
+      "edge": -3.92,
+      "tier": "MEDIUM",
+      "actual_margin": 15.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-06-03",
+      "home_team": "Seattle Storm",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "HOME",
+      "bet_team": "Seattle Storm",
+      "spread": 7.5,
+      "pred_margin": 0.2,
+      "edge": 7.71,
+      "tier": "MEDIUM",
+      "actual_margin": -4.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-05",
+      "home_team": "Los Angeles Sparks",
+      "away_team": "Dallas Wings",
+      "bet_direction": "AWAY",
+      "bet_team": "Dallas Wings",
+      "spread": 2.5,
+      "pred_margin": -7.0,
+      "edge": -4.47,
+      "tier": "MEDIUM",
+      "actual_margin": -8.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-05",
+      "home_team": "Portland Fire",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "AWAY",
+      "bet_team": "Phoenix Mercury",
+      "spread": -2.5,
+      "pred_margin": -3.7,
+      "edge": -6.19,
+      "tier": "STRONG",
+      "actual_margin": -6.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-07",
+      "home_team": "Los Angeles Sparks",
+      "away_team": "Portland Fire",
+      "bet_direction": "AWAY",
+      "bet_team": "Portland Fire",
+      "spread": -7.5,
+      "pred_margin": 2.4,
+      "edge": -5.07,
+      "tier": "STRONG",
+      "actual_margin": 17.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-05-28",
+      "home_team": "Dallas Wings",
+      "away_team": "Las Vegas Aces",
+      "bet_direction": "AWAY",
+      "bet_team": "Las Vegas Aces",
+      "spread": 1.5,
+      "pred_margin": -5.2,
+      "edge": -3.65,
+      "tier": "MEDIUM",
+      "actual_margin": -8.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-05-28",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Indiana Fever",
+      "bet_direction": "AWAY",
+      "bet_team": "Indiana Fever",
+      "spread": -2.5,
+      "pred_margin": -1.5,
+      "edge": -3.95,
+      "tier": "MEDIUM",
+      "actual_margin": 2.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-05-29",
+      "home_team": "New York Liberty",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "AWAY",
+      "bet_team": "Phoenix Mercury",
+      "spread": -5.5,
+      "pred_margin": 2.1,
+      "edge": -3.38,
+      "tier": "LEAN",
+      "actual_margin": 7.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-05-29",
+      "home_team": "Washington Mystics",
+      "away_team": "Los Angeles Sparks",
+      "bet_direction": "AWAY",
+      "bet_team": "Los Angeles Sparks",
+      "spread": -2.5,
+      "pred_margin": -2.0,
+      "edge": -4.47,
+      "tier": "MEDIUM",
+      "actual_margin": -5.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-05-29",
+      "home_team": "Portland Fire",
+      "away_team": "Atlanta Dream",
+      "bet_direction": "AWAY",
+      "bet_team": "Atlanta Dream",
+      "spread": 8.5,
+      "pred_margin": -13.9,
+      "edge": -5.41,
+      "tier": "STRONG",
+      "actual_margin": -20.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-05-28"
+  "updated": "2026-06-08"
 }
