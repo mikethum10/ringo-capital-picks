@@ -1,13 +1,13 @@
 {
   "record": {
     "W": 14,
-    "L": 9,
+    "L": 10,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 7,
-      "L": 4,
+      "L": 5,
       "P": 0
     },
     "STRONG": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 3.726,
+  "roi_units": 2.726,
   "bets": [
     {
       "date": "2026-05-09",
@@ -321,7 +321,20 @@
       "tier": "STRONG",
       "actual_margin": -3.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-06-09",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Dallas Wings",
+      "bet_direction": "AWAY",
+      "bet_team": "Dallas Wings",
+      "spread": -4.5,
+      "pred_margin": -0.2,
+      "edge": -4.74,
+      "tier": "MEDIUM",
+      "actual_margin": 24.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-06-09"
+  "updated": "2026-06-10"
 }
