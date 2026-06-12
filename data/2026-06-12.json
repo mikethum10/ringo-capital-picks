@@ -1,6 +1,6 @@
 {
   "date": "2026-06-12",
-  "generated_at": "2026-06-12T08:54:45.339781-04:00",
+  "generated_at": "2026-06-12T18:27:21.927695-04:00",
   "games": [
     {
       "home_team": "Washington Mystics",
@@ -17,11 +17,11 @@
       "spread_display": "Washington Mystics -2.5",
       "pred_display": "Toronto Tempo by 3.3",
       "bet_label": "Toronto Tempo +2.5",
-      "inj_delta": 1.8,
-      "adj_margin": -1.5,
-      "adj_pred_display": "Toronto Tempo by 1.5",
-      "adj_edge": -4.0,
-      "adj_tier": "MEDIUM",
+      "inj_delta": 3.3,
+      "adj_margin": 0.0,
+      "adj_pred_display": "Washington Mystics by 0.0",
+      "adj_edge": -2.5,
+      "adj_tier": "LEAN",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Toronto Tempo",
       "adj_has_bet": true,
@@ -41,28 +41,6 @@
       ],
       "inj_away": [
         {
-          "player": "Nyara Sabally",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 3.0,
-          "raw_impact": 3.0,
-          "miss_frac": 0.0,
-          "tier": "STARTER",
-          "avg_min": 24.6,
-          "found": true
-        },
-        {
-          "player": "Temi Fagbenle",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.0,
-          "raw_impact": 0.0,
-          "miss_frac": 1.0,
-          "tier": null,
-          "avg_min": null,
-          "found": false
-        },
-        {
           "player": "Kiki Rice",
           "status": "OUT",
           "gtd": false,
@@ -71,6 +49,17 @@
           "miss_frac": 0.4,
           "tier": "STARTER",
           "avg_min": 25.6,
+          "found": true
+        },
+        {
+          "player": "Nyara Sabally",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 3.0,
+          "raw_impact": 3.0,
+          "miss_frac": 0.0,
+          "tier": "STARTER",
+          "avg_min": 24.6,
           "found": true
         }
       ],
