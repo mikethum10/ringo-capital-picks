@@ -1,17 +1,17 @@
 {
   "record": {
-    "W": 14,
-    "L": 10,
+    "W": 15,
+    "L": 11,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 7,
-      "L": 5,
+      "L": 6,
       "P": 0
     },
     "STRONG": {
-      "W": 5,
+      "W": 6,
       "L": 4,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 2.726,
+  "roi_units": 2.635,
   "bets": [
     {
       "date": "2026-05-09",
@@ -334,7 +334,33 @@
       "tier": "MEDIUM",
       "actual_margin": 24.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-06-11",
+      "home_team": "Indiana Fever",
+      "away_team": "Chicago Sky",
+      "bet_direction": "AWAY",
+      "bet_team": "Chicago Sky",
+      "spread": -9.5,
+      "pred_margin": 3.5,
+      "edge": -5.99,
+      "tier": "STRONG",
+      "actual_margin": 8.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-11",
+      "home_team": "Dallas Wings",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "AWAY",
+      "bet_team": "Phoenix Mercury",
+      "spread": -6.5,
+      "pred_margin": 1.8,
+      "edge": -4.71,
+      "tier": "MEDIUM",
+      "actual_margin": 15.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-06-11"
+  "updated": "2026-06-12"
 }
