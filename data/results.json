@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 15,
+    "W": 16,
     "L": 11,
     "P": 0
   },
@@ -11,7 +11,7 @@
       "P": 0
     },
     "STRONG": {
-      "W": 6,
+      "W": 7,
       "L": 4,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 2.635,
+  "roi_units": 3.544,
   "bets": [
     {
       "date": "2026-05-09",
@@ -360,7 +360,20 @@
       "tier": "MEDIUM",
       "actual_margin": 15.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-06-12",
+      "home_team": "Washington Mystics",
+      "away_team": "Toronto Tempo",
+      "bet_direction": "AWAY",
+      "bet_team": "Toronto Tempo",
+      "spread": -2.5,
+      "pred_margin": -3.3,
+      "edge": -5.83,
+      "tier": "STRONG",
+      "actual_margin": 1.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-06-12"
+  "updated": "2026-06-13"
 }
