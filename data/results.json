@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 16,
+    "W": 17,
     "L": 11,
     "P": 0
   },
@@ -16,12 +16,12 @@
       "P": 0
     },
     "LEAN": {
-      "W": 2,
+      "W": 3,
       "L": 1,
       "P": 0
     }
   },
-  "roi_units": 3.544,
+  "roi_units": 4.453,
   "bets": [
     {
       "date": "2026-05-09",
@@ -373,7 +373,20 @@
       "tier": "STRONG",
       "actual_margin": 1.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-06-13",
+      "home_team": "Connecticut Sun",
+      "away_team": "Indiana Fever",
+      "bet_direction": "AWAY",
+      "bet_team": "Indiana Fever",
+      "spread": 8.5,
+      "pred_margin": -11.6,
+      "edge": -3.06,
+      "tier": "LEAN",
+      "actual_margin": -10.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-06-13"
+  "updated": "2026-06-14"
 }
