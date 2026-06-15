@@ -1,6 +1,6 @@
 {
   "date": "2026-06-15",
-  "generated_at": "2026-06-15T11:46:00.012162-04:00",
+  "generated_at": "2026-06-15T19:05:11.383472-04:00",
   "games": [
     {
       "home_team": "Dallas Wings",
@@ -17,27 +17,16 @@
       "spread_display": "Las Vegas Aces -2.5",
       "pred_display": "Las Vegas Aces by 4.8",
       "bet_label": "Las Vegas Aces -2.5",
-      "inj_delta": -2.0,
-      "adj_margin": -6.8,
-      "adj_pred_display": "Las Vegas Aces by 6.8",
-      "adj_edge": -4.3,
-      "adj_tier": "MEDIUM",
+      "inj_delta": 0.0,
+      "adj_margin": -4.8,
+      "adj_pred_display": "Las Vegas Aces by 4.8",
+      "adj_edge": -2.3,
+      "adj_tier": "--",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Las Vegas Aces",
-      "adj_has_bet": true,
+      "adj_has_bet": false,
       "adj_bet_label": "Las Vegas Aces -2.5",
       "inj_home": [
-        {
-          "player": "Paige Bueckers",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 4.0,
-          "raw_impact": 5.0,
-          "miss_frac": 0.2,
-          "tier": "STAR",
-          "avg_min": 29.3,
-          "found": true
-        },
         {
           "player": "Odyssey Sims",
           "status": "OUT",
@@ -51,6 +40,17 @@
         }
       ],
       "inj_away": [
+        {
+          "player": "Janiah Barker",
+          "status": "GTD",
+          "gtd": true,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
+        },
         {
           "player": "Chennedy Carter",
           "status": "OUT",
@@ -426,10 +426,10 @@
       "spread_display": "Minnesota Lynx -14.5",
       "pred_display": "Minnesota Lynx by 11.9",
       "bet_label": "Portland Fire +14.5",
-      "inj_delta": 1.0,
-      "adj_margin": 12.8,
-      "adj_pred_display": "Minnesota Lynx by 12.8",
-      "adj_edge": -1.7,
+      "inj_delta": 0.8,
+      "adj_margin": 12.7,
+      "adj_pred_display": "Minnesota Lynx by 12.7",
+      "adj_edge": -1.8,
       "adj_tier": "--",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Portland Fire",
@@ -457,40 +457,40 @@
           "tier": "ROTATION",
           "avg_min": 14.5,
           "found": true
+        },
+        {
+          "player": "Liatu King",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.2,
+          "raw_impact": 1.0,
+          "miss_frac": 0.8,
+          "tier": "ROTATION",
+          "avg_min": 12.6,
+          "found": true
         }
       ],
       "inj_away": [
         {
-          "player": "Nyadiew Puoch",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.8,
-          "raw_impact": 1.0,
-          "miss_frac": 0.2,
-          "tier": "ROTATION",
-          "avg_min": 18.6,
-          "found": true
+          "player": "Jordan Harrison",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         },
         {
           "player": "Karlie Samuelson",
-          "status": "GTD",
-          "gtd": true,
+          "status": "OUT",
+          "gtd": false,
           "impact": 1.0,
           "raw_impact": 1.0,
           "miss_frac": 0.0,
           "tier": "ROTATION",
           "avg_min": 14.0,
-          "found": true
-        },
-        {
-          "player": "Holly Winterburn",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.1,
-          "raw_impact": 0.5,
-          "miss_frac": 0.8,
-          "tier": "BENCH",
-          "avg_min": 9.8,
           "found": true
         }
       ],
