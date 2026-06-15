@@ -1,7 +1,7 @@
 {
   "record": {
     "W": 17,
-    "L": 11,
+    "L": 12,
     "P": 0
   },
   "by_tier": {
@@ -12,7 +12,7 @@
     },
     "STRONG": {
       "W": 7,
-      "L": 4,
+      "L": 5,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 4.453,
+  "roi_units": 3.453,
   "bets": [
     {
       "date": "2026-05-09",
@@ -386,7 +386,20 @@
       "tier": "LEAN",
       "actual_margin": -10.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-06-14",
+      "home_team": "New York Liberty",
+      "away_team": "Washington Mystics",
+      "bet_direction": "AWAY",
+      "bet_team": "Washington Mystics",
+      "spread": -12.5,
+      "pred_margin": 5.5,
+      "edge": -7.03,
+      "tier": "STRONG",
+      "actual_margin": 22.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-06-14"
+  "updated": "2026-06-15"
 }
