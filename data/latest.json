@@ -1,32 +1,43 @@
 {
   "date": "2026-06-17",
-  "generated_at": "2026-06-17T09:42:12.913971-04:00",
+  "generated_at": "2026-06-17T18:47:25.068708-04:00",
   "games": [
     {
       "home_team": "Connecticut Sun",
       "away_team": "Washington Mystics",
-      "spread": 1.5,
+      "spread": -2.5,
       "pred_margin": -0.2,
       "pred_ridge": 0.3,
       "pred_xgb": -0.5,
-      "edge": 1.3,
-      "tier": "--",
-      "bet_direction": "HOME",
-      "bet_team": "Connecticut Sun",
-      "has_bet": false,
-      "spread_display": "Washington Mystics -1.5",
+      "edge": -2.7,
+      "tier": "LEAN",
+      "bet_direction": "AWAY",
+      "bet_team": "Washington Mystics",
+      "has_bet": true,
+      "spread_display": "Connecticut Sun -2.5",
       "pred_display": "Washington Mystics by 0.2",
-      "bet_label": "Connecticut Sun +1.5",
-      "inj_delta": 2.2,
-      "adj_margin": 2.0,
-      "adj_pred_display": "Connecticut Sun by 2.0",
-      "adj_edge": 3.5,
+      "bet_label": "Washington Mystics +2.5",
+      "inj_delta": 4.4,
+      "adj_margin": 4.2,
+      "adj_pred_display": "Connecticut Sun by 4.2",
+      "adj_edge": 1.7,
       "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Connecticut Sun",
       "adj_has_bet": false,
-      "adj_bet_label": "Connecticut Sun +1.5",
+      "adj_bet_label": "Connecticut Sun -2.5",
       "inj_home": [
+        {
+          "player": "Ashlon Jackson",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.2,
+          "raw_impact": 1.0,
+          "miss_frac": 0.8,
+          "tier": "ROTATION",
+          "avg_min": 11.2,
+          "found": true
+        },
         {
           "player": "Hailey Van Lith",
           "status": "OUT",
@@ -41,9 +52,20 @@
       ],
       "inj_away": [
         {
+          "player": "Shakira Austin",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 3.0,
+          "raw_impact": 3.0,
+          "miss_frac": 0.0,
+          "tier": "STARTER",
+          "avg_min": 27.2,
+          "found": true
+        },
+        {
           "player": "Kiki Iriafen",
-          "status": "GTD",
-          "gtd": true,
+          "status": "OUT",
+          "gtd": false,
           "impact": 1.8,
           "raw_impact": 3.0,
           "miss_frac": 0.4,
@@ -52,15 +74,15 @@
           "found": true
         },
         {
-          "player": "Shakira Austin",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 3.0,
-          "raw_impact": 3.0,
-          "miss_frac": 0.0,
-          "tier": "STARTER",
-          "avg_min": 27.2,
-          "found": true
+          "player": "Darianna Littlepage-Buggs",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_source": "rotowire",
@@ -408,10 +430,10 @@
       "spread_display": "New York Liberty -10.5",
       "pred_display": "New York Liberty by 4.4",
       "bet_label": "Chicago Sky +10.5",
-      "inj_delta": 0.5,
-      "adj_margin": -3.9,
-      "adj_pred_display": "New York Liberty by 3.9",
-      "adj_edge": 6.6,
+      "inj_delta": 1.0,
+      "adj_margin": -3.4,
+      "adj_pred_display": "New York Liberty by 3.4",
+      "adj_edge": 7.1,
       "adj_tier": "MEDIUM",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Chicago Sky",
@@ -444,14 +466,25 @@
       "inj_away": [
         {
           "player": "Betnijah Laney-Hamilton",
-          "status": "GTD",
-          "gtd": true,
+          "status": "OUT",
+          "gtd": false,
           "impact": 1.0,
           "raw_impact": 1.0,
           "miss_frac": 0.0,
           "tier": "ROTATION",
           "avg_min": 16.5,
           "found": true
+        },
+        {
+          "player": "Anneli Maley",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_source": "rotowire",
@@ -1593,17 +1626,6 @@
       ],
       "inj_away": [
         {
-          "player": "Janiah Barker",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.0,
-          "raw_impact": 0.0,
-          "miss_frac": 1.0,
-          "tier": null,
-          "avg_min": null,
-          "found": false
-        },
-        {
           "player": "Jewell Loyd",
           "status": "GTD",
           "gtd": true,
@@ -1613,6 +1635,17 @@
           "tier": "STARTER",
           "avg_min": 26.5,
           "found": true
+        },
+        {
+          "player": "Janiah Barker",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         },
         {
           "player": "Chennedy Carter",
