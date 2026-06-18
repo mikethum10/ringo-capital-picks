@@ -1,12 +1,12 @@
 {
   "record": {
-    "W": 17,
+    "W": 19,
     "L": 14,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
-      "W": 7,
+      "W": 8,
       "L": 6,
       "P": 0
     },
@@ -16,12 +16,12 @@
       "P": 0
     },
     "LEAN": {
-      "W": 3,
+      "W": 4,
       "L": 2,
       "P": 0
     }
   },
-  "roi_units": 1.453,
+  "roi_units": 3.271,
   "bets": [
     {
       "date": "2026-05-09",
@@ -425,7 +425,33 @@
       "tier": "STRONG",
       "actual_margin": 20.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-06-17",
+      "home_team": "Connecticut Sun",
+      "away_team": "Washington Mystics",
+      "bet_direction": "AWAY",
+      "bet_team": "Washington Mystics",
+      "spread": -2.5,
+      "pred_margin": -0.2,
+      "edge": -2.7,
+      "tier": "LEAN",
+      "actual_margin": -7.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-17",
+      "home_team": "Chicago Sky",
+      "away_team": "New York Liberty",
+      "bet_direction": "HOME",
+      "bet_team": "Chicago Sky",
+      "spread": 10.5,
+      "pred_margin": -4.4,
+      "edge": 6.13,
+      "tier": "MEDIUM",
+      "actual_margin": -1.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-06-17"
+  "updated": "2026-06-18"
 }
