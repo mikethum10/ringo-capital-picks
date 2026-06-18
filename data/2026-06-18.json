@@ -1,6 +1,6 @@
 {
   "date": "2026-06-18",
-  "generated_at": "2026-06-18T08:52:10.149215-04:00",
+  "generated_at": "2026-06-18T18:57:42.971522-04:00",
   "games": [
     {
       "home_team": "Indiana Fever",
@@ -17,10 +17,10 @@
       "spread_display": "Atlanta Dream -1.5",
       "pred_display": "Atlanta Dream by 2.9",
       "bet_label": "Atlanta Dream -1.5",
-      "inj_delta": -1.0,
-      "adj_margin": -3.9,
-      "adj_pred_display": "Atlanta Dream by 3.9",
-      "adj_edge": -2.4,
+      "inj_delta": 0.5,
+      "adj_margin": -2.4,
+      "adj_pred_display": "Atlanta Dream by 2.4",
+      "adj_edge": -0.9,
       "adj_tier": "--",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Atlanta Dream",
@@ -28,15 +28,26 @@
       "adj_bet_label": "Atlanta Dream -1.5",
       "inj_home": [
         {
-          "player": "Caitlin Clark",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 3.0,
-          "raw_impact": 3.0,
-          "miss_frac": 0.0,
-          "tier": "STARTER",
-          "avg_min": 27.3,
+          "player": "Bree Hall",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.5,
+          "miss_frac": 1.0,
+          "tier": "BENCH",
+          "avg_min": 5.0,
           "found": true
+        },
+        {
+          "player": "Justine Pissott",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_away": [
@@ -61,6 +72,17 @@
           "tier": "BENCH",
           "avg_min": 1.5,
           "found": true
+        },
+        {
+          "player": "Amy Okonkwo",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 0.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_source": "rotowire",
