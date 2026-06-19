@@ -1,31 +1,31 @@
 {
   "date": "2026-06-19",
-  "generated_at": "2026-06-19T09:41:28.822872-04:00",
+  "generated_at": "2026-06-19T18:07:29.364490-04:00",
   "games": [
     {
       "home_team": "Connecticut Sun",
       "away_team": "Toronto Tempo",
-      "spread": 1.5,
+      "spread": -1.5,
       "pred_margin": 1.7,
       "pred_ridge": -1.3,
       "pred_xgb": 3.8,
-      "edge": 3.21,
+      "edge": 0.21,
       "tier": "--",
       "bet_direction": "HOME",
       "bet_team": "Connecticut Sun",
       "has_bet": false,
-      "spread_display": "Toronto Tempo -1.5",
+      "spread_display": "Connecticut Sun -1.5",
       "pred_display": "Connecticut Sun by 1.7",
-      "bet_label": "Connecticut Sun +1.5",
-      "inj_delta": 5.4,
-      "adj_margin": 7.1,
-      "adj_pred_display": "Connecticut Sun by 7.1",
-      "adj_edge": 8.6,
-      "adj_tier": "STRONG",
+      "bet_label": "Connecticut Sun -1.5",
+      "inj_delta": 6.0,
+      "adj_margin": 7.7,
+      "adj_pred_display": "Connecticut Sun by 7.7",
+      "adj_edge": 6.2,
+      "adj_tier": "MEDIUM",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Connecticut Sun",
       "adj_has_bet": true,
-      "adj_bet_label": "Connecticut Sun +1.5",
+      "adj_bet_label": "Connecticut Sun -1.5",
       "inj_home": [
         {
           "player": "Hailey Van Lith",
@@ -41,17 +41,6 @@
       ],
       "inj_away": [
         {
-          "player": "Nyara Sabally",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 1.2,
-          "raw_impact": 3.0,
-          "miss_frac": 0.6,
-          "tier": "STARTER",
-          "avg_min": 24.6,
-          "found": true
-        },
-        {
           "player": "Kiki Rice",
           "status": "OUT",
           "gtd": false,
@@ -60,6 +49,17 @@
           "miss_frac": 1.0,
           "tier": "STARTER",
           "avg_min": 25.6,
+          "found": true
+        },
+        {
+          "player": "Nyara Sabally",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 1.2,
+          "raw_impact": 3.0,
+          "miss_frac": 0.6,
+          "tier": "STARTER",
+          "avg_min": 24.6,
           "found": true
         },
         {
@@ -419,10 +419,10 @@
       "spread_display": "New York Liberty -12.5",
       "pred_display": "New York Liberty by 12.3",
       "bet_label": "Washington Mystics +12.5",
-      "inj_delta": 0.8,
-      "adj_margin": 13.1,
-      "adj_pred_display": "New York Liberty by 13.1",
-      "adj_edge": 0.6,
+      "inj_delta": 0.4,
+      "adj_margin": 12.7,
+      "adj_pred_display": "New York Liberty by 12.7",
+      "adj_edge": 0.2,
       "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "New York Liberty",
@@ -430,15 +430,37 @@
       "adj_bet_label": "New York Liberty -12.5",
       "inj_home": [
         {
+          "player": "Marine Fauthoux",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 0.4,
+          "tier": null,
+          "avg_min": null,
+          "found": false
+        },
+        {
           "player": "Betnijah Laney-Hamilton",
-          "status": "GTD",
-          "gtd": true,
+          "status": "OUT",
+          "gtd": false,
           "impact": 0.8,
           "raw_impact": 1.0,
           "miss_frac": 0.2,
           "tier": "ROTATION",
           "avg_min": 16.5,
           "found": true
+        },
+        {
+          "player": "Anneli Maley",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 0.0,
+          "miss_frac": 1.0,
+          "tier": null,
+          "avg_min": null,
+          "found": false
         }
       ],
       "inj_away": [
