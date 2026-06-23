@@ -1,17 +1,17 @@
 {
   "record": {
-    "W": 20,
-    "L": 15,
+    "W": 21,
+    "L": 16,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 8,
-      "L": 6,
+      "L": 7,
       "P": 0
     },
     "STRONG": {
-      "W": 7,
+      "W": 8,
       "L": 7,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 3.18,
+  "roi_units": 3.089,
   "bets": [
     {
       "date": "2026-05-09",
@@ -477,7 +477,33 @@
       "tier": "STRONG",
       "actual_margin": 19.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-06-22",
+      "home_team": "Atlanta Dream",
+      "away_team": "Toronto Tempo",
+      "bet_direction": "AWAY",
+      "bet_team": "Toronto Tempo",
+      "spread": -14.5,
+      "pred_margin": 6.0,
+      "edge": -8.49,
+      "tier": "STRONG",
+      "actual_margin": 7.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-22",
+      "home_team": "Indiana Fever",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "AWAY",
+      "bet_team": "Phoenix Mercury",
+      "spread": -7.5,
+      "pred_margin": 3.3,
+      "edge": -4.21,
+      "tier": "MEDIUM",
+      "actual_margin": 9.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-06-22"
+  "updated": "2026-06-23"
 }
