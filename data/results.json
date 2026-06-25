@@ -1,17 +1,17 @@
 {
   "record": {
-    "W": 21,
-    "L": 16,
+    "W": 22,
+    "L": 17,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 8,
-      "L": 7,
+      "L": 8,
       "P": 0
     },
     "STRONG": {
-      "W": 8,
+      "W": 9,
       "L": 7,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 3.089,
+  "roi_units": 2.998,
   "bets": [
     {
       "date": "2026-05-09",
@@ -503,7 +503,33 @@
       "tier": "MEDIUM",
       "actual_margin": 9.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-06-24",
+      "home_team": "Indiana Fever",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "AWAY",
+      "bet_team": "Phoenix Mercury",
+      "spread": -9.5,
+      "pred_margin": 0.8,
+      "edge": -8.71,
+      "tier": "STRONG",
+      "actual_margin": 9.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-06-24",
+      "home_team": "Washington Mystics",
+      "away_team": "Minnesota Lynx",
+      "bet_direction": "AWAY",
+      "bet_team": "Minnesota Lynx",
+      "spread": 8.5,
+      "pred_margin": -12.9,
+      "edge": -4.37,
+      "tier": "MEDIUM",
+      "actual_margin": -2.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-06-24"
+  "updated": "2026-06-25"
 }
