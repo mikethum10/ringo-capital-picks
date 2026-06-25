@@ -1,6 +1,6 @@
 {
   "date": "2026-06-25",
-  "generated_at": "2026-06-25T08:18:32.783189-04:00",
+  "generated_at": "2026-06-25T18:23:14.188972-04:00",
   "games": [
     {
       "home_team": "Toronto Tempo",
@@ -419,10 +419,10 @@
       "spread_display": "Las Vegas Aces -5.5",
       "pred_display": "Dallas Wings by 1.1",
       "bet_label": "Dallas Wings +5.5",
-      "inj_delta": 0.7,
-      "adj_margin": -0.4,
-      "adj_pred_display": "Dallas Wings by 0.4",
-      "adj_edge": -5.9,
+      "inj_delta": 0.6,
+      "adj_margin": -0.5,
+      "adj_pred_display": "Dallas Wings by 0.5",
+      "adj_edge": -6.0,
       "adj_tier": "STRONG",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Dallas Wings",
@@ -464,17 +464,6 @@
         }
       ],
       "inj_away": [
-        {
-          "player": "Alysha Clark",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.2,
-          "raw_impact": 0.5,
-          "miss_frac": 0.6,
-          "tier": "BENCH",
-          "avg_min": 8.6,
-          "found": true
-        },
         {
           "player": "Odyssey Sims",
           "status": "OUT",
@@ -831,27 +820,27 @@
     {
       "home_team": "Seattle Storm",
       "away_team": "New York Liberty",
-      "spread": 11.5,
+      "spread": 8.5,
       "pred_margin": -10.5,
       "pred_ridge": -12.4,
       "pred_xgb": -9.2,
-      "edge": 0.98,
+      "edge": -2.02,
       "tier": "--",
-      "bet_direction": "HOME",
-      "bet_team": "Seattle Storm",
+      "bet_direction": "AWAY",
+      "bet_team": "New York Liberty",
       "has_bet": false,
-      "spread_display": "New York Liberty -11.5",
+      "spread_display": "New York Liberty -8.5",
       "pred_display": "New York Liberty by 10.5",
-      "bet_label": "Seattle Storm +11.5",
-      "inj_delta": 0.0,
-      "adj_margin": -10.5,
-      "adj_pred_display": "New York Liberty by 10.5",
-      "adj_edge": 1.0,
+      "bet_label": "New York Liberty -8.5",
+      "inj_delta": 5.5,
+      "adj_margin": -5.0,
+      "adj_pred_display": "New York Liberty by 5.0",
+      "adj_edge": 3.5,
       "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Seattle Storm",
       "adj_has_bet": false,
-      "adj_bet_label": "Seattle Storm +11.5",
+      "adj_bet_label": "Seattle Storm +8.5",
       "inj_home": [
         {
           "player": "Jordan Horston",
@@ -890,13 +879,24 @@
       "inj_away": [
         {
           "player": "Satou Sabally",
-          "status": "GTD",
-          "gtd": true,
+          "status": "OUT",
+          "gtd": false,
           "impact": 1.0,
           "raw_impact": 1.0,
           "miss_frac": 0.0,
           "tier": "ROTATION",
           "avg_min": 15.9,
+          "found": true
+        },
+        {
+          "player": "Breanna Stewart",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 5.0,
+          "raw_impact": 5.0,
+          "miss_frac": 0.0,
+          "tier": "STAR",
+          "avg_min": 30.1,
           "found": true
         }
       ],
