@@ -1,18 +1,18 @@
 {
   "record": {
     "W": 22,
-    "L": 17,
+    "L": 19,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 8,
-      "L": 8,
+      "L": 9,
       "P": 0
     },
     "STRONG": {
       "W": 9,
-      "L": 7,
+      "L": 8,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 2.998,
+  "roi_units": 0.998,
   "bets": [
     {
       "date": "2026-05-09",
@@ -529,7 +529,33 @@
       "tier": "MEDIUM",
       "actual_margin": -2.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-06-25",
+      "home_team": "Toronto Tempo",
+      "away_team": "Los Angeles Sparks",
+      "bet_direction": "AWAY",
+      "bet_team": "Los Angeles Sparks",
+      "spread": -1.5,
+      "pred_margin": -2.6,
+      "edge": -4.12,
+      "tier": "MEDIUM",
+      "actual_margin": 28.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-06-25",
+      "home_team": "Las Vegas Aces",
+      "away_team": "Dallas Wings",
+      "bet_direction": "AWAY",
+      "bet_team": "Dallas Wings",
+      "spread": -5.5,
+      "pred_margin": -1.1,
+      "edge": -6.59,
+      "tier": "STRONG",
+      "actual_margin": 15.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-06-25"
+  "updated": "2026-06-26"
 }
