@@ -1,7 +1,7 @@
 {
   "record": {
     "W": 22,
-    "L": 19,
+    "L": 20,
     "P": 0
   },
   "by_tier": {
@@ -12,7 +12,7 @@
     },
     "STRONG": {
       "W": 9,
-      "L": 8,
+      "L": 9,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 0.998,
+  "roi_units": -0.002,
   "bets": [
     {
       "date": "2026-05-09",
@@ -555,7 +555,20 @@
       "tier": "STRONG",
       "actual_margin": 15.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-06-26",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Atlanta Dream",
+      "bet_direction": "AWAY",
+      "bet_team": "Atlanta Dream",
+      "spread": 1.5,
+      "pred_margin": -8.4,
+      "edge": -6.91,
+      "tier": "STRONG",
+      "actual_margin": 11.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-06-26"
+  "updated": "2026-06-27"
 }
