@@ -1,6 +1,6 @@
 {
   "date": "2026-07-03",
-  "generated_at": "2026-07-03T08:10:27.401830-04:00",
+  "generated_at": "2026-07-03T18:08:19.514015-04:00",
   "games": [
     {
       "home_team": "New York Liberty",
@@ -41,17 +41,6 @@
       ],
       "inj_away": [
         {
-          "player": "Dorka Juhasz",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.0,
-          "raw_impact": 1.0,
-          "miss_frac": 1.0,
-          "tier": "ROTATION",
-          "avg_min": 14.5,
-          "found": true
-        },
-        {
           "player": "Napheesa Collier",
           "status": "OUT",
           "gtd": false,
@@ -60,6 +49,17 @@
           "miss_frac": 1.0,
           "tier": "STAR",
           "avg_min": 32.2,
+          "found": true
+        },
+        {
+          "player": "Dorka Juhasz",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 0.0,
+          "raw_impact": 1.0,
+          "miss_frac": 1.0,
+          "tier": "ROTATION",
+          "avg_min": 14.5,
           "found": true
         }
       ],
@@ -410,39 +410,28 @@
     {
       "home_team": "Las Vegas Aces",
       "away_team": "Chicago Sky",
-      "spread": -9.5,
+      "spread": -4.5,
       "pred_margin": 9.6,
       "pred_ridge": 13.2,
       "pred_xgb": 7.2,
-      "edge": 0.13,
+      "edge": 5.13,
       "tier": "--",
       "bet_direction": "HOME",
       "bet_team": "Las Vegas Aces",
       "has_bet": false,
-      "spread_display": "Las Vegas Aces -9.5",
+      "spread_display": "Las Vegas Aces -4.5",
       "pred_display": "Las Vegas Aces by 9.6",
-      "bet_label": "Las Vegas Aces -9.5",
-      "inj_delta": -2.5,
-      "adj_margin": 7.1,
-      "adj_pred_display": "Las Vegas Aces by 7.1",
-      "adj_edge": -2.4,
+      "bet_label": "Las Vegas Aces -4.5",
+      "inj_delta": -5.0,
+      "adj_margin": 4.6,
+      "adj_pred_display": "Las Vegas Aces by 4.6",
+      "adj_edge": 0.1,
       "adj_tier": "--",
-      "adj_bet_direction": "AWAY",
-      "adj_bet_team": "Chicago Sky",
+      "adj_bet_direction": "HOME",
+      "adj_bet_team": "Las Vegas Aces",
       "adj_has_bet": false,
-      "adj_bet_label": "Chicago Sky +9.5",
+      "adj_bet_label": "Las Vegas Aces -4.5",
       "inj_home": [
-        {
-          "player": "A'ja Wilson",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 5.0,
-          "raw_impact": 5.0,
-          "miss_frac": 0.0,
-          "tier": "STAR",
-          "avg_min": 31.3,
-          "found": true
-        },
         {
           "player": "Janiah Barker",
           "status": "OUT",
@@ -463,6 +452,17 @@
           "miss_frac": 1.0,
           "tier": "ROTATION",
           "avg_min": 18.2,
+          "found": true
+        },
+        {
+          "player": "A'ja Wilson",
+          "status": "OUT",
+          "gtd": false,
+          "impact": 5.0,
+          "raw_impact": 5.0,
+          "miss_frac": 0.0,
+          "tier": "STAR",
+          "avg_min": 31.3,
           "found": true
         }
       ],
