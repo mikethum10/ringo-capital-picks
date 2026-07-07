@@ -1,18 +1,18 @@
 {
   "record": {
     "W": 22,
-    "L": 22,
+    "L": 24,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 8,
-      "L": 11,
+      "L": 12,
       "P": 0
     },
     "STRONG": {
       "W": 9,
-      "L": 9,
+      "L": 10,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": -2.002,
+  "roi_units": -4.002,
   "bets": [
     {
       "date": "2026-05-09",
@@ -594,7 +594,33 @@
       "tier": "MEDIUM",
       "actual_margin": 9.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-07-06",
+      "home_team": "Washington Mystics",
+      "away_team": "Golden State Valkyries",
+      "bet_direction": "HOME",
+      "bet_team": "Washington Mystics",
+      "spread": 6.5,
+      "pred_margin": -0.2,
+      "edge": 6.34,
+      "tier": "MEDIUM",
+      "actual_margin": -13.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-07-06",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Connecticut Sun",
+      "bet_direction": "HOME",
+      "bet_team": "Minnesota Lynx",
+      "spread": -11.5,
+      "pred_margin": 20.3,
+      "edge": 8.77,
+      "tier": "STRONG",
+      "actual_margin": -1.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-07-06"
+  "updated": "2026-07-07"
 }
