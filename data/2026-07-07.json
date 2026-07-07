@@ -1,6 +1,6 @@
 {
   "date": "2026-07-07",
-  "generated_at": "2026-07-07T08:27:53.869258-04:00",
+  "generated_at": "2026-07-07T18:12:48.730444-04:00",
   "games": [
     {
       "home_team": "New York Liberty",
@@ -17,11 +17,11 @@
       "spread_display": "New York Liberty -4.5",
       "pred_display": "New York Liberty by 2.8",
       "bet_label": "Dallas Wings +4.5",
-      "inj_delta": -2.9,
-      "adj_margin": -0.1,
-      "adj_pred_display": "Dallas Wings by 0.1",
-      "adj_edge": -4.6,
-      "adj_tier": "MEDIUM",
+      "inj_delta": -5.4,
+      "adj_margin": -2.6,
+      "adj_pred_display": "Dallas Wings by 2.6",
+      "adj_edge": -7.1,
+      "adj_tier": "STRONG",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Dallas Wings",
       "adj_has_bet": true,
@@ -29,8 +29,8 @@
       "inj_home": [
         {
           "player": "Leonie Fiebich",
-          "status": "GTD",
-          "gtd": true,
+          "status": "OUT",
+          "gtd": false,
           "impact": 5.0,
           "raw_impact": 5.0,
           "miss_frac": 0.0,
