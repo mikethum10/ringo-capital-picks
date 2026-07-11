@@ -1,18 +1,18 @@
 {
   "record": {
     "W": 24,
-    "L": 24,
+    "L": 26,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 8,
-      "L": 12,
+      "L": 13,
       "P": 0
     },
     "STRONG": {
       "W": 11,
-      "L": 10,
+      "L": 11,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": -2.184,
+  "roi_units": -4.184,
   "bets": [
     {
       "date": "2026-05-09",
@@ -646,7 +646,33 @@
       "tier": "STRONG",
       "actual_margin": 11.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-10",
+      "home_team": "Connecticut Sun",
+      "away_team": "Golden State Valkyries",
+      "bet_direction": "HOME",
+      "bet_team": "Connecticut Sun",
+      "spread": 6.5,
+      "pred_margin": 1.7,
+      "edge": 8.24,
+      "tier": "STRONG",
+      "actual_margin": -15.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-07-10",
+      "home_team": "Los Angeles Sparks",
+      "away_team": "Chicago Sky",
+      "bet_direction": "AWAY",
+      "bet_team": "Chicago Sky",
+      "spread": -1.5,
+      "pred_margin": -2.6,
+      "edge": -4.05,
+      "tier": "MEDIUM",
+      "actual_margin": 15.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-07-10"
+  "updated": "2026-07-11"
 }

@@ -384,8 +384,8 @@
           "direction": "away_cover"
         }
       ],
-      "actual_margin": null,
-      "ats_result": null,
+      "actual_margin": -15.0,
+      "ats_result": "L",
       "context": {
         "flags": [
           {
@@ -409,6 +409,26 @@
         "away_days_from_home": 10.0,
         "home_tz_return": 0,
         "game_num": 25
+      },
+      "actual_stats": {
+        "margin": -15.0,
+        "pace": 75.6,
+        "home_efg_pct": 0.4483,
+        "home_ts_pct": 0.4887,
+        "home_tov_pct": 0.234,
+        "home_ft_rate": 0.2931,
+        "home_ast_pct": 0.7917,
+        "home_oreb_pct": 0.2222,
+        "home_pts": 64.0,
+        "home_poss": 79.5,
+        "away_efg_pct": 0.5833,
+        "away_ts_pct": 0.601,
+        "away_tov_pct": 0.1858,
+        "away_ft_rate": 0.2167,
+        "away_ast_pct": 0.6129,
+        "away_oreb_pct": 0.3462,
+        "away_pts": 79.0,
+        "away_poss": 71.7
       }
     },
     {
@@ -792,7 +812,7 @@
           "direction": "away_cover"
         }
       ],
-      "actual_margin": null,
+      "actual_margin": -13.0,
       "ats_result": null,
       "context": {
         "flags": [
@@ -817,6 +837,26 @@
         "away_days_from_home": 9.2,
         "home_tz_return": 0,
         "game_num": 25
+      },
+      "actual_stats": {
+        "margin": -13.0,
+        "pace": 78.2,
+        "home_efg_pct": 0.6562,
+        "home_ts_pct": 0.677,
+        "home_tov_pct": 0.1461,
+        "home_ft_rate": 0.2188,
+        "home_ast_pct": 0.6857,
+        "home_oreb_pct": 0.16,
+        "home_pts": 95.0,
+        "home_poss": 78.2,
+        "away_efg_pct": 0.6014,
+        "away_ts_pct": 0.6487,
+        "away_tov_pct": 0.0672,
+        "away_ft_rate": 0.2838,
+        "away_ast_pct": 0.5641,
+        "away_oreb_pct": 0.3548,
+        "away_pts": 108.0,
+        "away_poss": 78.2
       }
     },
     {
@@ -1201,8 +1241,8 @@
           "direction": "away_cover"
         }
       ],
-      "actual_margin": null,
-      "ats_result": null,
+      "actual_margin": 15.0,
+      "ats_result": "L",
       "context": {
         "flags": [
           {
@@ -1226,6 +1266,26 @@
         "away_days_from_home": 9.2,
         "home_tz_return": 0,
         "game_num": 24
+      },
+      "actual_stats": {
+        "margin": 15.0,
+        "pace": 88.2,
+        "home_efg_pct": 0.6053,
+        "home_ts_pct": 0.6174,
+        "home_tov_pct": 0.1175,
+        "home_ft_rate": 0.1974,
+        "home_ast_pct": 0.8205,
+        "home_oreb_pct": 0.1515,
+        "home_pts": 102.0,
+        "home_poss": 88.6,
+        "away_efg_pct": 0.4789,
+        "away_ts_pct": 0.5392,
+        "away_tov_pct": 0.1568,
+        "away_ft_rate": 0.3099,
+        "away_ast_pct": 0.6774,
+        "away_oreb_pct": 0.2286,
+        "away_pts": 87.0,
+        "away_poss": 87.7
       }
     }
   ]
