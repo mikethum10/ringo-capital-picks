@@ -1,7 +1,7 @@
 {
   "record": {
     "W": 24,
-    "L": 26,
+    "L": 27,
     "P": 0
   },
   "by_tier": {
@@ -12,7 +12,7 @@
     },
     "STRONG": {
       "W": 11,
-      "L": 11,
+      "L": 12,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": -4.184,
+  "roi_units": -5.184,
   "bets": [
     {
       "date": "2026-05-09",
@@ -672,7 +672,20 @@
       "tier": "MEDIUM",
       "actual_margin": 15.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-07-11",
+      "home_team": "Atlanta Dream",
+      "away_team": "Portland Fire",
+      "bet_direction": "HOME",
+      "bet_team": "Atlanta Dream",
+      "spread": 5.5,
+      "pred_margin": 8.1,
+      "edge": 13.64,
+      "tier": "STRONG",
+      "actual_margin": -10.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-07-11"
+  "updated": "2026-07-12"
 }
