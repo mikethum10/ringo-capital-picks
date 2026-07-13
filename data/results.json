@@ -1,12 +1,12 @@
 {
   "record": {
-    "W": 24,
+    "W": 25,
     "L": 27,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
-      "W": 8,
+      "W": 9,
       "L": 13,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": -5.184,
+  "roi_units": -4.275,
   "bets": [
     {
       "date": "2026-05-09",
@@ -685,7 +685,20 @@
       "tier": "STRONG",
       "actual_margin": -10.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-07-12",
+      "home_team": "Dallas Wings",
+      "away_team": "Chicago Sky",
+      "bet_direction": "AWAY",
+      "bet_team": "Chicago Sky",
+      "spread": -9.5,
+      "pred_margin": 4.6,
+      "edge": -4.94,
+      "tier": "MEDIUM",
+      "actual_margin": 5.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-12"
+  "updated": "2026-07-13"
 }
