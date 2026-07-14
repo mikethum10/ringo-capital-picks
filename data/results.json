@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 25,
+    "W": 26,
     "L": 27,
     "P": 0
   },
@@ -11,7 +11,7 @@
       "P": 0
     },
     "STRONG": {
-      "W": 11,
+      "W": 12,
       "L": 12,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": -4.275,
+  "roi_units": -3.366,
   "bets": [
     {
       "date": "2026-05-09",
@@ -698,7 +698,20 @@
       "tier": "MEDIUM",
       "actual_margin": 5.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-13",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Phoenix Mercury",
+      "bet_direction": "AWAY",
+      "bet_team": "Phoenix Mercury",
+      "spread": -12.5,
+      "pred_margin": 2.8,
+      "edge": -9.75,
+      "tier": "STRONG",
+      "actual_margin": 4.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-13"
+  "updated": "2026-07-14"
 }
