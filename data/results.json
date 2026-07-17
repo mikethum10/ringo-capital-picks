@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 26,
+    "W": 27,
     "L": 27,
     "P": 0
   },
@@ -16,12 +16,12 @@
       "P": 0
     },
     "LEAN": {
-      "W": 5,
+      "W": 6,
       "L": 2,
       "P": 0
     }
   },
-  "roi_units": -3.366,
+  "roi_units": -2.457,
   "bets": [
     {
       "date": "2026-05-09",
@@ -711,7 +711,20 @@
       "tier": "STRONG",
       "actual_margin": 4.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-16",
+      "home_team": "Washington Mystics",
+      "away_team": "Portland Fire",
+      "bet_direction": "AWAY",
+      "bet_team": "Portland Fire",
+      "spread": -6.5,
+      "pred_margin": 3.3,
+      "edge": -3.24,
+      "tier": "LEAN",
+      "actual_margin": -19.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-07-17"
 }
