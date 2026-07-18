@@ -1,12 +1,12 @@
 {
   "record": {
-    "W": 27,
+    "W": 29,
     "L": 27,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
-      "W": 9,
+      "W": 11,
       "L": 13,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": -2.457,
+  "roi_units": -0.639,
   "bets": [
     {
       "date": "2026-05-09",
@@ -724,7 +724,33 @@
       "tier": "LEAN",
       "actual_margin": -19.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-17",
+      "home_team": "Indiana Fever",
+      "away_team": "Seattle Storm",
+      "bet_direction": "AWAY",
+      "bet_team": "Seattle Storm",
+      "spread": -8.5,
+      "pred_margin": 4.7,
+      "edge": -3.8,
+      "tier": "MEDIUM",
+      "actual_margin": 3.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-07-17",
+      "home_team": "Phoenix Mercury",
+      "away_team": "Connecticut Sun",
+      "bet_direction": "AWAY",
+      "bet_team": "Connecticut Sun",
+      "spread": -4.5,
+      "pred_margin": -0.2,
+      "edge": -4.67,
+      "tier": "MEDIUM",
+      "actual_margin": -13.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-17"
+  "updated": "2026-07-18"
 }
