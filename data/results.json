@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 29,
+    "W": 31,
     "L": 27,
     "P": 0
   },
@@ -11,17 +11,17 @@
       "P": 0
     },
     "STRONG": {
-      "W": 12,
+      "W": 13,
       "L": 12,
       "P": 0
     },
     "LEAN": {
-      "W": 6,
+      "W": 7,
       "L": 2,
       "P": 0
     }
   },
-  "roi_units": -0.639,
+  "roi_units": 1.179,
   "bets": [
     {
       "date": "2026-05-09",
@@ -750,7 +750,33 @@
       "tier": "MEDIUM",
       "actual_margin": -13.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-18",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Portland Fire",
+      "bet_direction": "AWAY",
+      "bet_team": "Portland Fire",
+      "spread": -13.5,
+      "pred_margin": 10.7,
+      "edge": -2.8,
+      "tier": "LEAN",
+      "actual_margin": 8.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-07-18",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Washington Mystics",
+      "bet_direction": "AWAY",
+      "bet_team": "Washington Mystics",
+      "spread": -8.5,
+      "pred_margin": 1.7,
+      "edge": -6.77,
+      "tier": "STRONG",
+      "actual_margin": 5.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-18"
+  "updated": "2026-07-19"
 }
