@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 31,
+    "W": 32,
     "L": 27,
     "P": 0
   },
@@ -11,7 +11,7 @@
       "P": 0
     },
     "STRONG": {
-      "W": 13,
+      "W": 14,
       "L": 12,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 1.179,
+  "roi_units": 2.088,
   "bets": [
     {
       "date": "2026-05-09",
@@ -776,7 +776,20 @@
       "tier": "STRONG",
       "actual_margin": 5.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-19",
+      "home_team": "Phoenix Mercury",
+      "away_team": "Connecticut Sun",
+      "bet_direction": "AWAY",
+      "bet_team": "Connecticut Sun",
+      "spread": -4.5,
+      "pred_margin": -1.8,
+      "edge": -6.29,
+      "tier": "STRONG",
+      "actual_margin": -13.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-19"
+  "updated": "2026-07-20"
 }
