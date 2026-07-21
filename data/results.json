@@ -1,27 +1,27 @@
 {
   "record": {
-    "W": 32,
-    "L": 27,
+    "W": 34,
+    "L": 28,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
-      "W": 11,
+      "W": 12,
       "L": 13,
       "P": 0
     },
     "STRONG": {
       "W": 14,
-      "L": 12,
+      "L": 13,
       "P": 0
     },
     "LEAN": {
-      "W": 7,
+      "W": 8,
       "L": 2,
       "P": 0
     }
   },
-  "roi_units": 2.088,
+  "roi_units": 2.906,
   "bets": [
     {
       "date": "2026-05-09",
@@ -789,7 +789,46 @@
       "tier": "STRONG",
       "actual_margin": -13.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-20",
+      "home_team": "Toronto Tempo",
+      "away_team": "Las Vegas Aces",
+      "bet_direction": "HOME",
+      "bet_team": "Toronto Tempo",
+      "spread": 11.5,
+      "pred_margin": -2.6,
+      "edge": 8.91,
+      "tier": "STRONG",
+      "actual_margin": -26.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-07-20",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Washington Mystics",
+      "bet_direction": "AWAY",
+      "bet_team": "Washington Mystics",
+      "spread": -8.5,
+      "pred_margin": 5.7,
+      "edge": -2.82,
+      "tier": "LEAN",
+      "actual_margin": 5.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-07-20",
+      "home_team": "Dallas Wings",
+      "away_team": "New York Liberty",
+      "bet_direction": "HOME",
+      "bet_team": "Dallas Wings",
+      "spread": 4.5,
+      "pred_margin": 3.4,
+      "edge": 7.85,
+      "tier": "MEDIUM",
+      "actual_margin": -1.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-20"
+  "updated": "2026-07-21"
 }
