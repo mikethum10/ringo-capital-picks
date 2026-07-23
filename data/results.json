@@ -1,18 +1,18 @@
 {
   "record": {
-    "W": 34,
-    "L": 28,
+    "W": 35,
+    "L": 30,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 12,
-      "L": 13,
+      "L": 14,
       "P": 0
     },
     "STRONG": {
-      "W": 14,
-      "L": 13,
+      "W": 15,
+      "L": 14,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 2.906,
+  "roi_units": 1.815,
   "bets": [
     {
       "date": "2026-05-09",
@@ -828,7 +828,46 @@
       "tier": "MEDIUM",
       "actual_margin": -1.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-22",
+      "home_team": "New York Liberty",
+      "away_team": "Chicago Sky",
+      "bet_direction": "AWAY",
+      "bet_team": "Chicago Sky",
+      "spread": -7.5,
+      "pred_margin": 1.2,
+      "edge": -6.31,
+      "tier": "STRONG",
+      "actual_margin": 1.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-07-22",
+      "home_team": "Indiana Fever",
+      "away_team": "Connecticut Sun",
+      "bet_direction": "AWAY",
+      "bet_team": "Connecticut Sun",
+      "spread": -10.5,
+      "pred_margin": 0.9,
+      "edge": -9.64,
+      "tier": "STRONG",
+      "actual_margin": 35.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-07-22",
+      "home_team": "Portland Fire",
+      "away_team": "Dallas Wings",
+      "bet_direction": "AWAY",
+      "bet_team": "Dallas Wings",
+      "spread": 5.5,
+      "pred_margin": -9.1,
+      "edge": -3.64,
+      "tier": "MEDIUM",
+      "actual_margin": -4.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-07-21"
+  "updated": "2026-07-23"
 }
