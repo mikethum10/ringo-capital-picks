@@ -1,18 +1,18 @@
 {
   "record": {
-    "W": 35,
-    "L": 30,
+    "W": 36,
+    "L": 33,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 12,
-      "L": 14,
+      "L": 16,
       "P": 0
     },
     "STRONG": {
-      "W": 15,
-      "L": 14,
+      "W": 16,
+      "L": 15,
       "P": 0
     },
     "LEAN": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 1.815,
+  "roi_units": -0.276,
   "bets": [
     {
       "date": "2026-05-09",
@@ -867,7 +867,59 @@
       "tier": "MEDIUM",
       "actual_margin": -4.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-07-28",
+      "home_team": "Washington Mystics",
+      "away_team": "Connecticut Sun",
+      "bet_direction": "AWAY",
+      "bet_team": "Connecticut Sun",
+      "spread": -6.5,
+      "pred_margin": 1.7,
+      "edge": -4.83,
+      "tier": "MEDIUM",
+      "actual_margin": 8.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-07-28",
+      "home_team": "Minnesota Lynx",
+      "away_team": "Toronto Tempo",
+      "bet_direction": "AWAY",
+      "bet_team": "Toronto Tempo",
+      "spread": -16.5,
+      "pred_margin": 6.8,
+      "edge": -9.73,
+      "tier": "STRONG",
+      "actual_margin": 7.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-07-28",
+      "home_team": "Seattle Storm",
+      "away_team": "Indiana Fever",
+      "bet_direction": "HOME",
+      "bet_team": "Seattle Storm",
+      "spread": 8.5,
+      "pred_margin": -0.7,
+      "edge": 7.85,
+      "tier": "MEDIUM",
+      "actual_margin": -10.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-07-28",
+      "home_team": "Las Vegas Aces",
+      "away_team": "Portland Fire",
+      "bet_direction": "AWAY",
+      "bet_team": "Portland Fire",
+      "spread": -12.5,
+      "pred_margin": 7.1,
+      "edge": -5.39,
+      "tier": "STRONG",
+      "actual_margin": 15.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-07-23"
+  "updated": "2026-07-29"
 }
