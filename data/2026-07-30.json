@@ -1,31 +1,31 @@
 {
   "date": "2026-07-30",
-  "generated_at": "2026-07-30T07:51:07.900451-04:00",
+  "generated_at": "2026-07-30T18:08:40.443511-04:00",
   "games": [
     {
       "home_team": "Chicago Sky",
       "away_team": "Connecticut Sun",
-      "spread": -4.5,
+      "spread": -5.5,
       "pred_margin": 1.6,
       "pred_ridge": -1.2,
       "pred_xgb": 3.4,
-      "edge": -2.92,
-      "tier": "LEAN",
+      "edge": -3.92,
+      "tier": "MEDIUM",
       "bet_direction": "AWAY",
       "bet_team": "Connecticut Sun",
       "has_bet": true,
-      "spread_display": "Chicago Sky -4.5",
+      "spread_display": "Chicago Sky -5.5",
       "pred_display": "Chicago Sky by 1.6",
-      "bet_label": "Connecticut Sun +4.5",
-      "inj_delta": -0.4,
-      "adj_margin": 1.2,
-      "adj_pred_display": "Chicago Sky by 1.2",
-      "adj_edge": -3.3,
-      "adj_tier": "LEAN",
+      "bet_label": "Connecticut Sun +5.5",
+      "inj_delta": -0.6,
+      "adj_margin": 1.0,
+      "adj_pred_display": "Chicago Sky by 1.0",
+      "adj_edge": -4.5,
+      "adj_tier": "MEDIUM",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Connecticut Sun",
       "adj_has_bet": true,
-      "adj_bet_label": "Connecticut Sun +4.5",
+      "adj_bet_label": "Connecticut Sun +5.5",
       "inj_home": [
         {
           "player": "DiJonai Carrington",
@@ -34,17 +34,6 @@
           "impact": 0.0,
           "raw_impact": 0.0,
           "miss_frac": 1.0,
-          "tier": null,
-          "avg_min": null,
-          "found": false
-        },
-        {
-          "player": "Chloe Bibby",
-          "status": "OUT",
-          "gtd": false,
-          "impact": 0.0,
-          "raw_impact": 0.0,
-          "miss_frac": 0.4,
           "tier": null,
           "avg_min": null,
           "found": false
@@ -70,17 +59,6 @@
           "tier": "STARTER",
           "avg_min": 25.2,
           "found": true
-        },
-        {
-          "player": "Maddy Westbeld",
-          "status": "OUT",
-          "gtd": false,
-          "impact": 0.0,
-          "raw_impact": 0.0,
-          "miss_frac": 0.8,
-          "tier": null,
-          "avg_min": null,
-          "found": false
         }
       ],
       "inj_away": [
@@ -104,28 +82,6 @@
           "miss_frac": 0.4,
           "tier": "STARTER",
           "avg_min": 24.9,
-          "found": true
-        },
-        {
-          "player": "Ashlon Jackson",
-          "status": "OUT",
-          "gtd": false,
-          "impact": 0.0,
-          "raw_impact": 1.0,
-          "miss_frac": 1.0,
-          "tier": "ROTATION",
-          "avg_min": 10.2,
-          "found": true
-        },
-        {
-          "player": "Hailey Van Lith",
-          "status": "OUT",
-          "gtd": false,
-          "impact": 0.2,
-          "raw_impact": 1.0,
-          "miss_frac": 0.8,
-          "tier": "ROTATION",
-          "avg_min": 14.7,
           "found": true
         }
       ],
@@ -476,27 +432,27 @@
     {
       "home_team": "Las Vegas Aces",
       "away_team": "New York Liberty",
-      "spread": -5.5,
+      "spread": -4.5,
       "pred_margin": 8.9,
       "pred_ridge": 6.9,
       "pred_xgb": 10.3,
-      "edge": 3.44,
+      "edge": 4.44,
       "tier": "--",
       "bet_direction": "HOME",
       "bet_team": "Las Vegas Aces",
       "has_bet": false,
-      "spread_display": "Las Vegas Aces -5.5",
+      "spread_display": "Las Vegas Aces -4.5",
       "pred_display": "Las Vegas Aces by 8.9",
-      "bet_label": "Las Vegas Aces -5.5",
-      "inj_delta": -1.5,
-      "adj_margin": 7.4,
-      "adj_pred_display": "Las Vegas Aces by 7.4",
-      "adj_edge": 1.9,
+      "bet_label": "Las Vegas Aces -4.5",
+      "inj_delta": -2.1,
+      "adj_margin": 6.8,
+      "adj_pred_display": "Las Vegas Aces by 6.8",
+      "adj_edge": 2.3,
       "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Las Vegas Aces",
       "adj_has_bet": false,
-      "adj_bet_label": "Las Vegas Aces -5.5",
+      "adj_bet_label": "Las Vegas Aces -4.5",
       "inj_home": [
         {
           "player": "NaLyssa Smith",
@@ -533,17 +489,6 @@
         }
       ],
       "inj_away": [
-        {
-          "player": "Marine Johannes",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 1.2,
-          "raw_impact": 3.0,
-          "miss_frac": 0.6,
-          "tier": "STARTER",
-          "avg_min": 22.9,
-          "found": true
-        },
         {
           "player": "Leonie Fiebich",
           "status": "OUT",
