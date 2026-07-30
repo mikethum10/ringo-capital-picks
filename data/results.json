@@ -1,12 +1,12 @@
 {
   "record": {
-    "W": 36,
+    "W": 38,
     "L": 33,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
-      "W": 12,
+      "W": 14,
       "L": 16,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": -0.276,
+  "roi_units": 1.542,
   "bets": [
     {
       "date": "2026-05-09",
@@ -919,7 +919,33 @@
       "tier": "STRONG",
       "actual_margin": 15.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-07-29",
+      "home_team": "Dallas Wings",
+      "away_team": "Atlanta Dream",
+      "bet_direction": "HOME",
+      "bet_team": "Dallas Wings",
+      "spread": 1.5,
+      "pred_margin": 5.9,
+      "edge": 7.42,
+      "tier": "MEDIUM",
+      "actual_margin": -1.0,
+      "ats_result": "W"
+    },
+    {
+      "date": "2026-07-29",
+      "home_team": "Phoenix Mercury",
+      "away_team": "Golden State Valkyries",
+      "bet_direction": "HOME",
+      "bet_team": "Phoenix Mercury",
+      "spread": 3.5,
+      "pred_margin": 3.8,
+      "edge": 7.29,
+      "tier": "MEDIUM",
+      "actual_margin": 2.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-29"
+  "updated": "2026-07-30"
 }
