@@ -1,13 +1,13 @@
 {
   "record": {
     "W": 38,
-    "L": 33,
+    "L": 34,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 14,
-      "L": 16,
+      "L": 17,
       "P": 0
     },
     "STRONG": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 1.542,
+  "roi_units": 0.542,
   "bets": [
     {
       "date": "2026-05-09",
@@ -945,7 +945,20 @@
       "tier": "MEDIUM",
       "actual_margin": 2.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-07-30",
+      "home_team": "Chicago Sky",
+      "away_team": "Connecticut Sun",
+      "bet_direction": "AWAY",
+      "bet_team": "Connecticut Sun",
+      "spread": -5.5,
+      "pred_margin": 1.6,
+      "edge": -3.92,
+      "tier": "MEDIUM",
+      "actual_margin": 6.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-07-30"
+  "updated": "2026-07-31"
 }
