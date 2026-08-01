@@ -1,6 +1,6 @@
 {
   "record": {
-    "W": 38,
+    "W": 39,
     "L": 34,
     "P": 0
   },
@@ -11,7 +11,7 @@
       "P": 0
     },
     "STRONG": {
-      "W": 16,
+      "W": 17,
       "L": 15,
       "P": 0
     },
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 0.542,
+  "roi_units": 1.451,
   "bets": [
     {
       "date": "2026-05-09",
@@ -958,7 +958,20 @@
       "tier": "MEDIUM",
       "actual_margin": 6.0,
       "ats_result": "L"
+    },
+    {
+      "date": "2026-07-31",
+      "home_team": "Atlanta Dream",
+      "away_team": "Seattle Storm",
+      "bet_direction": "AWAY",
+      "bet_team": "Seattle Storm",
+      "spread": -11.5,
+      "pred_margin": 3.7,
+      "edge": -7.78,
+      "tier": "STRONG",
+      "actual_margin": 9.0,
+      "ats_result": "W"
     }
   ],
-  "updated": "2026-07-31"
+  "updated": "2026-08-01"
 }
