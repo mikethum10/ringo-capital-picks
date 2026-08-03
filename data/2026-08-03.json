@@ -1,31 +1,31 @@
 {
   "date": "2026-08-03",
-  "generated_at": "2026-08-03T08:55:06.418881-04:00",
+  "generated_at": "2026-08-03T18:11:33.581081-04:00",
   "games": [
     {
       "home_team": "Atlanta Dream",
       "away_team": "Las Vegas Aces",
-      "spread": -1.5,
+      "spread": -2.5,
       "pred_margin": -0.5,
       "pred_ridge": -1.7,
       "pred_xgb": 0.4,
-      "edge": -1.96,
-      "tier": "--",
+      "edge": -2.96,
+      "tier": "LEAN",
       "bet_direction": "AWAY",
       "bet_team": "Las Vegas Aces",
-      "has_bet": false,
-      "spread_display": "Atlanta Dream -1.5",
+      "has_bet": true,
+      "spread_display": "Atlanta Dream -2.5",
       "pred_display": "Las Vegas Aces by 0.5",
-      "bet_label": "Las Vegas Aces +1.5",
+      "bet_label": "Las Vegas Aces +2.5",
       "inj_delta": 0.2,
       "adj_margin": -0.3,
       "adj_pred_display": "Las Vegas Aces by 0.3",
-      "adj_edge": -1.8,
-      "adj_tier": "--",
+      "adj_edge": -2.8,
+      "adj_tier": "LEAN",
       "adj_bet_direction": "AWAY",
       "adj_bet_team": "Las Vegas Aces",
-      "adj_has_bet": false,
-      "adj_bet_label": "Las Vegas Aces +1.5",
+      "adj_has_bet": true,
+      "adj_bet_label": "Las Vegas Aces +2.5",
       "inj_home": [
         {
           "player": "Te-Hina Paopao",
@@ -404,10 +404,10 @@
       "spread_display": "Phoenix Mercury -1.5",
       "pred_display": "Chicago Sky by 1.5",
       "bet_label": "Chicago Sky +1.5",
-      "inj_delta": -1.4,
-      "adj_margin": 0.1,
-      "adj_pred_display": "Chicago Sky by 0.1",
-      "adj_edge": 1.6,
+      "inj_delta": -1.8,
+      "adj_margin": -0.3,
+      "adj_pred_display": "Phoenix Mercury by 0.3",
+      "adj_edge": 1.2,
       "adj_tier": "--",
       "adj_bet_direction": "HOME",
       "adj_bet_team": "Chicago Sky",
@@ -437,30 +437,7 @@
           "found": true
         }
       ],
-      "inj_away": [
-        {
-          "player": "Kelsey Plum",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.0,
-          "raw_impact": 0.0,
-          "miss_frac": 0.0,
-          "tier": null,
-          "avg_min": null,
-          "found": false
-        },
-        {
-          "player": "Sami Whitcomb",
-          "status": "GTD",
-          "gtd": true,
-          "impact": 0.8,
-          "raw_impact": 1.0,
-          "miss_frac": 0.2,
-          "tier": "ROTATION",
-          "avg_min": 14.9,
-          "found": true
-        }
-      ],
+      "inj_away": [],
       "inj_source": "rotowire",
       "stats": [
         {
