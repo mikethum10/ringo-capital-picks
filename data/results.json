@@ -1,13 +1,13 @@
 {
   "record": {
     "W": 39,
-    "L": 34,
+    "L": 36,
     "P": 0
   },
   "by_tier": {
     "MEDIUM": {
       "W": 14,
-      "L": 17,
+      "L": 19,
       "P": 0
     },
     "STRONG": {
@@ -21,7 +21,7 @@
       "P": 0
     }
   },
-  "roi_units": 1.451,
+  "roi_units": -0.549,
   "bets": [
     {
       "date": "2026-05-09",
@@ -971,7 +971,33 @@
       "tier": "STRONG",
       "actual_margin": 9.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-08-02",
+      "home_team": "Dallas Wings",
+      "away_team": "Connecticut Sun",
+      "bet_direction": "AWAY",
+      "bet_team": "Connecticut Sun",
+      "spread": -10.5,
+      "pred_margin": 6.0,
+      "edge": -4.53,
+      "tier": "MEDIUM",
+      "actual_margin": 20.0,
+      "ats_result": "L"
+    },
+    {
+      "date": "2026-08-02",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Toronto Tempo",
+      "bet_direction": "AWAY",
+      "bet_team": "Toronto Tempo",
+      "spread": -13.5,
+      "pred_margin": 8.6,
+      "edge": -4.87,
+      "tier": "MEDIUM",
+      "actual_margin": 17.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-08-02"
+  "updated": "2026-08-03"
 }
