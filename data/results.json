@@ -1,7 +1,7 @@
 {
   "record": {
     "W": 40,
-    "L": 36,
+    "L": 37,
     "P": 0
   },
   "by_tier": {
@@ -17,11 +17,11 @@
     },
     "LEAN": {
       "W": 9,
-      "L": 2,
+      "L": 3,
       "P": 0
     }
   },
-  "roi_units": 0.36,
+  "roi_units": -0.64,
   "bets": [
     {
       "date": "2026-05-09",
@@ -1010,7 +1010,20 @@
       "tier": "LEAN",
       "actual_margin": -22.0,
       "ats_result": "W"
+    },
+    {
+      "date": "2026-08-04",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Toronto Tempo",
+      "bet_direction": "AWAY",
+      "bet_team": "Toronto Tempo",
+      "spread": -11.5,
+      "pred_margin": 8.7,
+      "edge": -2.77,
+      "tier": "LEAN",
+      "actual_margin": 17.0,
+      "ats_result": "L"
     }
   ],
-  "updated": "2026-08-04"
+  "updated": "2026-08-05"
 }
